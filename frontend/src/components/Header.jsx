@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from './ui/button';
 
 export const Header = () => {
@@ -23,6 +23,10 @@ export const Header = () => {
     }
   };
 
+  const handleMediaKitDownload = () => {
+    window.open('https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/bd8rz450_Media%20kit.pdf', '_blank');
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -31,8 +35,12 @@ export const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Maria's Media Management
+          <Link to="/" className="flex items-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/a3j3n26q_Screenshot%202025-12-29%20at%2011.14.48%E2%80%AFAM.png" 
+              alt="Maria's Media Management" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,6 +56,10 @@ export const Header = () => {
             </button>
             <button onClick={() => scrollToSection('shop')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Shop
+            </button>
+            <button onClick={handleMediaKitDownload} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium flex items-center gap-2">
+              <Download className="w-4 h-4" />
+              Media Kit
             </button>
             <button onClick={() => scrollToSection('contact')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Contact
@@ -92,6 +104,9 @@ export const Header = () => {
             <button onClick={() => scrollToSection('shop')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Shop
             </button>
+            <button onClick={handleMediaKitDownload} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+              Download Media Kit
+            </button>
             <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Contact
             </button>
@@ -111,4 +126,3 @@ export const Header = () => {
     </header>
   );
 };
-
