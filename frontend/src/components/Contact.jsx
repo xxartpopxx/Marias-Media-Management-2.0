@@ -146,28 +146,6 @@ export const Contact = () => {
             </form>
           </div>
         </div>
-
-        {/* Newsletter Section */}
-        <div className={`max-w-2xl mx-auto mt-16 text-center transition-all duration-1000 delay-500 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl p-8 md:p-12 shadow-2xl text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Get Social Media Tips & Tricks Every Month</h3>
-            <p className="mb-6 text-purple-100">Join our newsletter for insights, strategies, inspiration, and updates from Maria.</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Your Email..."
-                className="flex-1 py-6 bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white placeholder:text-purple-100 rounded-xl focus:border-white transition-colors duration-300"
-              />
-              <Button
-                className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-6 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
-              >
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
