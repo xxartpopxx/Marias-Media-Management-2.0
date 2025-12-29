@@ -34,17 +34,57 @@ html {
 /* Floating animation for hero elements */
 @keyframes float {
     0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 0.3;
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(2deg);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-30px) rotate(5deg);
-        opacity: 0.5;
+        transform: translateY(-30px) translateX(-10px) rotate(-2deg);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateY(-15px) translateX(5px) rotate(1deg);
+        opacity: 1;
     }
 }
 
 .animate-float {
     animation: float 8s ease-in-out infinite;
+}
+
+/* Pulse slow animation */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Slide in up animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideInUp {
+    animation: slideInUp 0.8s ease-out forwards;
 }
 
 /* Gradient animation */
@@ -63,6 +103,21 @@ html {
 .animate-gradient {
     background-size: 200% auto;
     animation: gradient 3s linear infinite;
+}
+
+/* 3D Card hover effect */
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0) rotateX(0) rotateY(0);
+    }
+    50% {
+        transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+    }
+}
+
+.card-3d:hover {
+    animation: cardFloat 2s ease-in-out infinite;
+    transform-style: preserve-3d;
 }
 
 /* Smooth transitions for interactive elements */
@@ -97,4 +152,20 @@ button {
 
 .animate-fadeIn {
     animation: fadeIn 0.6s ease-out;
+}
+
+/* 3D perspective for cards */
+.perspective-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Rotate animation */
+@keyframes rotate3d {
+    from {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+    to {
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
 }
