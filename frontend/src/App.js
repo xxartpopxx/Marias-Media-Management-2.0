@@ -12,6 +12,7 @@ import { FindMaria } from "./components/FindMaria";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { FloatingContact } from "./components/FloatingContact";
 import { Toaster } from "./components/ui/sonner";
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <FloatingContact />
       <Toaster />
     </div>
   );
