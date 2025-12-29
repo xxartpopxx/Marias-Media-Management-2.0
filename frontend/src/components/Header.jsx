@@ -1,0 +1,108 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { Button } from './ui/button';
+
+export const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md' : 'bg-transparent'
+      }`}
+    >
+      <nav className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Maria's Media Management
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Home
+            </button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Meet Maria
+            </button>
+            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Testimonials
+            </button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Services
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Contact
+            </button>
+            <a
+              href="https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                Shop Now
+              </Button>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-700 hover:text-purple-600"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top">
+            <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Home
+            </button>
+            <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Meet Maria
+            </button>
+            <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Testimonials
+            </button>
+            <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Services
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+              Contact
+            </button>
+            <a
+              href="https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                Shop Now
+              </Button>
+            </a>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+};
