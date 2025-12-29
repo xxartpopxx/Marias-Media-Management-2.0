@@ -4,12 +4,12 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Mission } from "./components/Mission";
 import { About } from "./components/About";
-import { EtsyShop } from "./components/EtsyShop";
-import { Reviews } from "./components/Reviews";
-import { InstagramFeed } from "./components/InstagramFeed";
+import { Services } from "./components/Services";
+import { Shop } from "./components/Shop";
+import { FoodReviews } from "./components/FoodReviews";
+import { InstagramFeeds } from "./components/InstagramFeeds";
 import { FindMaria } from "./components/FindMaria";
 import { Testimonials } from "./components/Testimonials";
-import { Services } from "./components/Services";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
@@ -21,12 +21,12 @@ const Home = () => {
       <Hero />
       <Mission />
       <About />
-      <EtsyShop />
-      <Reviews />
-      <InstagramFeed />
+      <Services />
+      <Shop />
+      <FoodReviews />
+      <InstagramFeeds />
       <FindMaria />
       <Testimonials />
-      <Services />
       <Contact />
       <Footer />
       <Toaster />
