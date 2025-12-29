@@ -212,7 +212,7 @@ export const InstagramFeeds = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white px-10 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
-                style={
+                style={{
                   boxShadow: '0 15px 50px rgba(168, 85, 247, 0.4)'
                 }}
               >
