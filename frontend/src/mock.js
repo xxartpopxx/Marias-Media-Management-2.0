@@ -51,25 +51,29 @@ export const etsyProducts = [
     id: 1,
     title: "Custom Photo Editing and Restoration",
     link: "https://www.etsy.com/listing/1726389407/custom-photo-editing-service-restoration",
-    image: "https://i.etsystatic.com/41835855/r/il/8a5cc0/5285790957/il_794xN.5285790957_m8oc.jpg"
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/fxjeinxt_il_794xN.7546789152_o6ed.webp",
+    description: "Bring your photos back to life with professional editing, restoration, enhancement, and retouching services."
   },
   {
     id: 2,
     title: "Personalized Photo Coloring Book (Printed)",
     link: "https://www.etsy.com/listing/1705251745/personalized-photo-coloring-book-custom",
-    image: "https://i.etsystatic.com/41835855/r/il/c8f9e5/5238074748/il_794xN.5238074748_rkvs.jpg"
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/xxbah8gt_il_794xN.6452854846_qdjp.webp",
+    description: "Turn your favorite photos into a custom printed coloring book. Perfect for gifts and keepsakes."
   },
   {
     id: 3,
     title: "Personalized Coloring Pages (Digital)",
     link: "https://www.etsy.com/listing/1710696187/personalized-photo-coloring-book-custom",
-    image: "https://i.etsystatic.com/41835855/r/il/3e1f42/5285790969/il_794xN.5285790969_j7kd.jpg"
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/j4yy8dpj_il_794xN.7339468041_mvsy.webp",
+    description: "Get instant digital coloring pages from your photos. Print as many times as you want."
   },
   {
     id: 4,
     title: "Custom Murder Mystery Party Game",
     link: "https://www.etsy.com/listing/1755460004/personalized-murder-mystery-party-game",
-    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg"
+    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg",
+    description: "Host an unforgettable murder mystery party with a fully customized game for your guests."
   }
 ];
 
