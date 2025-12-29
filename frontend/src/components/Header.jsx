@@ -37,19 +37,22 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Meet Maria
             </button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('digital-products')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+              Digital Products
+            </button>
+            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Testimonials
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Services
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Contact
             </button>
             <a
@@ -57,7 +60,12 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+              <Button 
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: '0 4px 15px rgba(168, 85, 247, 0.3)'
+                }}
+              >
                 Shop Now
               </Button>
             </a>
