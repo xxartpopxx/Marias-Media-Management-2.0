@@ -152,8 +152,8 @@ export const Contact = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl p-8 md:p-12 shadow-2xl text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Get Social Media Tips & Tricks Every Month!</h3>
-            <p className="mb-6 text-purple-100">Join our newsletter today!</p>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Get Social Media Tips & Tricks Every Month</h3>
+            <p className="mb-6 text-purple-100">Join our newsletter for insights, strategies, inspiration, and updates from Maria.</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input
                 type="email"
