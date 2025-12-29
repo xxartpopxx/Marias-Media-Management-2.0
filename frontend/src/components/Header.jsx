@@ -89,8 +89,8 @@ export const Header = () => {
             <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Meet Maria
             </button>
-            <button onClick={() => scrollToSection('digital-products')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
-              Digital Products
+            <button onClick={() => scrollToSection('etsy-shop')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+              Etsy Shop
             </button>
             <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Testimonials
