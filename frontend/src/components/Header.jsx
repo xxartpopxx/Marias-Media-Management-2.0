@@ -33,13 +33,13 @@ export const Header = () => {
         isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-gray-900/80 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/a3j3n26q_Screenshot%202025-12-29%20at%2011.14.48%E2%80%AFAM.png" 
+              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
               alt="Maria's Media Management" 
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
