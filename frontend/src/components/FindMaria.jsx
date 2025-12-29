@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Instagram, Linkedin, ShoppingBag, Globe } from 'lucide-react';
+import { Instagram, ShoppingBag } from 'lucide-react';
 import { socialLinks } from '../mock';
 
 export const FindMaria = () => {
@@ -29,31 +29,25 @@ export const FindMaria = () => {
 
   const platforms = [
     {
-      name: 'Instagram',
-      icon: Instagram,
-      url: socialLinks.instagram,
-      color: 'from-purple-500 to-pink-500',
-      description: 'Daily content & behind-the-scenes'
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: socialLinks.linkedin,
-      color: 'from-blue-600 to-blue-400',
-      description: 'Professional insights & connections'
-    },
-    {
-      name: 'Etsy Shop',
+      name: 'Etsy',
+      handle: 'MariasMediaShop',
       icon: ShoppingBag,
       url: socialLinks.etsy,
-      color: 'from-orange-500 to-yellow-400',
-      description: 'Digital products & creative tools'
+      color: 'from-orange-500 to-yellow-400'
     },
     {
-      name: 'Nonprofit Work',
-      icon: Globe,
-      color: 'from-green-500 to-teal-400',
-      description: 'Community advocacy & partnerships'
+      name: 'Instagram',
+      handle: '@mariasfoodphotos',
+      icon: Instagram,
+      url: socialLinks.instagramFood,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      name: 'Instagram',
+      handle: '@maria.mongiardo',
+      icon: Instagram,
+      url: socialLinks.instagram,
+      color: 'from-pink-500 to-purple-500'
     }
   ];
 
@@ -65,15 +59,12 @@ export const FindMaria = () => {
         <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">
             Where Else You Can <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Find Maria</span>
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Maria is proud to be active in multiple creative and professional spaces — from nonprofit advocacy to digital storytelling communities. Explore more of her work and collaborations here.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             return (
@@ -101,8 +92,8 @@ export const FindMaria = () => {
                   >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">{platform.name}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{platform.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">{platform.name}</h3>
+                  <p className="text-purple-600 font-medium">{platform.handle}</p>
                 </div>
               </a>
             );
@@ -112,3 +103,4 @@ export const FindMaria = () => {
     </section>
   );
 };
+
