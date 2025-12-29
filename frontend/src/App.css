@@ -20,6 +20,16 @@ button[class*="emergent"],
     left: -9999px !important;
 }
 
+/* 3D Perspective for cards */
+.perspective-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.perspective-card:hover {
+    transform: rotateX(2deg) rotateY(-2deg) translateZ(10px);
+}
+
 /* Custom animations for blob effect */
 @keyframes blob {
     0% {
@@ -122,6 +132,23 @@ button[class*="emergent"],
     animation: gradient 3s linear infinite;
 }
 
+/* Parallax effect on scroll */
+@media (prefers-reduced-motion: no-reduce) {
+    [data-parallax] {
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+/* Enhanced hover lift effect */
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.25);
+}
+
 /* 3D Card hover effect */
 @keyframes cardFloat {
     0%, 100% {
@@ -185,4 +212,18 @@ button {
     to {
         transform: rotate3d(0, 1, 0, 360deg);
     }
+}
+
+/* Glow effect */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(236, 72, 153, 0.5);
+    }
+}
+
+.animate-glow {
+    animation: glow 3s ease-in-out infinite;
 }
