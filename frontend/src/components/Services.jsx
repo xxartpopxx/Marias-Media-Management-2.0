@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Camera } from 'lucide-react';
 import { pricingPlans } from '../mock';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
@@ -37,8 +37,17 @@ export const Services = () => {
   };
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="services" ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
+      {/* Logo accent */}
+      <div className="absolute bottom-10 left-10 opacity-5">
+        <img 
+          src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
+          alt="" 
+          className="w-48 h-auto"
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-20 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
@@ -52,12 +61,13 @@ export const Services = () => {
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
-                className={`p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-100 hover:border-purple-300 rounded-3xl ${
+                className={`p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 border-2 border-purple-100 hover:border-purple-300 rounded-3xl perspective-card ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
                 style={{ 
                   transitionDelay: `${index * 100}ms`,
-                  boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)'
+                  boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)',
+                  transformStyle: 'preserve-3d'
                 }}
               >
                 <div className="text-center">
@@ -85,17 +95,40 @@ export const Services = () => {
                       boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'
                     }}
                   >
-                    Get Started
+                    Inquire
                   </Button>
                 </div>
               </Card>
             ))}
           </div>
 
-          <div className={`text-center text-lg text-gray-600 transition-all duration-1000 delay-500 transform ${
+          <div className={`text-center text-lg text-gray-600 mb-12 transition-all duration-1000 delay-500 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p>Every client receives a complimentary social media guide.</p>
+            <p className="font-medium">Every client receives a complimentary social media guide.</p>
+          </div>
+
+          {/* Additional Services Note */}
+          <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <Card 
+              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border-2 border-purple-200"
+              style={{
+                boxShadow: '0 10px 40px rgba(168, 85, 247, 0.15)'
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Camera className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    In addition to social media management packages, Maria also offers <span className="font-semibold text-purple-700">photo editing and brand photography for restaurants and businesses</span>. Please inquire directly to discuss these services.
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
