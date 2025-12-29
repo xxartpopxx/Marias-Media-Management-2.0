@@ -58,22 +58,55 @@ export const etsyProducts = [
     id: 2,
     title: "Personalized Photo Coloring Book (Printed)",
     link: "https://www.etsy.com/listing/1705251745/personalized-photo-coloring-book-custom",
-    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/xxbah8gt_il_794xN.6452854846_qdjp.webp",
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/7zbcz7qf_il_794xN.6452854846_qdjp-1.webp",
     description: "Turn your favorite photos into a custom printed coloring book. Perfect for gifts and keepsakes."
   },
   {
     id: 3,
     title: "Personalized Coloring Pages (Digital)",
     link: "https://www.etsy.com/listing/1710696187/personalized-photo-coloring-book-custom",
-    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/j4yy8dpj_il_794xN.7339468041_mvsy.webp",
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/dcjjmclx_il_794xN.7339468041_mvsy.webp",
     description: "Get instant digital coloring pages from your photos. Print as many times as you want."
   },
   {
     id: 4,
     title: "Custom Murder Mystery Party Game",
     link: "https://www.etsy.com/listing/1755460004/personalized-murder-mystery-party-game",
-    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg",
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/hyteqiw9_il_794xN.7198200902_gmcc.webp",
     description: "Host an unforgettable murder mystery party with a fully customized game for your guests."
+  }
+];
+
+export const professionalLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/mariamongiardo/",
+    icon: "linkedin",
+    description: "Professional network and career highlights"
+  },
+  {
+    name: "LupusChick Study Results",
+    url: "https://lupuschick.com/lupus-study-survey-results-lupuschick/",
+    icon: "research",
+    description: "Lupus research and advocacy work"
+  },
+  {
+    name: "PubMed Publications",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=maria%20mongiardo",
+    icon: "research",
+    description: "Published research and academic work"
+  },
+  {
+    name: "Channel Kindness Author",
+    url: "https://www.channelkindness.org/author/mariam/",
+    icon: "writing",
+    description: "Storytelling and community features"
+  },
+  {
+    name: "Born This Way Foundation",
+    url: "https://bornthisway.foundation/my-experience-as-a-channel-kindness-reporter/",
+    icon: "nonprofit",
+    description: "Featured work and advocacy"
   }
 ];
 
