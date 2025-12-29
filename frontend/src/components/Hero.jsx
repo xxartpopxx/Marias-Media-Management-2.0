@@ -16,51 +16,75 @@ export const Hero = () => {
     }
   };
 
+  const scrollToProducts = () => {
+    const element = document.getElementById('digital-products');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-white">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video-style Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-800">
+        {/* Simulated scrolling feed elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-3xl animate-float" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-white rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-32 left-1/4 w-56 h-56 bg-white rounded-2xl animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-white rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 right-1/4 w-52 h-52 bg-white rounded-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        </div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 transform ${
+      <div className="container mx-auto px-6 relative z-10 pt-20">
+        <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6 shadow-lg">
-            <Sparkles className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-purple-600">Elevate Your Social Media Presence</span>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-8 shadow-lg border border-white/20">
+            <Sparkles className="w-4 h-4 text-pink-300" />
+            <span className="text-sm font-medium text-white">Boston-Based • Global Reach</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Giving Your Social Media
-            <span className="block bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
-              The Attention They Deserve
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white drop-shadow-2xl">
+            Giving Your Social Media Profiles
+            <span className="block mt-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent animate-gradient">
+              the Attention They Deserve
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-            Helping creative brands, businesses, and entrepreneurs across the globe elevate their social media platforms with passion, drive, and attention to detail.
+          <p className="text-xl md:text-2xl text-pink-100 mb-6 font-light">
+            Purpose-driven strategy • Thoughtful design • Engaging, human-centered storytelling
+          </p>
+          
+          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+            At Maria's Media Management, we transform social media into a powerful extension of your brand — blending creativity, strategy, and connection. Whether you're a business, creator, nonprofit, or entrepreneur, we help your online presence not only look beautiful, but work for you.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-purple-900 hover:bg-pink-50 px-8 py-7 text-lg font-semibold shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+              style={{
+                boxShadow: '0 10px 40px rgba(236, 72, 153, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.1)'
+              }}
             >
-              Get Started
+              Work With Maria
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50 px-8 py-6 text-lg transition-all duration-300"
+              onClick={scrollToProducts}
+              className="border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/60 px-8 py-7 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+              style={{
+                boxShadow: '0 10px 40px rgba(168, 85, 247, 0.2)'
+              }}
             >
-              Learn More
+              Explore Digital Products & Photo Editing
             </Button>
           </div>
         </div>
@@ -68,8 +92,8 @@ export const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -52,25 +52,39 @@ export const monthlyPricing = [
   { accounts: 4, price: 600 }
 ];
 
-export const otherServices = [
+export const digitalProducts = [
   {
     id: 1,
-    title: "Maria's Social Media Tips",
-    price: 7.99,
-    description: "Unlock Maria's guide"
+    title: "Photo Editing & Retouching",
+    description: "Blending, enhancement, background cleanup, natural face-preserving edits — handled with care.",
+    icon: "Camera"
   },
   {
     id: 2,
-    title: "Maria's Social Media Audit",
-    price: 49.99,
-    description: "Unlock Maria's social media guide and get a thorough audit of all of your social media pages"
+    title: "Custom Media Kits",
+    description: "Professional, clean, personalized branding kits to showcase your work and partnerships.",
+    icon: "FileText"
   },
   {
     id: 3,
-    title: "Maria's Personalized Media Kit",
-    price: 49.99,
-    description: "Unlock Maria's social media guide and receive a customized media kit"
+    title: "Social Media Guides & Strategy Tools",
+    description: "DIY resources to help you glow up your online presence.",
+    icon: "Lightbulb"
+  },
+  {
+    id: 4,
+    title: "Creative Digital Downloads",
+    description: "Templates, guides, and more — straight from Maria's Media Shop.",
+    icon: "Download"
   }
+];
+
+export const nonprofitPartners = [
+  "LupusChick",
+  "The Lupus Foundation of New England",
+  "Born This Way Foundation",
+  "The Massachusetts Breast Cancer Coalition",
+  "The Nan Project"
 ];
 
 export const socialLinks = {
