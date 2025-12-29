@@ -38,6 +38,26 @@ export const testimonials = [
   }
 ];
 
+export const googleReviews = [
+  {
+    id: 1,
+    reviewer: "Client Review",
+    rating: 5,
+    text: "Maria's expertise in social media management is unmatched. She helped us grow our audience significantly!",
+    platform: "google"
+  }
+];
+
+export const yelpReviews = [
+  {
+    id: 1,
+    reviewer: "Food Enthusiast",
+    rating: 5,
+    text: "Maria has great taste! Her restaurant recommendations are always spot-on.",
+    platform: "yelp"
+  }
+];
+
 export const weeklyPricing = [
   { accounts: 1, price: 100 },
   { accounts: 2, price: 150 },
@@ -52,30 +72,34 @@ export const monthlyPricing = [
   { accounts: 4, price: 600 }
 ];
 
-export const digitalProducts = [
+export const etsyProducts = [
   {
     id: 1,
-    title: "Photo Editing & Retouching",
-    description: "Blending, enhancement, background cleanup, natural face-preserving edits — handled with care.",
-    icon: "Camera"
+    title: "Social Media Audit & Strategy Guide",
+    price: 49.99,
+    image: "https://i.etsystatic.com/41835855/r/il/8a5cc0/5285790957/il_794xN.5285790957_m8oc.jpg",
+    description: "Complete audit of your social media presence with actionable strategies"
   },
   {
     id: 2,
-    title: "Custom Media Kits",
-    description: "Professional, clean, personalized branding kits to showcase your work and partnerships.",
-    icon: "FileText"
+    title: "Instagram Growth Template Pack",
+    price: 29.99,
+    image: "https://i.etsystatic.com/41835855/r/il/c8f9e5/5238074748/il_794xN.5238074748_rkvs.jpg",
+    description: "Professional templates to boost your Instagram engagement"
   },
   {
     id: 3,
-    title: "Social Media Guides & Strategy Tools",
-    description: "DIY resources to help you glow up your online presence.",
-    icon: "Lightbulb"
+    title: "Content Calendar Planner",
+    price: 19.99,
+    image: "https://i.etsystatic.com/41835855/r/il/3e1f42/5285790969/il_794xN.5285790969_j7kd.jpg",
+    description: "30-day content planning system for consistent posting"
   },
   {
     id: 4,
-    title: "Creative Digital Downloads",
-    description: "Templates, guides, and more — straight from Maria's Media Shop.",
-    icon: "Download"
+    title: "Photo Editing Service",
+    price: 39.99,
+    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg",
+    description: "Professional photo retouching and enhancement"
   }
 ];
 
@@ -88,7 +112,9 @@ export const nonprofitPartners = [
 ];
 
 export const socialLinks = {
-  instagram: "https://www.instagram.com/mariasmediamanagement/",
+  instagram: "https://www.instagram.com/maria.mongiardo/",
   linkedin: "https://www.linkedin.com/in/maria-mongiardo/",
-  etsy: "https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav"
+  etsy: "https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav",
+  yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
+  google: "https://www.google.com/maps/contrib//reviews/"
 };
