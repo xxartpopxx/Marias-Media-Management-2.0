@@ -83,19 +83,22 @@ export const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top">
-            <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Meet Maria
             </button>
-            <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('digital-products')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+              Digital Products
+            </button>
+            <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Testimonials
             </button>
-            <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Services
             </button>
-            <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200">
+            <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Contact
             </button>
             <a
@@ -104,7 +107,7 @@ export const Header = () => {
               rel="noopener noreferrer"
               className="block"
             >
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold">
                 Shop Now
               </Button>
             </a>
