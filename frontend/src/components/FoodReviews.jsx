@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { socialLinks } from '../mock';
 import { Card } from './ui/card';
 
@@ -32,14 +32,14 @@ export const FoodReviews = () => {
     {
       name: 'Google Reviews',
       url: socialLinks.google,
-      icon: 'G',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg',
       color: 'from-blue-500 to-blue-600',
       hoverColor: 'hover:from-blue-600 hover:to-blue-700'
     },
     {
       name: 'Yelp Reviews',
       url: socialLinks.yelp,
-      icon: 'Y',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg',
       color: 'from-red-500 to-red-600',
       hoverColor: 'hover:from-red-600 hover:to-red-700'
     },
@@ -90,7 +90,17 @@ export const FoodReviews = () => {
                 }}
               >
                 <div className="text-center">
-                  <div className="text-5xl mb-4">{link.icon}</div>
+                  {link.logo ? (
+                    <div className="bg-white rounded-2xl p-4 mb-4 inline-block">
+                      <img 
+                        src={link.logo} 
+                        alt={link.name}
+                        className="h-12 w-auto mx-auto"
+                      />
+                    </div>
+                  ) : (
+                    <div className="text-5xl mb-4">{link.icon}</div>
+                  )}
                   <h3 className="text-xl font-bold mb-3">{link.name}</h3>
                   <ExternalLink className="w-6 h-6 mx-auto opacity-80" />
                 </div>
