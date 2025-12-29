@@ -4,7 +4,9 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Mission } from "./components/Mission";
 import { About } from "./components/About";
-import { DigitalProducts } from "./components/DigitalProducts";
+import { EtsyShop } from "./components/EtsyShop";
+import { Reviews } from "./components/Reviews";
+import { InstagramFeed } from "./components/InstagramFeed";
 import { FindMaria } from "./components/FindMaria";
 import { Testimonials } from "./components/Testimonials";
 import { Services } from "./components/Services";
@@ -19,7 +21,9 @@ const Home = () => {
       <Hero />
       <Mission />
       <About />
-      <DigitalProducts />
+      <EtsyShop />
+      <Reviews />
+      <InstagramFeed />
       <FindMaria />
       <Testimonials />
       <Services />
