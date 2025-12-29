@@ -31,6 +31,22 @@ html {
     animation-delay: 4s;
 }
 
+/* Floating animation for hero elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-30px) rotate(5deg);
+        opacity: 0.5;
+    }
+}
+
+.animate-float {
+    animation: float 8s ease-in-out infinite;
+}
+
 /* Gradient animation */
 @keyframes gradient {
     0% {
