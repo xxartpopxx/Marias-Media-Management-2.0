@@ -74,10 +74,10 @@ export const Contact = () => {
         <div className={`text-center mb-16 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Touch</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            Let's Create Something <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Meaningful Together</span>
           </h2>
-          <p className="text-xl text-gray-600">Let's elevate your social media presence together</p>
+          <p className="text-xl text-gray-600">Ready to transform your social media presence?</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
