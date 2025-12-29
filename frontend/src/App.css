@@ -3,6 +3,23 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Hide Emergent badge completely */
+.emergent-badge,
+.emergent-button,
+a[href*="emergent"],
+footer a[href*="emergent"],
+div[class*="emergent"],
+button[class*="emergent"],
+[class*="made-with"],
+[id*="emergent"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
 /* Custom animations for blob effect */
 @keyframes blob {
     0% {
