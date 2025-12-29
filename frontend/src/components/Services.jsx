@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check } from 'lucide-react';
-import { weeklyPricing, monthlyPricing, otherServices } from '../mock';
+import { weeklyPricing, monthlyPricing } from '../mock';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -35,61 +35,82 @@ export const Services = () => {
   };
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+    <section id="services" ref={sectionRef} className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className={`text-center mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center mb-20 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer content creation, engagement strategies, follower growth, website management, influencer/client outreach and our complimentary social media guide when you hire Maria's Media Management.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We offer content creation, engagement strategy, audience growth support, website and newsletter guidance, influencer/client outreach — plus a complimentary social media guide when you hire Maria's Media Management.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto mb-16">
+        <div className="max-w-7xl mx-auto">
           <Tabs defaultValue="monthly" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 bg-white shadow-lg p-1 rounded-xl">
-              <TabsTrigger value="weekly" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-lg transition-all duration-300">
+            <TabsList 
+              className="grid w-full max-w-md mx-auto grid-cols-2 mb-16 bg-purple-50 shadow-lg p-2 rounded-2xl border border-purple-100"
+              style={{
+                boxShadow: '0 8px 30px rgba(168, 85, 247, 0.15)'
+              }}
+            >
+              <TabsTrigger 
+                value="weekly" 
+                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300 text-base font-semibold py-3"
+              >
                 One Week
               </TabsTrigger>
-              <TabsTrigger value="monthly" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-lg transition-all duration-300">
+              <TabsTrigger 
+                value="monthly" 
+                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300 text-base font-semibold py-3"
+              >
                 One Month
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="weekly">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {weeklyPricing.map((plan, index) => (
                   <Card
                     key={index}
-                    className={`p-8 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-purple-300 ${
+                    className={`p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-100 hover:border-purple-300 rounded-3xl ${
                       isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
+                    style={{ 
+                      transitionDelay: `${index * 100}ms`,
+                      boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)'
+                    }}
                   >
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.accounts} Account{plan.accounts > 1 ? 's' : ''}</h3>
-                      <div className="mb-6">
-                        <span className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                      <h3 className="text-2xl font-bold mb-3 text-gray-800">{plan.accounts} Account{plan.accounts > 1 ? 's' : ''}</h3>
+                      <div className="mb-8">
+                        <span className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
                           ${plan.price}
                         </span>
-                        <span className="text-gray-500">/week</span>
+                        <span className="text-gray-500 text-lg">/week</span>
                       </div>
-                      <div className="space-y-3 mb-6">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Check className="w-5 h-5 text-green-500" />
-                          <span>Daily Content Creation</span>
+                      <div className="space-y-4 mb-8 text-left">
+                        <div className="flex items-center gap-3">
+                          <div className="bg-green-100 rounded-full p-1">
+                            <Check className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Daily Content Creation</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Check className="w-5 h-5 text-green-500" />
-                          <span>Engagement Services</span>
+                        <div className="flex items-center gap-3">
+                          <div className="bg-green-100 rounded-full p-1">
+                            <Check className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Engagement Services</span>
                         </div>
                       </div>
                       <Button
                         onClick={handleRequestInfo}
-                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white transition-all duration-300"
+                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 font-semibold transition-all duration-300 transform hover:scale-105"
+                        style={{
+                          boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'
+                        }}
                       >
                         Request Info
                       </Button>
@@ -100,36 +121,46 @@ export const Services = () => {
             </TabsContent>
 
             <TabsContent value="monthly">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {monthlyPricing.map((plan, index) => (
                   <Card
                     key={index}
-                    className={`p-8 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-purple-300 ${
+                    className={`p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-100 hover:border-purple-300 rounded-3xl ${
                       isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
+                    style={{ 
+                      transitionDelay: `${index * 100}ms`,
+                      boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)'
+                    }}
                   >
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.accounts} Account{plan.accounts > 1 ? 's' : ''}</h3>
-                      <div className="mb-6">
-                        <span className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                      <h3 className="text-2xl font-bold mb-3 text-gray-800">{plan.accounts} Account{plan.accounts > 1 ? 's' : ''}</h3>
+                      <div className="mb-8">
+                        <span className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
                           ${plan.price}
                         </span>
-                        <span className="text-gray-500">/month</span>
+                        <span className="text-gray-500 text-lg">/month</span>
                       </div>
-                      <div className="space-y-3 mb-6">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Check className="w-5 h-5 text-green-500" />
-                          <span>Daily Content Creation</span>
+                      <div className="space-y-4 mb-8 text-left">
+                        <div className="flex items-center gap-3">
+                          <div className="bg-green-100 rounded-full p-1">
+                            <Check className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Daily Content Creation</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Check className="w-5 h-5 text-green-500" />
-                          <span>Engagement Services</span>
+                        <div className="flex items-center gap-3">
+                          <div className="bg-green-100 rounded-full p-1">
+                            <Check className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Engagement Services</span>
                         </div>
                       </div>
                       <Button
                         onClick={handleRequestInfo}
-                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white transition-all duration-300"
+                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 font-semibold transition-all duration-300 transform hover:scale-105"
+                        style={{
+                          boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'
+                        }}
                       >
                         Request Info
                       </Button>
@@ -139,41 +170,6 @@ export const Services = () => {
               </div>
             </TabsContent>
           </Tabs>
-        </div>
-
-        {/* Other Services */}
-        <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-500 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <h3 className="text-3xl font-bold text-center mb-10">
-            Shop Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Digital Products</span>
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {otherServices.map((service, index) => (
-              <Card
-                key={service.id}
-                className="p-8 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 hover:border-pink-300"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <h4 className="text-xl font-bold mb-4 text-gray-800">{service.title}</h4>
-                <div className="mb-4">
-                  <span className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                    ${service.price}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-6 text-sm">{service.description}</p>
-                <a
-                  href="https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white transition-all duration-300">
-                    Buy on Etsy
-                  </Button>
-                </a>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
     </section>
