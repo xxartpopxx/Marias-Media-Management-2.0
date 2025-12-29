@@ -16,13 +16,6 @@ export const Hero = () => {
     }
   };
 
-  const scrollToProducts = () => {
-    const element = document.getElementById('etsy-shop');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Real Video Background */}
@@ -34,7 +27,7 @@ export const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ filter: 'brightness(0.4)' }}
       >
-        <source src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/xib6kkdm_7613582-hd_1080_1920_24fps.mp4" type="video/mp4" />
+        <source src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/8asjsv8t_6953896-uhd_4096_2160_25fps.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient overlay */}
@@ -46,22 +39,22 @@ export const Hero = () => {
         }`}>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-8 shadow-lg border border-white/20 animate-float">
             <Sparkles className="w-4 h-4 text-pink-300" />
-            <span className="text-sm font-medium text-white">Boston-Based • Global Reach</span>
+            <span className="text-sm font-medium text-white">Boston Based • Global Reach</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white drop-shadow-2xl animate-slideInUp">
-            Giving Your Social Media Profiles
+            Giving Your Social Media
             <span className="block mt-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent animate-gradient">
-              the Attention They Deserve
+              the Attention It Deserves
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-pink-100 mb-6 font-light animate-slideInUp" style={{ animationDelay: '0.2s' }}>
-            Purpose-driven strategy • Thoughtful design • Engaging, human-centered storytelling
+          <p className="text-xl md:text-2xl text-pink-100 mb-8 font-light animate-slideInUp" style={{ animationDelay: '0.2s' }}>
+            Purpose driven strategy. Thoughtful design. Real connection.
           </p>
           
           <p className="text-lg md:text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-slideInUp" style={{ animationDelay: '0.4s' }}>
-            At Maria's Media Management, we transform social media into a powerful extension of your brand — blending creativity, strategy, and connection. Whether you're a business, creator, nonprofit, or entrepreneur, we help your online presence not only look beautiful, but work for you.
+            At Maria's Media Management, I help you turn social media into a natural extension of your brand. Your online presence should feel genuine, compelling, and intentional.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slideInUp" style={{ animationDelay: '0.6s' }}>
@@ -76,17 +69,6 @@ export const Hero = () => {
               Work With Maria
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={scrollToProducts}
-              className="border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/60 px-8 py-7 text-lg font-semibold transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
-              style={{
-                boxShadow: '0 10px 40px rgba(168, 85, 247, 0.3)'
-              }}
-            >
-              Explore Etsy Shop
-            </Button>
           </div>
         </div>
       </div>
@@ -100,4 +82,5 @@ export const Hero = () => {
     </section>
   );
 };
+
 
