@@ -32,7 +32,7 @@ export const FoodReviews = () => {
     {
       name: 'Google Reviews',
       url: socialLinks.google,
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg',
+      logo: 'https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/31njkd8u_Google-Review-Logo.png',
       color: 'from-blue-500 to-blue-600',
       hoverColor: 'hover:from-blue-600 hover:to-blue-700'
     },
@@ -53,17 +53,15 @@ export const FoodReviews = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-20 animate-float"></div>
-      
+    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
+          <h2 className="text-5xl md:text-6xl font-bold mb-10" style={{ letterSpacing: '-0.02em' }}>
             Where I Share <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Food Reviews</span>
           </h2>
-          <p className="text-xl text-gray-700 leading-relaxed mb-4">
+          <p className="text-xl text-gray-700 leading-relaxed mb-6">
             I love exploring restaurants and sharing thoughtful food reviews and photography.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -84,24 +82,24 @@ export const FoodReviews = () => {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <Card
-                className={`bg-gradient-to-br ${link.color} ${link.hoverColor} text-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer`}
+                className={`bg-gradient-to-br ${link.color} ${link.hoverColor} text-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer`}
                 style={{
                   boxShadow: '0 10px 40px rgba(168, 85, 247, 0.2)'
                 }}
               >
                 <div className="text-center">
                   {link.logo ? (
-                    <div className="bg-white rounded-2xl p-4 mb-4 inline-block">
+                    <div className="bg-white rounded-2xl p-5 mb-6 inline-block">
                       <img 
                         src={link.logo} 
                         alt={link.name}
-                        className="h-12 w-auto mx-auto"
+                        className="h-14 w-auto mx-auto"
                       />
                     </div>
                   ) : (
-                    <div className="text-5xl mb-4">{link.icon}</div>
+                    <div className="text-6xl mb-6">{link.icon}</div>
                   )}
-                  <h3 className="text-xl font-bold mb-3">{link.name}</h3>
+                  <h3 className="text-xl font-bold mb-4">{link.name}</h3>
                   <ExternalLink className="w-6 h-6 mx-auto opacity-80" />
                 </div>
               </Card>

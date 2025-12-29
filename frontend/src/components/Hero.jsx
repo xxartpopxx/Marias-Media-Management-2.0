@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 export const Hero = () => {
@@ -37,37 +37,36 @@ export const Hero = () => {
         <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-8 shadow-lg border border-white/20 animate-float">
-            <Sparkles className="w-4 h-4 text-pink-300" />
-            <span className="text-sm font-medium text-white">Boston Based • Global Reach</span>
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-12 shadow-lg border border-white/20">
+            <span className="text-sm font-medium text-white tracking-wide">North Shore, Massachusetts Based • Global Reach</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white drop-shadow-2xl animate-slideInUp">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-10 leading-tight text-white drop-shadow-2xl" style={{ letterSpacing: '-0.02em' }}>
             Giving Your Social Media
-            <span className="block mt-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent animate-gradient">
+            <span className="block mt-4 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
               the Attention It Deserves
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-pink-100 mb-8 font-light animate-slideInUp" style={{ animationDelay: '0.2s' }}>
+          <p className="text-2xl md:text-3xl text-pink-100 mb-10 font-light" style={{ letterSpacing: '0.01em' }}>
             Purpose driven strategy. Thoughtful design. Real connection.
           </p>
           
-          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-slideInUp" style={{ animationDelay: '0.4s' }}>
+          <p className="text-xl md:text-2xl text-white/90 mb-16 max-w-4xl mx-auto leading-relaxed">
             At Maria's Media Management, I help you turn social media into a natural extension of your brand. Your online presence should feel genuine, compelling, and intentional.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slideInUp" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-white text-purple-900 hover:bg-pink-50 px-8 py-7 text-lg font-semibold shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
+              className="bg-white text-purple-900 hover:bg-pink-50 px-12 py-8 text-xl font-semibold shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-105"
               style={{
                 boxShadow: '0 10px 40px rgba(236, 72, 153, 0.4), 0 0 0 3px rgba(255, 255, 255, 0.1)'
               }}
             >
               Work With Maria
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
           </div>
         </div>
@@ -75,5 +74,3 @@ export const Hero = () => {
     </section>
   );
 };
-
-
