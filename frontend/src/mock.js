@@ -10,6 +10,7 @@ export const testimonials = [
     id: 2,
     name: "David Daykin",
     company: "Premier Paint Party",
+    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/0z4u845k_images.jpg",
     instagram: "https://www.instagram.com/premierpaintparty/",
     text: "A few months ago I got in contact with Maria about her social media services and how it could help me. We got on the phone and talked about my business, my brand, and where I wanted it to go. She created a plan moving forward to increase brand awareness and grow my social media presence. I couldn't be happier with the results. She is professional, reliable, and what she does is top notch."
   },
@@ -38,34 +39,7 @@ export const testimonials = [
   }
 ];
 
-export const googleReviews = [
-  {
-    id: 1,
-    reviewer: "Client Review",
-    rating: 5,
-    text: "Maria's expertise in social media management is unmatched. She helped us grow our audience significantly!",
-    platform: "google"
-  }
-];
-
-export const yelpReviews = [
-  {
-    id: 1,
-    reviewer: "Food Enthusiast",
-    rating: 5,
-    text: "Maria has great taste! Her restaurant recommendations are always spot-on.",
-    platform: "yelp"
-  }
-];
-
-export const weeklyPricing = [
-  { accounts: 1, price: 100 },
-  { accounts: 2, price: 150 },
-  { accounts: 3, price: 175 },
-  { accounts: 4, price: 200 }
-];
-
-export const monthlyPricing = [
+export const pricingPlans = [
   { accounts: 1, price: 300 },
   { accounts: 2, price: 450 },
   { accounts: 3, price: 500 },
@@ -75,31 +49,27 @@ export const monthlyPricing = [
 export const etsyProducts = [
   {
     id: 1,
-    title: "Social Media Audit & Strategy Guide",
-    price: 49.99,
-    image: "https://i.etsystatic.com/41835855/r/il/8a5cc0/5285790957/il_794xN.5285790957_m8oc.jpg",
-    description: "Complete audit of your social media presence with actionable strategies"
+    title: "Custom Photo Editing and Restoration",
+    link: "https://www.etsy.com/listing/1726389407/custom-photo-editing-service-restoration",
+    image: "https://i.etsystatic.com/41835855/r/il/8a5cc0/5285790957/il_794xN.5285790957_m8oc.jpg"
   },
   {
     id: 2,
-    title: "Instagram Growth Template Pack",
-    price: 29.99,
-    image: "https://i.etsystatic.com/41835855/r/il/c8f9e5/5238074748/il_794xN.5238074748_rkvs.jpg",
-    description: "Professional templates to boost your Instagram engagement"
+    title: "Personalized Photo Coloring Book (Printed)",
+    link: "https://www.etsy.com/listing/1705251745/personalized-photo-coloring-book-custom",
+    image: "https://i.etsystatic.com/41835855/r/il/c8f9e5/5238074748/il_794xN.5238074748_rkvs.jpg"
   },
   {
     id: 3,
-    title: "Content Calendar Planner",
-    price: 19.99,
-    image: "https://i.etsystatic.com/41835855/r/il/3e1f42/5285790969/il_794xN.5285790969_j7kd.jpg",
-    description: "30-day content planning system for consistent posting"
+    title: "Personalized Coloring Pages (Digital)",
+    link: "https://www.etsy.com/listing/1710696187/personalized-photo-coloring-book-custom",
+    image: "https://i.etsystatic.com/41835855/r/il/3e1f42/5285790969/il_794xN.5285790969_j7kd.jpg"
   },
   {
     id: 4,
-    title: "Photo Editing Service",
-    price: 39.99,
-    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg",
-    description: "Professional photo retouching and enhancement"
+    title: "Custom Murder Mystery Party Game",
+    link: "https://www.etsy.com/listing/1755460004/personalized-murder-mystery-party-game",
+    image: "https://i.etsystatic.com/41835855/r/il/ab2d3c/5333517848/il_794xN.5333517848_74mh.jpg"
   }
 ];
 
@@ -113,8 +83,9 @@ export const nonprofitPartners = [
 
 export const socialLinks = {
   instagram: "https://www.instagram.com/maria.mongiardo/",
+  instagramFood: "https://www.instagram.com/mariasfoodphotos/",
   linkedin: "https://www.linkedin.com/in/maria-mongiardo/",
-  etsy: "https://www.etsy.com/shop/MariasMediaShop?ref=seller-platform-mcnav",
+  etsy: "https://www.etsy.com/shop/MariasMediaShop",
   yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
   google: "https://www.google.com/maps/contrib//reviews/"
 };
