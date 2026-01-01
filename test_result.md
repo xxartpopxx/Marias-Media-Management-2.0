@@ -176,11 +176,7 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus:
-    - "Murder Mystery image updated in Shop section"
-    - "Logo added to hero section"
-    - "Header logo size increased"
-    - "Mobile text sizing reduced"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
