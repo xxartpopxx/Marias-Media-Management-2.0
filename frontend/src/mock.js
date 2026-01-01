@@ -58,7 +58,7 @@ export const etsyProducts = [
     id: 2,
     title: "Personalized Photo Coloring Book (Printed)",
     link: "https://www.etsy.com/listing/1705251745/personalized-photo-coloring-book-custom",
-    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/7zbcz7qf_il_794xN.6452854846_qdjp-1.webp",
+    image: "https://customer-assets.emergentagent.com/job_clean-rebrand-1/artifacts/nuowwzg1_il_794xN.7339468041_mvsy.webp",
     description: "Turn your favorite photos into a custom printed coloring book. Perfect for gifts and keepsakes."
   },
   {
