@@ -17,7 +17,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Real Video Background */}
       <video
         autoPlay
@@ -33,15 +33,15 @@ export const Hero = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/60 via-pink-900/50 to-purple-900/60"></div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-20">
+      <div className="container mx-auto px-6 relative z-10 pt-24 md:pt-28 flex-1 flex flex-col justify-center">
         {/* Prominent Logo above hero content */}
-        <div className={`flex justify-center mb-8 transition-all duration-1000 transform ${
+        <div className={`flex justify-center mb-6 md:mb-8 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <img 
             src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
             alt="Maria's Media Management" 
-            className="h-28 md:h-36 lg:h-44 w-auto drop-shadow-2xl"
+            className="h-24 md:h-32 lg:h-40 w-auto drop-shadow-2xl"
             style={{
               filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))'
             }}
