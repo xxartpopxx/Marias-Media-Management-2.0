@@ -35,15 +35,18 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10 pt-24 md:pt-28 flex-1 flex flex-col justify-center">
         {/* Layout with Logo on left and content */}
-        <div className={`flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 transition-all duration-1000 transform ${
+        <div className={`flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           {/* Prominent Logo - Left side on desktop, top on mobile */}
-          <div className="flex-shrink-0 bg-yellow-500 rounded-2xl p-6">
+          <div className="flex-shrink-0">
             <img 
               src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
               alt="Maria's Media Management" 
-              className="h-32 md:h-40 lg:h-48 w-auto"
+              className="h-28 sm:h-36 md:h-40 lg:h-48 w-auto drop-shadow-2xl"
+              style={{
+                filter: 'drop-shadow(0 4px 30px rgba(255, 255, 255, 0.2)) drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5))'
+              }}
             />
           </div>
           
