@@ -5,6 +5,12 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from 'sonner';
 
+// Helper to encode data for Netlify form submission
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+
 export const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -13,7 +19,7 @@ export const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   useEffect(() => {
@@ -26,13 +32,14 @@ export const Contact = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const current = sectionRef.current;
+    if (current) {
+      observer.observe(current);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (current) {
+        observer.unobserve(current);
       }
     };
   }, []);
@@ -40,47 +47,40 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      // Send form data to backend
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
-      const response = await fetch(`${backendUrl}/api/contact`, {
+      const form = e.target;
+
+      const data = {
+        'form-name': form.getAttribute('name'),
+        ...formData,
+      };
+
+      await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(data),
       });
 
-      if (response.ok) {
-        toast.success("Message Sent!", {
-          description: "Thank you for reaching out. Maria will get back to you soon!",
-          duration: 5000,
-        });
-
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error("Message Sent!", {
-        description: "Thank you for reaching out. Maria will get back to you soon!",
+      toast.success('Message Sent!', {
+        description:
+          'Thank you for reaching out. Maria will get back to you soon!',
         duration: 5000,
       });
-      
-      // Still reset form even if backend fails (to allow resubmission)
+
       setFormData({
         firstName: '',
         lastName: '',
         email: '',
-        message: ''
+        message: '',
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Something went wrong', {
+        description: 'Please try again in a moment.',
+        duration: 5000,
       });
     } finally {
       setIsSubmitting(false);
@@ -89,32 +89,60 @@ export const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-white relative overflow-hidden">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-20 bg-white relative overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-100 rounded-full filter blur-3xl opacity-20"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center mb-16 transition-all duration-1000 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}
+        >
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            Let's Create Something <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Meaningful Together</span>
+            Let's Create Something{' '}
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              Meaningful Together
+            </span>
           </h2>
-          <p className="text-xl text-gray-600">Ready to transform your social media presence?</p>
+          <p className="text-xl text-gray-600">
+            Ready to transform your social media presence?
+          </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className={`bg-gradient-to-br from-white to-purple-50 rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-purple-100 transition-all duration-1000 delay-300 transform ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div
+            className={`bg-gradient-to-br from-white to-purple-50 rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-purple-100 transition-all duration-1000 delay-300 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              {/* Netlify wiring */}
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label>
+                  Don’t fill this out: <input name="bot-field" onChange={() => {}} />
+                </label>
+              </p>
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
