@@ -38,14 +38,21 @@ export const Hero = () => {
         <div className={`flex justify-center mb-6 md:mb-8 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <img 
-            src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
-            alt="Maria's Media Management" 
-            className="h-24 md:h-32 lg:h-40 w-auto drop-shadow-2xl"
-            style={{
-              filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))'
-            }}
-          />
+          <div className="relative">
+            {/* White glow backdrop for logo visibility */}
+            <div 
+              className="absolute inset-0 bg-white/20 rounded-full blur-3xl scale-150"
+              aria-hidden="true"
+            ></div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
+              alt="Maria's Media Management" 
+              className="relative h-24 md:h-32 lg:h-40 w-auto"
+              style={{
+                filter: 'drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3)) drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))'
+              }}
+            />
+          </div>
         </div>
         
         <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 transform ${
