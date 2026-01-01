@@ -39,15 +39,11 @@ export const Hero = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           {/* Prominent Logo - Left side on desktop, top on mobile */}
-          <div className="flex-shrink-0 bg-gray-900/40 rounded-2xl p-4 backdrop-blur-sm border border-white/20">
+          <div className="flex-shrink-0 bg-yellow-500 rounded-2xl p-6">
             <img 
               src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
               alt="Maria's Media Management" 
-              className="h-28 sm:h-36 md:h-44 lg:h-52 w-auto min-w-[120px]"
-              onError={(e) => console.log('Image failed to load:', e)}
-              style={{
-                filter: 'drop-shadow(0 4px 20px rgba(255, 255, 255, 0.25)) drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))'
-              }}
+              className="h-32 md:h-40 lg:h-48 w-auto"
             />
           </div>
           
