@@ -101,3 +101,78 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  Fix latest posts section for custom murder mystery game (use provided image).
+  Logo placement - add logo to left side of main video/hero section, more prominent.
+  Header logo - increase size slightly.
+  Mobile text sizing - reduce font size of main headings on mobile only.
+
+frontend:
+  - task: "Murder Mystery image updated in Shop section"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/mock.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated product ID 4 image URL to user's provided avif image"
+
+  - task: "Logo added to hero section (left side on desktop, top on mobile)"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added MMM logo to hero with flex-row layout on lg screens and flex-col on mobile"
+
+  - task: "Header logo size increased"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Header.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Changed header logo from h-16 to h-20 for better visibility"
+
+  - task: "Mobile text sizing reduced"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Applied responsive text classes: text-3xl for mobile heading (was text-6xl), reduced body text sizes"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+test_plan:
+  current_focus:
+    - "Murder Mystery image updated in Shop section"
+    - "Logo added to hero section"
+    - "Header logo size increased"
+    - "Mobile text sizing reduced"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Implemented all UI changes. Need to verify: 1) Murder Mystery product shows new image, 2) Hero has logo on left side (desktop) / top (mobile), 3) Header logo is larger, 4) Mobile text is smaller. Test on http://localhost:3000 since preview URL may have caching."
