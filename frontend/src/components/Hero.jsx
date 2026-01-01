@@ -40,12 +40,7 @@ export const Hero = () => {
         }`}>
           {/* Prominent Logo - Left side on desktop, top on mobile */}
           <div className="flex-shrink-0">
-            <div className="relative">
-              {/* Subtle glow effect */}
-              <div 
-                className="absolute inset-0 bg-white/15 rounded-full blur-2xl scale-150"
-                aria-hidden="true"
-              ></div>
+            <div className="relative p-4 bg-gray-900/50 rounded-2xl backdrop-blur-sm">
               <img 
                 src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
                 alt="Maria's Media Management" 
