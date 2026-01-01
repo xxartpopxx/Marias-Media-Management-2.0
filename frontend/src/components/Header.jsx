@@ -39,7 +39,7 @@ export const Header = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
               alt="Maria's Media Management" 
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 

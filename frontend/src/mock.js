@@ -72,7 +72,7 @@ export const etsyProducts = [
     id: 4,
     title: "Custom Murder Mystery Party Game",
     link: "https://www.etsy.com/listing/1755460004/personalized-murder-mystery-party-game",
-    image: "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/hyteqiw9_il_794xN.7198200902_gmcc.webp",
+    image: "https://customer-assets.emergentagent.com/job_ee9c6596-9d20-4a7c-af77-bea26a018a3b/artifacts/b5grllvb_il_794xN.6452854846_qdjp.avif",
     description: "Host an unforgettable murder mystery party with a fully customized game for your guests."
   }
 ];
