@@ -34,25 +34,39 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/60 via-pink-900/50 to-purple-900/60"></div>
 
       <div className="container mx-auto px-6 relative z-10 pt-20">
+        {/* Prominent Logo above hero content */}
+        <div className={`flex justify-center mb-8 transition-all duration-1000 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
+            alt="Maria's Media Management" 
+            className="h-28 md:h-36 lg:h-44 w-auto drop-shadow-2xl"
+            style={{
+              filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4))'
+            }}
+          />
+        </div>
+        
         <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-12 shadow-lg border border-white/20">
-            <span className="text-sm font-medium text-white tracking-wide">North Shore, Massachusetts Based • Global Reach</span>
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-full mb-8 md:mb-12 shadow-lg border border-white/20">
+            <span className="text-xs md:text-sm font-medium text-white tracking-wide">North Shore, Massachusetts Based • Global Reach</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-10 leading-tight text-white drop-shadow-2xl" style={{ letterSpacing: '-0.02em' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-8xl lg:text-9xl font-bold mb-6 md:mb-10 leading-tight text-white drop-shadow-2xl" style={{ letterSpacing: '-0.02em' }}>
             Giving Your Social Media
-            <span className="block mt-4 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            <span className="block mt-2 md:mt-4 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
               the Attention It Deserves
             </span>
           </h1>
           
-          <p className="text-2xl md:text-3xl text-pink-100 mb-10 font-light" style={{ letterSpacing: '0.01em' }}>
+          <p className="text-lg sm:text-xl md:text-3xl text-pink-100 mb-6 md:mb-10 font-light" style={{ letterSpacing: '0.01em' }}>
             Purpose driven strategy. Thoughtful design. Real connection.
           </p>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-16 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl text-white/90 mb-10 md:mb-16 max-w-4xl mx-auto leading-relaxed px-2">
             At Maria's Media Management, I help you turn social media into a natural extension of your brand. Your online presence should feel genuine, compelling, and intentional.
           </p>
           
@@ -60,13 +74,13 @@ export const Hero = () => {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-white text-purple-900 hover:bg-pink-50 px-12 py-8 text-xl font-semibold shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-105"
+              className="bg-white text-purple-900 hover:bg-pink-50 px-8 py-6 md:px-12 md:py-8 text-lg md:text-xl font-semibold shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-105"
               style={{
                 boxShadow: '0 10px 40px rgba(236, 72, 153, 0.4), 0 0 0 3px rgba(255, 255, 255, 0.1)'
               }}
             >
               Work With Maria
-              <ArrowRight className="ml-3 w-6 h-6" />
+              <ArrowRight className="ml-3 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
         </div>
