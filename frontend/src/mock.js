@@ -121,7 +121,7 @@ export const nonprofitPartners = [
 export const socialLinks = {
   instagram: "https://www.instagram.com/maria.mongiardo/",
   instagramFood: "https://www.instagram.com/mariasfoodphotos/",
-  linkedin: "https://www.linkedin.com/in/maria-mongiardo/",
+  linkedin: "https://www.linkedin.com/in/mariamongiardo/",
   etsy: "https://www.etsy.com/shop/MariasMediaShop",
   yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
   google: "https://www.google.com/maps/contrib//reviews/"
