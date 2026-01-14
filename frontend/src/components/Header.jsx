@@ -104,6 +104,9 @@ export const Header = () => {
             <button onClick={() => scrollToSection('services')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Services
             </button>
+            <button onClick={() => scrollToSection('portfolio')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+              Portfolio
+            </button>
             <button onClick={() => scrollToSection('shop')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Shop
             </button>
