@@ -126,3 +126,41 @@ export const socialLinks = {
   yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
   google: "https://www.google.com/maps/contrib//reviews/"
 };
+
+export const websitePortfolio = [
+  {
+    id: 1,
+    name: "Lake & Pine Stays",
+    url: "https://lakeandpinestays.com/",
+    description: "Vacation rental property website with beautiful lakeside imagery and booking capabilities.",
+    category: "Vacation Rentals"
+  },
+  {
+    id: 2,
+    name: "Serenity Passage",
+    url: "https://serenitypassage.net",
+    description: "Professional services website with a calming, serene design aesthetic.",
+    category: "Professional Services"
+  },
+  {
+    id: 3,
+    name: "Hem of Grace Events",
+    url: "https://hemofgraceevents.com",
+    description: "Event planning and coordination website showcasing elegant event services.",
+    category: "Events & Planning"
+  },
+  {
+    id: 4,
+    name: "Cedar Creek Cleans",
+    url: "https://cedarcreekcleans.com",
+    description: "Professional cleaning services website with modern, clean design.",
+    category: "Cleaning Services"
+  },
+  {
+    id: 5,
+    name: "A Gentle Touch Home Care",
+    url: "https://agentletouchhomecarellc1.com",
+    description: "Home care services website with a warm, compassionate design approach.",
+    category: "Home Care"
+  }
+];
