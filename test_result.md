@@ -107,6 +107,7 @@ user_problem_statement: |
   Logo placement - add logo to left side of main video/hero section, more prominent.
   Header logo - increase size slightly.
   Mobile text sizing - reduce font size of main headings on mobile only.
+  Add website portfolio section with 5 websites: lakeandpinestays.com, serenitypassage.net, hemofgraceevents.com, cedarcreekcleans.com, agentletouchhomecarellc1.com - priced at $200 per website + domain connection.
 
 frontend:
   - task: "Murder Mystery image updated in Shop section"
@@ -168,6 +169,18 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ VERIFIED: Mobile viewport (375x812) shows hero heading 'Giving Your Social Media' using text-3xl class. Text fits cleanly without awkward wrapping. Desktop maintains larger text sizes."
+
+  - task: "Website Portfolio section with browser mockup cards"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/Portfolio.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created Portfolio.jsx component with browser mockup styled cards showing live iframe previews of 5 websites. Added pricing card ($200 per website + domain setup). Added Portfolio link to Header navigation (desktop and mobile)."
 
 metadata:
   created_by: "main_agent"
