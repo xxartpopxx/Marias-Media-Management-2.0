@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { Mission } from "./components/Mission";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
+import { Portfolio } from "./components/Portfolio";
 import { Shop } from "./components/Shop";
 import { FoodReviews } from "./components/FoodReviews";
 import { InstagramFeeds } from "./components/InstagramFeeds";
