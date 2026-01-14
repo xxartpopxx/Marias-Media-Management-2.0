@@ -24,6 +24,7 @@ const Home = () => {
       <Mission />
       <About />
       <Services />
+      <Portfolio />
       <Shop />
       <FoodReviews />
       <InstagramFeeds />
