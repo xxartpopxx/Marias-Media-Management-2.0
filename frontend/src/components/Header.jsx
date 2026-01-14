@@ -54,6 +54,9 @@ export const Header = () => {
             <button onClick={() => scrollToSection('services')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Services
             </button>
+            <button onClick={() => scrollToSection('portfolio')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+              Portfolio
+            </button>
             <button onClick={() => scrollToSection('shop')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
               Shop
             </button>
