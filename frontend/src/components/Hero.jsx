@@ -94,7 +94,7 @@ export const Hero = () => {
             </p>
             
             <p className="text-sm sm:text-base md:text-lg text-white/90 mb-8 md:mb-10 leading-relaxed">
-              At Maria's Media Management, I help you turn social media into a natural extension of your brand. Your online presence should feel genuine, compelling, and intentional.
+              At Maria&apos;s Media Management, I help you turn social media into a natural extension of your brand. Your online presence should feel genuine, compelling, and intentional.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
