@@ -162,5 +162,13 @@ export const websitePortfolio = [
     url: "https://agentletouchhomecarellc1.com",
     description: "Home care services website with a warm, compassionate design approach.",
     category: "Home Care"
+  },
+  {
+    id: 6,
+    name: "A2 Hospitality & Consulting Services LLC",
+    url: "https://a2hospitality.org/",
+    description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services.",
+    category: "Consulting",
+    skills: ["SEO-Ready Build", "Performance Optimization", "Responsive Design", "Modern UI/UX"]
   }
 ];
