@@ -36,19 +36,24 @@ export const Services = () => {
     }
   };
 
+  const getAccountText = (accounts) => {
+    const words = ['One', 'Two', 'Three', 'Four'];
+    return words[accounts - 1] || accounts;
+  };
+
   return (
-    <section id="services" ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section id="services" ref={sectionRef} className="py-32 bg-white relative overflow-hidden" aria-labelledby="services-heading">
       <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-24 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-6xl md:text-7xl font-bold mb-8" style={{ letterSpacing: '-0.02em' }}>
+          <h2 id="services-heading" className="text-6xl md:text-7xl font-bold mb-8" style={{ letterSpacing: '-0.02em' }}>
             Social Media Management <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Services</span>
           </h2>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" role="list">
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
@@ -59,10 +64,11 @@ export const Services = () => {
                   transitionDelay: `${index * 100}ms`,
                   boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)'
                 }}
+                role="listitem"
               >
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">
-                    {plan.accounts === 1 ? 'One Account' : `${plan.accounts === 2 ? 'Two' : plan.accounts === 3 ? 'Three' : 'Four'} Accounts`}
+                    {getAccountText(plan.accounts)} Account{plan.accounts > 1 ? 's' : ''}
                   </h3>
                   <div className="mb-8">
                     <span className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
@@ -72,7 +78,7 @@ export const Services = () => {
                   </div>
                   <div className="space-y-4 mb-8 text-left">
                     <div className="flex items-start gap-3">
-                      <div className="bg-green-100 rounded-full p-1 mt-0.5">
+                      <div className="bg-green-100 rounded-full p-1 mt-0.5" aria-hidden="true">
                         <Check className="w-4 h-4 text-green-600" />
                       </div>
                       <span className="text-gray-700">Content creation and engagement support</span>
@@ -84,6 +90,7 @@ export const Services = () => {
                     style={{
                       boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'
                     }}
+                    aria-label={`Inquire about ${getAccountText(plan.accounts)} Account plan at $${plan.price} per month`}
                   >
                     Inquire
                   </Button>
@@ -103,7 +110,7 @@ export const Services = () => {
               }}
             >
               <div className="flex items-start gap-6">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
                   <Camera className="w-7 h-7 text-white" />
                 </div>
                 <div className="flex-1">

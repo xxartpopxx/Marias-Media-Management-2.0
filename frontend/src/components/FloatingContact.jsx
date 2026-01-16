@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 
 export const FloatingContact = () => {
@@ -9,7 +9,7 @@ export const FloatingContact = () => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -25,6 +25,8 @@ export const FloatingContact = () => {
       className={`fixed bottom-8 right-8 z-40 transition-all duration-500 transform ${
         isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-0'
       }`}
+      role="complementary"
+      aria-label="Quick contact"
     >
       <Button
         onClick={scrollToContact}
@@ -33,8 +35,9 @@ export const FloatingContact = () => {
         style={{
           boxShadow: '0 10px 40px rgba(168, 85, 247, 0.4)'
         }}
+        aria-label="Contact Maria - Jump to contact form"
       >
-        <MessageCircle className="w-6 h-6 mr-2" />
+        <MessageCircle className="w-6 h-6 mr-2" aria-hidden="true" />
         <span className="font-semibold">Contact Maria</span>
       </Button>
     </div>

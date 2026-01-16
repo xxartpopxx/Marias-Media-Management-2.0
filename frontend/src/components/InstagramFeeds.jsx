@@ -13,6 +13,15 @@ export const InstagramFeeds = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Load Elfsight script only when section is visible (lazy load third-party)
+          const existingScript = document.querySelector('script[src*="elfsightcdn"]');
+          if (!existingScript) {
+            const script = document.createElement('script');
+            script.src = 'https://elfsightcdn.com/platform.js';
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+          }
         }
       },
       { threshold: 0.1 }
@@ -22,18 +31,9 @@ export const InstagramFeeds = () => {
       observer.observe(sectionRef.current);
     }
 
-    // Load Elfsight script
-    const script = document.createElement('script');
-    script.src = 'https://elfsightcdn.com/platform.js';
-    script.async = true;
-    document.body.appendChild(script);
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
-      }
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
       }
     };
   }, []);
@@ -46,7 +46,7 @@ export const InstagramFeeds = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden" aria-labelledby="instagram-heading">
       <div className="container mx-auto px-6 relative z-10">
         {/* Food & Brand Reels - Live Elfsight Feed */}
         <div className={`mb-32 transition-all duration-1000 transform ${
@@ -54,8 +54,8 @@ export const InstagramFeeds = () => {
         }`}>
           <div className="text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center gap-4 mb-8">
-              <Instagram className="w-12 h-12 text-purple-600" />
-              <h2 className="text-5xl md:text-6xl font-bold" style={{ letterSpacing: '-0.02em' }}>
+              <Instagram className="w-12 h-12 text-purple-600" aria-hidden="true" />
+              <h2 id="instagram-heading" className="text-5xl md:text-6xl font-bold" style={{ letterSpacing: '-0.02em' }}>
                 Food & Brand <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Reels</span>
               </h2>
             </div>
@@ -64,7 +64,7 @@ export const InstagramFeeds = () => {
             </p>
           </div>
 
-          {/* Elfsight Instagram Feed */}
+          {/* Elfsight Instagram Feed - Lazy loaded */}
           <div className="max-w-6xl mx-auto">
             <div 
               className="elfsight-app-9fd835c2-4b3d-4f30-bedb-ea6e47913cf9" 
@@ -72,6 +72,7 @@ export const InstagramFeeds = () => {
               style={{
                 minHeight: '400px'
               }}
+              aria-label="Instagram feed from @maria.mongiardo"
             ></div>
           </div>
 
@@ -80,6 +81,7 @@ export const InstagramFeeds = () => {
               href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow @maria.mongiardo on Instagram - Opens in new tab"
             >
               <Button
                 size="lg"
@@ -88,9 +90,9 @@ export const InstagramFeeds = () => {
                   boxShadow: '0 15px 50px rgba(168, 85, 247, 0.4)'
                 }}
               >
-                <Instagram className="mr-3 w-5 h-5" />
+                <Instagram className="mr-3 w-5 h-5" aria-hidden="true" />
                 Follow @maria.mongiardo
-                <ExternalLink className="ml-3 w-5 h-5" />
+                <ExternalLink className="ml-3 w-5 h-5" aria-hidden="true" />
               </Button>
             </a>
           </div>
@@ -113,6 +115,7 @@ export const InstagramFeeds = () => {
                   style={{
                     boxShadow: '0 10px 30px rgba(168, 85, 247, 0.4)'
                   }}
+                  aria-hidden="true"
                 >
                   <Camera className="w-14 h-14 text-white" />
                 </div>
@@ -129,6 +132,7 @@ export const InstagramFeeds = () => {
                     href={socialLinks.instagramFood}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="View Maria's food photography on Instagram - Opens in new tab"
                   >
                     <Button
                       size="lg"
@@ -137,7 +141,7 @@ export const InstagramFeeds = () => {
                         boxShadow: '0 10px 30px rgba(168, 85, 247, 0.4)'
                       }}
                     >
-                      <Instagram className="mr-2 w-5 h-5" />
+                      <Instagram className="mr-2 w-5 h-5" aria-hidden="true" />
                       View Work
                     </Button>
                   </a>
@@ -146,8 +150,9 @@ export const InstagramFeeds = () => {
                     variant="outline"
                     onClick={scrollToContact}
                     className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50 px-10 py-7 font-semibold transition-all duration-500 transform hover:scale-105"
+                    aria-label="Inquire about food photography services"
                   >
-                    <Camera className="mr-2 w-5 h-5" />
+                    <Camera className="mr-2 w-5 h-5" aria-hidden="true" />
                     Inquire About Photography
                   </Button>
                 </div>

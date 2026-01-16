@@ -4,8 +4,15 @@ import { socialLinks } from '../mock';
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-purple-900 text-white py-12">
+    <footer className="bg-gradient-to-br from-gray-900 to-purple-900 text-white py-12" role="contentinfo">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -19,29 +26,32 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Footer navigation">
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm" role="list">
               <li>
                 <button
-                  onClick={() => document.getElementById('home').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => scrollToSection('home')}
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
+                  aria-label="Go to Home section"
                 >
                   Home
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => scrollToSection('about')}
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
+                  aria-label="Go to Meet Maria section"
                 >
                   Meet Maria
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => scrollToSection('services')}
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
+                  aria-label="Go to Services section"
                 >
                   Services
                 </button>
@@ -52,12 +62,13 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
+                  aria-label="Shop on Etsy - Opens in new tab"
                 >
                   Shop on Etsy
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact & Social */}
           <div>
@@ -68,26 +79,33 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                aria-label="Follow Maria on Instagram - Opens in new tab"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                aria-label="Connect with Maria on LinkedIn - Opens in new tab"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="mailto:mariamongiardo15@gmail.com"
                 className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                aria-label="Send email to Maria"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
             <p className="text-gray-300 text-sm">
-              <a href="mailto:mariamongiardo15@gmail.com" className="hover:text-purple-300 transition-colors duration-200">
+              <a 
+                href="mailto:mariamongiardo15@gmail.com" 
+                className="hover:text-purple-300 transition-colors duration-200"
+                aria-label="Email Maria at mariamongiardo15@gmail.com"
+              >
                 mariamongiardo15@gmail.com
               </a>
             </p>
@@ -96,7 +114,7 @@ export const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-gray-300 text-sm flex items-center justify-center gap-2">
-            © {currentYear} Maria's Media Management. Made with <Heart className="w-4 h-4 text-pink-400 fill-pink-400" /> in Boston, MA
+            © {currentYear} Maria's Media Management. Made with <Heart className="w-4 h-4 text-pink-400 fill-pink-400" aria-hidden="true" /> <span className="sr-only">love</span> in Boston, MA
           </p>
         </div>
       </div>
