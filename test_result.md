@@ -119,6 +119,126 @@ user_problem_statement: |
   Remove Emergent badge from the website.
 
 frontend:
+  - task: "Performance: Gradient placeholder for Hero video (LCP optimization)"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added gradient placeholder that shows immediately, video fades in after loading. Removes video load from critical rendering path."
+
+  - task: "Performance: Code splitting with React.lazy for below-fold components"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Lazy load Mission, About, Services, Portfolio, Shop, FoodReviews, InstagramFeeds, FindMaria, Testimonials, Contact, Footer, FloatingContact components"
+
+  - task: "Performance: Preload critical assets in index.html"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added preload for hero logo, preconnect to CDN domains, inline critical CSS for gradient placeholder"
+
+  - task: "Performance: Defer PostHog analytics loading"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "PostHog now loads after user interaction or 3 seconds delay, not blocking initial render"
+
+  - task: "Performance: Add explicit image dimensions (width/height)"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added width/height attributes to all images in Hero, Header, About, Shop, Testimonials, FoodReviews components"
+
+  - task: "Performance: Add loading=lazy to offscreen images"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added loading=lazy to images in About, Shop, Testimonials, FoodReviews components"
+
+  - task: "Accessibility: Add aria-labels and roles to all interactive elements"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added aria-labels to buttons, links, navigation, aria-hidden to decorative elements, proper roles"
+
+  - task: "Accessibility: Add labels to form inputs"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Contact.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added sr-only labels and proper autocomplete attributes to form fields"
+
+  - task: "Portfolio: Add A2 Hospitality & Consulting Services LLC"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/mock.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added A2 Hospitality to websitePortfolio array with skills tags: SEO-Ready Build, Performance Optimization, Responsive Design, Modern UI/UX"
+
+  - task: "Remove Emergent badge"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Removed Emergent badge HTML from index.html"
+
   - task: "Murder Mystery image updated in Shop section"
     implemented: true
     working: true
