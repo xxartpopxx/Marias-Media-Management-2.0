@@ -66,7 +66,7 @@ export const Hero = () => {
               alt="Maria's Media Management - Social Media Strategy and Design Services"
               width="192"
               height="192"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               className="h-28 sm:h-36 md:h-40 lg:h-48 w-auto drop-shadow-2xl"
               style={{
