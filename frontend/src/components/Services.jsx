@@ -3,6 +3,7 @@ import { Check, Camera } from 'lucide-react';
 import { pricingPlans } from '../mock';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { scrollToContact } from '../lib/scrollUtils';
 
 export const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,13 +29,6 @@ export const Services = () => {
       }
     };
   }, []);
-
-  const handleRequestInfo = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const getAccountText = (accounts) => {
     const words = ['One', 'Two', 'Three', 'Four'];
@@ -85,7 +79,7 @@ export const Services = () => {
                     </div>
                   </div>
                   <Button
-                    onClick={handleRequestInfo}
+                    onClick={scrollToContact}
                     className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 font-semibold transition-all duration-500 transform hover:scale-105"
                     style={{
                       boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'

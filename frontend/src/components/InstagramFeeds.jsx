@@ -3,9 +3,11 @@ import { Instagram, ExternalLink, Camera } from 'lucide-react';
 import { socialLinks } from '../mock';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { scrollToContact } from '../lib/scrollUtils';
 
 export const InstagramFeeds = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -13,14 +15,19 @@ export const InstagramFeeds = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Load Elfsight script only when section is visible (lazy load third-party)
-          const existingScript = document.querySelector('script[src*="elfsightcdn"]');
-          if (!existingScript) {
-            const script = document.createElement('script');
-            script.src = 'https://elfsightcdn.com/platform.js';
-            script.async = true;
-            script.defer = true;
-            document.body.appendChild(script);
+          // Load SociableKIT script only when section is visible (lazy load third-party)
+          // and only if not already loaded
+          if (!scriptLoaded) {
+            const existingScript = document.querySelector('script[src*="sociablekit.com"]');
+            if (!existingScript) {
+              const script = document.createElement('script');
+              script.src = 'https://widgets.sociablekit.com/instagram-feed/widget.js';
+              script.defer = true;
+              script.onload = () => setScriptLoaded(true);
+              document.body.appendChild(script);
+            } else {
+              setScriptLoaded(true);
+            }
           }
         }
       },
@@ -36,19 +43,12 @@ export const InstagramFeeds = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  }, [scriptLoaded]);
 
   return (
     <section ref={sectionRef} className="py-32 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden" aria-labelledby="instagram-heading">
       <div className="container mx-auto px-6 relative z-10">
-        {/* Food & Brand Reels - Live Elfsight Feed */}
+        {/* Food & Brand Reels - SociableKIT Feed */}
         <div className={`mb-32 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
@@ -64,13 +64,14 @@ export const InstagramFeeds = () => {
             </p>
           </div>
 
-          {/* Elfsight Instagram Feed - Lazy loaded */}
+          {/* SociableKIT Instagram Feed - Responsive */}
           <div className="max-w-6xl mx-auto">
             <div 
-              className="elfsight-app-9fd835c2-4b3d-4f30-bedb-ea6e47913cf9" 
-              data-elfsight-app-lazy
+              className="sk-instagram-feed" 
+              data-embed-id="25644225"
               style={{
-                minHeight: '400px'
+                minHeight: '400px',
+                width: '100%'
               }}
               aria-label="Instagram feed from @maria.mongiardo"
             ></div>

@@ -3,6 +3,7 @@ import { ExternalLink, Globe, Monitor, DollarSign, Link2 } from 'lucide-react';
 import { websitePortfolio } from '../mock';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { scrollToContact } from '../lib/scrollUtils';
 
 export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,13 +30,6 @@ export const Portfolio = () => {
       }
     };
   }, []);
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden" aria-labelledby="portfolio-heading">

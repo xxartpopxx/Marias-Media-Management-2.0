@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
+import { scrollToContact } from '../lib/scrollUtils';
 
 export const FloatingContact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,13 +13,6 @@ export const FloatingContact = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div

@@ -1,19 +1,13 @@
 import { useState, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { scrollToContact } from '../lib/scrollUtils';
 
 export const Hero = () => {
   // Start visible immediately for better LCP - no delay needed
   const [isVisible] = useState(true);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
