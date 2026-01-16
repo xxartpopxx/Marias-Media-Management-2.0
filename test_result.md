@@ -318,13 +318,15 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Performance: Gradient placeholder for Hero video (LCP optimization)"
+    - "Performance: Code splitting with React.lazy"
+    - "Portfolio: Add A2 Hospitality & Consulting Services LLC"
+    - "Remove Emergent badge"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
   - agent: "main"
-    message: "Implemented all UI changes. Need to verify: 1) Murder Mystery product shows new image, 2) Hero has logo on left side (desktop) / top (mobile), 3) Header logo is larger, 4) Mobile text is smaller. Test on http://localhost:3000 since preview URL may have caching."
-  - agent: "testing"
-    message: "✅ COMPREHENSIVE TESTING COMPLETE: All 4 UI changes verified successfully on both desktop (1920x1080) and mobile (375x812) viewports. Murder Mystery image correct, hero logo layout responsive, header logo sized properly, mobile text sizing appropriate. No console errors. Screenshots captured for verification. All tasks working as intended."
+    message: "Implemented comprehensive Lighthouse performance optimizations: (1) Hero video gradient placeholder for instant LCP, (2) React.lazy code splitting for all below-fold components, (3) Preload critical assets, (4) Deferred PostHog analytics, (5) Added width/height to images, (6) lazy loading for offscreen images, (7) Accessibility improvements with aria-labels. Also added A2 Hospitality to portfolio and removed Emergent badge. Test on http://localhost:3000"
