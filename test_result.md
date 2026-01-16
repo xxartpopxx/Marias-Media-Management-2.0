@@ -103,11 +103,20 @@
 #====================================================================================================
 
 user_problem_statement: |
-  Fix latest posts section for custom murder mystery game (use provided image).
-  Logo placement - add logo to left side of main video/hero section, more prominent.
-  Header logo - increase size slightly.
-  Mobile text sizing - reduce font size of main headings on mobile only.
-  Add website portfolio section with 5 websites: lakeandpinestays.com, serenitypassage.net, hemofgraceevents.com, cedarcreekcleans.com, agentletouchhomecarellc1.com - priced at $200 per website + domain connection.
+  Lighthouse Performance Optimization (target 90-100 on Mobile + Desktop):
+  - Fix LCP (currently 6.3s, target under 2.5s)
+  - Implement efficient cache lifetimes
+  - Improve image delivery (WebP/AVIF, srcset, lazy-load)
+  - Remove render-blocking requests (inline critical CSS, defer scripts)
+  - Code splitting/lazy loading for below-fold components
+  - Add explicit image width/height
+  - Fix accessibility (button names, link names, alt text, heading order)
+  
+  Portfolio Addition:
+  - Add A2 Hospitality & Consulting Services LLC (https://a2hospitality.org/)
+  - Include skills tags: SEO-Ready Build, Performance Optimization, Responsive Design, Modern UI/UX
+  
+  Remove Emergent badge from the website.
 
 frontend:
   - task: "Murder Mystery image updated in Shop section"
