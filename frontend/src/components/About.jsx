@@ -27,12 +27,12 @@ export const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 bg-white">
+    <section id="about" ref={sectionRef} className="py-24 bg-white" aria-labelledby="about-heading">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+          <h2 id="about-heading" className="text-5xl md:text-6xl font-bold mb-4">
             Meet <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Maria</span>
           </h2>
         </div>
@@ -47,13 +47,19 @@ export const About = () => {
                 style={{
                   boxShadow: '0 20px 60px rgba(168, 85, 247, 0.3)'
                 }}
+                aria-hidden="true"
               ></div>
               <img
                 src="https://images.ctfassets.net/ef34o61n7ee2/315eYhq4Pd2VAFokRA2dlg/07587558fcb0cabec06c599e72015a65/maria.mongiardo_67077307_195168964832873_4373870044423530444_n.jpg"
-                alt="Maria Mongiardo"
+                alt="Maria Mongiardo - Founder of Maria's Media Management, social media strategist and digital branding expert"
+                width="600"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 className="relative rounded-3xl shadow-2xl w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 style={{
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.2)',
+                  aspectRatio: '1/1'
                 }}
               />
             </div>
@@ -79,10 +85,10 @@ export const About = () => {
                 
                 <div className="my-6">
                   <p className="font-semibold text-purple-900 mb-3">Over the years, Maria has supported nonprofits such as:</p>
-                  <ul className="space-y-2 ml-4">
+                  <ul className="space-y-2 ml-4" role="list">
                     {nonprofitPartners.map((org, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-purple-500 mr-2">•</span>
+                        <span className="text-purple-500 mr-2" aria-hidden="true">•</span>
                         <span>{org}</span>
                       </li>
                     ))}

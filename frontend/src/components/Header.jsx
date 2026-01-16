@@ -11,7 +11,7 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -32,45 +32,86 @@ export const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-gray-900/80 backdrop-blur-sm'
       }`}
+      role="banner"
     >
-      <nav className="container mx-auto px-6 py-3">
+      <nav className="container mx-auto px-6 py-3" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" aria-label="Maria's Media Management - Home">
             <img 
               src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
-              alt="Maria's Media Management" 
+              alt="Maria's Media Management Logo"
+              width="80"
+              height="80"
               className="h-20 w-auto"
+              loading="eager"
+              decoding="async"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+          <div className="hidden md:flex items-center space-x-8" role="menubar">
+            <button 
+              onClick={() => scrollToSection('home')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Home section"
+            >
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Meet Maria section"
+            >
               Meet Maria
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Services section"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection('portfolio')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('portfolio')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Portfolio section"
+            >
               Portfolio
             </button>
-            <button onClick={() => scrollToSection('shop')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('shop')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Shop section"
+            >
               Shop
             </button>
-            <button onClick={handleMediaKitDownload} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium flex items-center gap-2">
-              <Download className="w-4 h-4" />
+            <button 
+              onClick={handleMediaKitDownload} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium flex items-center gap-2"
+              role="menuitem"
+              aria-label="Download Media Kit PDF"
+            >
+              <Download className="w-4 h-4" aria-hidden="true" />
               Media Kit
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+              aria-label="Go to Contact section"
+            >
               Contact
             </button>
             <a
               href="https://www.etsy.com/shop/MariasMediaShop"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Shop on Etsy - Opens in new tab"
             >
               <Button 
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transform hover:scale-105 transition-all duration-300"
@@ -87,33 +128,64 @@ export const Header = () => {
           <button
             className="md:hidden text-white hover:text-purple-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top">
-            <button onClick={() => scrollToSection('home')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+          <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top" role="menu">
+            <button 
+              onClick={() => scrollToSection('home')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Meet Maria
             </button>
-            <button onClick={() => scrollToSection('services')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection('portfolio')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('portfolio')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Portfolio
             </button>
-            <button onClick={() => scrollToSection('shop')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('shop')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Shop
             </button>
-            <button onClick={handleMediaKitDownload} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={handleMediaKitDownload} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Download Media Kit
             </button>
-            <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
+              role="menuitem"
+            >
               Contact
             </button>
             <a
@@ -121,6 +193,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block"
+              aria-label="Shop on Etsy - Opens in new tab"
             >
               <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold">
                 Shop Etsy

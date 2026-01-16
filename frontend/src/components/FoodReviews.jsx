@@ -53,12 +53,12 @@ export const FoodReviews = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden" aria-labelledby="food-reviews-heading">
       <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-10" style={{ letterSpacing: '-0.02em' }}>
+          <h2 id="food-reviews-heading" className="text-5xl md:text-6xl font-bold mb-10" style={{ letterSpacing: '-0.02em' }}>
             Where I Share <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Food Reviews</span>
           </h2>
           <p className="text-xl text-gray-700 leading-relaxed mb-6">
@@ -80,6 +80,7 @@ export const FoodReviews = () => {
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
+              aria-label={`${link.name} - Opens in new tab`}
             >
               <Card
                 className={`bg-gradient-to-br ${link.color} ${link.hoverColor} text-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer`}
@@ -92,15 +93,19 @@ export const FoodReviews = () => {
                     <div className="bg-white rounded-2xl p-5 mb-6 inline-block">
                       <img 
                         src={link.logo} 
-                        alt={link.name}
+                        alt={`${link.name} logo`}
+                        width="112"
+                        height="56"
+                        loading="lazy"
+                        decoding="async"
                         className="h-14 w-auto mx-auto"
                       />
                     </div>
                   ) : (
-                    <div className="text-6xl mb-6">{link.icon}</div>
+                    <div className="text-6xl mb-6" role="img" aria-label="Camera emoji">{link.icon}</div>
                   )}
                   <h3 className="text-xl font-bold mb-4">{link.name}</h3>
-                  <ExternalLink className="w-6 h-6 mx-auto opacity-80" />
+                  <ExternalLink className="w-6 h-6 mx-auto opacity-80" aria-hidden="true" />
                 </div>
               </Card>
             </a>

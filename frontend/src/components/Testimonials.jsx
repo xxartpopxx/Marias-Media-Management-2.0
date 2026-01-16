@@ -38,15 +38,15 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
-      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-20"></div>
+    <section id="testimonials" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden" aria-labelledby="testimonials-heading">
+      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-20" aria-hidden="true"></div>
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-20" aria-hidden="true"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-20 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 id="testimonials-heading" className="text-5xl md:text-6xl font-bold mb-6">
             We Love Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Clients</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -55,7 +55,7 @@ export const Testimonials = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-[400px]" role="region" aria-live="polite" aria-atomic="true">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
@@ -64,6 +64,7 @@ export const Testimonials = () => {
                     ? 'opacity-100 scale-100 relative'
                     : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'
                 }`}
+                aria-hidden={index !== currentIndex}
               >
                 <Card 
                   className="bg-white rounded-3xl p-10 md:p-14 border-2 border-purple-100 hover:border-purple-200 transition-all duration-300"
@@ -71,15 +72,21 @@ export const Testimonials = () => {
                     boxShadow: '0 20px 60px rgba(168, 85, 247, 0.15)'
                   }}
                 >
-                  <Quote className="w-14 h-14 text-purple-200 mb-6" />
-                  <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed italic font-light">
-                    "{testimonial.text}"
-                  </p>
+                  <Quote className="w-14 h-14 text-purple-200 mb-6" aria-hidden="true" />
+                  <blockquote>
+                    <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed italic font-light">
+                      "{testimonial.text}"
+                    </p>
+                  </blockquote>
                   <div className="flex items-center gap-5">
                     {testimonial.image && (
                       <img
                         src={testimonial.image}
-                        alt={testimonial.name}
+                        alt={`${testimonial.name} - Client testimonial`}
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                        decoding="async"
                         className="w-20 h-20 rounded-full object-cover border-4 border-purple-100"
                         style={{
                           boxShadow: '0 8px 20px rgba(168, 85, 247, 0.2)'
@@ -87,10 +94,12 @@ export const Testimonials = () => {
                       />
                     )}
                     <div className="flex-1">
-                      <h4 className="font-bold text-xl text-gray-800">{testimonial.name}</h4>
-                      {testimonial.company && (
-                        <p className="text-purple-600 text-base">{testimonial.company}</p>
-                      )}
+                      <cite className="not-italic">
+                        <span className="font-bold text-xl text-gray-800 block">{testimonial.name}</span>
+                        {testimonial.company && (
+                          <span className="text-purple-600 text-base">{testimonial.company}</span>
+                        )}
+                      </cite>
                     </div>
                     {testimonial.instagram && (
                       <a
@@ -101,8 +110,9 @@ export const Testimonials = () => {
                         style={{
                           boxShadow: '0 4px 15px rgba(168, 85, 247, 0.2)'
                         }}
+                        aria-label={`Follow ${testimonial.name} on Instagram - Opens in new tab`}
                       >
-                        <Instagram className="w-6 h-6 text-purple-600" />
+                        <Instagram className="w-6 h-6 text-purple-600" aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -112,8 +122,8 @@ export const Testimonials = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-10">
-            {testimonials.map((_, index) => (
+          <div className="flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+            {testimonials.map((testimonial, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
@@ -125,6 +135,9 @@ export const Testimonials = () => {
                 style={{
                   boxShadow: index === currentIndex ? '0 4px 15px rgba(168, 85, 247, 0.4)' : 'none'
                 }}
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Show testimonial ${index + 1} from ${testimonial.name}`}
               />
             ))}
           </div>
