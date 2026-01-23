@@ -85,16 +85,16 @@ export const Portfolio = () => {
                 </div>
 
                 {/* Website Preview - Using iframe */}
-                <div className="relative h-48 bg-gray-900 overflow-hidden">
+                <div className="relative h-64 bg-gray-900 overflow-hidden">
                   <iframe
                     src={site.url}
                     title={`${site.name} website preview`}
                     className="w-full h-full border-0 pointer-events-none transform scale-100"
                     style={{
-                      transform: 'scale(0.5)',
+                      transform: 'scale(0.4)',
                       transformOrigin: 'top left',
-                      width: '200%',
-                      height: '200%'
+                      width: '250%',
+                      height: '250%'
                     }}
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
@@ -102,13 +102,8 @@ export const Portfolio = () => {
                   />
                   {/* Overlay for interaction */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent transition-opacity duration-300 ${
-                    hoveredSite === site.id ? 'opacity-90' : 'opacity-60'
+                    hoveredSite === site.id ? 'opacity-70' : 'opacity-40'
                   }`} aria-hidden="true"></div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-3 right-3 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-medium text-white">{site.category}</span>
-                  </div>
                 </div>
 
                 {/* Content */}
