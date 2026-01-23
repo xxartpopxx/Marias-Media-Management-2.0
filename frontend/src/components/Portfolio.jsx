@@ -108,25 +108,9 @@ export const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors duration-300">
                     {site.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
-                    {site.description}
-                  </p>
-                  {/* Skills tags for A2 Hospitality */}
-                  {site.skills && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {site.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={skillIndex} 
-                          className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full border border-purple-500/30"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                   <a
                     href={site.url}
                     target="_blank"
