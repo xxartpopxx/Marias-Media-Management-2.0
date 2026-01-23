@@ -115,7 +115,7 @@ export const Header = () => {
                 Shop Etsy
               </Button>
             </a>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
