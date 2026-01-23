@@ -39,13 +39,35 @@
     <!-- Title -->
     <title>Maria's Media Management</title>
 
-    <!-- Google tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DJCK0XNGW"></script>
+    <!-- Google tag (gtag.js) - Google Analytics - Deferred for performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2DJCK0XNGW');
+      // Defer Google Analytics until after page load
+      function loadGoogleAnalytics() {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+        
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-2DJCK0XNGW';
+        script.async = true;
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-2DJCK0XNGW');
+        };
+      }
+      
+      // Load after page is fully loaded or after 2 seconds
+      if (document.readyState === 'complete') {
+        setTimeout(loadGoogleAnalytics, 100);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadGoogleAnalytics, 100);
+        });
+      }
     </script>
 
     <!-- Preload critical assets for LCP optimization -->
