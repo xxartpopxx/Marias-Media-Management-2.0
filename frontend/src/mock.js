@@ -130,45 +130,38 @@ export const socialLinks = {
 export const websitePortfolio = [
   {
     id: 1,
-    name: "Lake & Pine Stays",
-    url: "https://lakeandpinestays.com/",
-    description: "Vacation rental property website with beautiful lakeside imagery and booking capabilities.",
-    category: "Vacation Rentals"
+    name: "Serenity Passage",
+    url: "https://serenitypassage.net",
+    description: "Professional services website with a calming, serene design aesthetic."
   },
   {
     id: 2,
-    name: "Serenity Passage",
-    url: "https://serenitypassage.net",
-    description: "Professional services website with a calming, serene design aesthetic.",
-    category: "Professional Services"
+    name: "Hem of Grace Events",
+    url: "https://hemofgraceevents.com",
+    description: "Event planning and coordination website showcasing elegant event services."
   },
   {
     id: 3,
-    name: "Hem of Grace Events",
-    url: "https://hemofgraceevents.com",
-    description: "Event planning and coordination website showcasing elegant event services.",
-    category: "Events & Planning"
+    name: "A2 Hospitality & Consulting Services LLC",
+    url: "https://a2hospitality.org/",
+    description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services."
   },
   {
     id: 4,
-    name: "Cedar Creek Cleans",
-    url: "https://cedarcreekcleans.com",
-    description: "Professional cleaning services website with modern, clean design.",
-    category: "Cleaning Services"
+    name: "Luxury Style Studio",
+    url: "https://luxurystylestudio.com/",
+    description: "High-end fashion and styling services with an elegant, luxurious design aesthetic."
   },
   {
     id: 5,
-    name: "A Gentle Touch Home Care",
-    url: "https://agentletouchhomecarellc1.com",
-    description: "Home care services website with a warm, compassionate design approach.",
-    category: "Home Care"
+    name: "CSD 3D Walls",
+    url: "https://csd3dwalls.com/",
+    description: "Modern 3D wall design and installation services showcasing innovative interior solutions."
   },
   {
     id: 6,
-    name: "A2 Hospitality & Consulting Services LLC",
-    url: "https://a2hospitality.org/",
-    description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services.",
-    category: "Consulting",
-    skills: ["SEO-Ready Build", "Performance Optimization", "Responsive Design", "Modern UI/UX"]
+    name: "Wild Ones LLC",
+    url: "https://wildonesllc.org/",
+    description: "Wildlife and nature conservation organization with an engaging, informative website."
   }
 ];
