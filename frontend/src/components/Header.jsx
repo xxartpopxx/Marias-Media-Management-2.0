@@ -49,11 +49,10 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8" role="menubar">
+          <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
             <button 
               onClick={() => scrollToSection('home')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Home section"
             >
               Home
@@ -61,7 +60,6 @@ export const Header = () => {
             <button 
               onClick={() => scrollToSection('about')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Meet Maria section"
             >
               Meet Maria
@@ -69,7 +67,6 @@ export const Header = () => {
             <button 
               onClick={() => scrollToSection('services')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Services section"
             >
               Services
@@ -77,7 +74,6 @@ export const Header = () => {
             <button 
               onClick={() => scrollToSection('portfolio')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Website Portfolio section"
             >
               Website Portfolio
@@ -85,7 +81,6 @@ export const Header = () => {
             <button 
               onClick={() => scrollToSection('shop')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Shop section"
             >
               Shop
@@ -93,7 +88,6 @@ export const Header = () => {
             <button 
               onClick={handleMediaKitDownload} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium flex items-center gap-2"
-              role="menuitem"
               aria-label="Download Media Kit PDF"
             >
               <Download className="w-4 h-4" aria-hidden="true" />
@@ -102,7 +96,6 @@ export const Header = () => {
             <button 
               onClick={() => scrollToSection('contact')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
               aria-label="Go to Contact section"
             >
               Contact
