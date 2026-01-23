@@ -7,7 +7,6 @@ import { scrollToContact } from '../lib/scrollUtils';
 
 export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSite, setHoveredSite] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -30,6 +29,21 @@ export const Portfolio = () => {
       }
     };
   }, []);
+
+  // Generate a unique gradient for each site based on index
+  const getGradient = (index) => {
+    const gradients = [
+      'from-purple-600 via-pink-500 to-purple-700',
+      'from-blue-600 via-purple-500 to-pink-600',
+      'from-pink-500 via-purple-600 to-blue-600',
+      'from-indigo-600 via-purple-500 to-pink-500',
+      'from-purple-700 via-pink-600 to-rose-500',
+      'from-violet-600 via-purple-500 to-fuchsia-500',
+      'from-fuchsia-600 via-pink-500 to-purple-600',
+      'from-rose-500 via-pink-600 to-purple-700',
+    ];
+    return gradients[index % gradients.length];
+  };
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden" aria-labelledby="portfolio-heading">
@@ -58,72 +72,55 @@ export const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
           {websitePortfolio.map((site, index) => (
-            <article
+            <a
               key={site.id}
-              className={`transition-all duration-1000 transform ${
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group block transition-all duration-700 transform ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-              onMouseEnter={() => setHoveredSite(site.id)}
-              onMouseLeave={() => setHoveredSite(null)}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              aria-label={`Visit ${site.name} website - Opens in new tab`}
             >
               {/* Browser Mockup Frame */}
-              <Card className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-3 border border-gray-700/50 hover:border-purple-500/50">
+              <Card className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.02] border border-gray-700/50 hover:border-purple-500/50">
                 {/* Browser Header */}
-                <div className="bg-gray-900/80 px-4 py-3 flex items-center gap-3 border-b border-gray-700/50">
-                  <div className="flex gap-2" aria-hidden="true">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <div className="bg-gray-900/80 px-3 py-2 flex items-center gap-2 border-b border-gray-700/50">
+                  <div className="flex gap-1.5" aria-hidden="true">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
                   </div>
-                  <div className="flex-1 bg-gray-800/80 rounded-lg px-3 py-1.5 flex items-center gap-2 overflow-hidden">
-                    <Globe className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" aria-hidden="true" />
-                    <span className="text-xs text-gray-400 truncate">{site.url.replace('https://', '')}</span>
+                  <div className="flex-1 bg-gray-800/80 rounded px-2 py-1 flex items-center gap-1.5 overflow-hidden">
+                    <Globe className="w-3 h-3 text-gray-500 flex-shrink-0" aria-hidden="true" />
+                    <span className="text-[10px] text-gray-400 truncate">{site.url.replace('https://', '').replace('/', '')}</span>
                   </div>
                 </div>
 
-                {/* Website Preview - Using iframe */}
-                <div className="relative h-64 bg-gray-900 overflow-hidden">
-                  <iframe
-                    src={site.url}
-                    title={`${site.name} website preview`}
-                    className="w-full h-full border-0 pointer-events-none transform scale-100"
-                    style={{
-                      transform: 'scale(0.4)',
-                      transformOrigin: 'top left',
-                      width: '250%',
-                      height: '250%'
-                    }}
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin"
-                    aria-hidden="true"
-                  />
-                  {/* Overlay for interaction */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent transition-opacity duration-300 ${
-                    hoveredSite === site.id ? 'opacity-70' : 'opacity-40'
-                  }`} aria-hidden="true"></div>
+                {/* Website Preview - Gradient placeholder */}
+                <div className={`relative h-36 bg-gradient-to-br ${getGradient(index)} overflow-hidden`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Globe className="w-12 h-12 text-white/30" aria-hidden="true" />
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                      Visit Site <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    </span>
+                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors duration-300">
+                <div className="p-4">
+                  <h3 className="text-base font-bold text-white group-hover:text-pink-300 transition-colors duration-300 truncate">
                     {site.name}
                   </h3>
-                  <a
-                    href={site.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-medium text-sm transition-all duration-300 group-hover:gap-3"
-                    aria-label={`Visit ${site.name} website - Opens in new tab`}
-                  >
-                    Visit Website
-                    <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
-                  </a>
                 </div>
               </Card>
-            </article>
+            </a>
           ))}
         </div>
 
