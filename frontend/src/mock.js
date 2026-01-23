@@ -136,42 +136,18 @@ export const websitePortfolio = [
   },
   {
     id: 2,
-    name: "Hem of Grace Events",
-    url: "https://hemofgraceevents.com",
-    description: "Event planning and coordination website showcasing elegant event services."
-  },
-  {
-    id: 3,
     name: "A2 Hospitality & Consulting Services LLC",
     url: "https://a2hospitality.org/",
     description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services."
   },
   {
-    id: 4,
+    id: 3,
     name: "Luxury Style Studio",
     url: "https://luxurystylestudio.com/",
     description: "High-end fashion and styling services with an elegant, luxurious design aesthetic."
   },
   {
-    id: 5,
-    name: "CSD 3D Walls",
-    url: "https://csd3dwalls.com/",
-    description: "Modern 3D wall design and installation services showcasing innovative interior solutions."
-  },
-  {
-    id: 6,
-    name: "Wild Ones LLC",
-    url: "https://wildonesllc.org/",
-    description: "Wildlife and nature conservation organization with an engaging, informative website."
-  },
-  {
-    id: 7,
-    name: "Lake & Pine Stays",
-    url: "https://lakeandpinestays.com/",
-    description: "Vacation rental property website with beautiful lakeside imagery and booking capabilities."
-  },
-  {
-    id: 8,
+    id: 4,
     name: "Little House on the Table",
     url: "https://littlehouseonthetable.com/",
     description: "Charming artisan crafts and home decor website with a cozy, inviting aesthetic."
