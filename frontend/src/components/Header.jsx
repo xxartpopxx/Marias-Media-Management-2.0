@@ -131,53 +131,46 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top" role="menu">
+          <nav id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top" aria-label="Mobile navigation">
             <button 
               onClick={() => scrollToSection('home')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Meet Maria
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Website Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('shop')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Shop
             </button>
             <button 
               onClick={handleMediaKitDownload} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Download Media Kit
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-              role="menuitem"
             >
               Contact
             </button>
@@ -192,7 +185,7 @@ export const Header = () => {
                 Shop Etsy
               </Button>
             </a>
-          </div>
+          </nav>
         )}
       </nav>
     </header>
