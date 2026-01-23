@@ -163,5 +163,17 @@ export const websitePortfolio = [
     name: "Wild Ones LLC",
     url: "https://wildonesllc.org/",
     description: "Wildlife and nature conservation organization with an engaging, informative website."
+  },
+  {
+    id: 7,
+    name: "Lake & Pine Stays",
+    url: "https://lakeandpinestays.com/",
+    description: "Vacation rental property website with beautiful lakeside imagery and booking capabilities."
+  },
+  {
+    id: 8,
+    name: "Little House on the Table",
+    url: "https://littlehouseonthetable.com/",
+    description: "Charming artisan crafts and home decor website with a cozy, inviting aesthetic."
   }
 ];
