@@ -78,9 +78,9 @@ export const Header = () => {
               onClick={() => scrollToSection('portfolio')} 
               className="text-white hover:text-purple-300 transition-colors duration-200 font-medium"
               role="menuitem"
-              aria-label="Go to Portfolio section"
+              aria-label="Go to Website Portfolio section"
             >
-              Portfolio
+              Website Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('shop')} 
@@ -165,7 +165,7 @@ export const Header = () => {
               className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
               role="menuitem"
             >
-              Portfolio
+              Website Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('shop')} 
