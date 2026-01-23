@@ -7,6 +7,7 @@ import { scrollToContact } from '../lib/scrollUtils';
 
 export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [loadedIframes, setLoadedIframes] = useState({});
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -30,20 +31,16 @@ export const Portfolio = () => {
     };
   }, []);
 
-  // Generate a unique gradient for each site based on index
-  const getGradient = (index) => {
-    const gradients = [
-      'from-purple-600 via-pink-500 to-purple-700',
-      'from-blue-600 via-purple-500 to-pink-600',
-      'from-pink-500 via-purple-600 to-blue-600',
-      'from-indigo-600 via-purple-500 to-pink-500',
-      'from-purple-700 via-pink-600 to-rose-500',
-      'from-violet-600 via-purple-500 to-fuchsia-500',
-      'from-fuchsia-600 via-pink-500 to-purple-600',
-      'from-rose-500 via-pink-600 to-purple-700',
-    ];
-    return gradients[index % gradients.length];
-  };
+  // Load iframes progressively when section becomes visible
+  useEffect(() => {
+    if (isVisible) {
+      websitePortfolio.forEach((site, index) => {
+        setTimeout(() => {
+          setLoadedIframes(prev => ({ ...prev, [site.id]: true }));
+        }, index * 200);
+      });
+    }
+  }, [isVisible]);
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden" aria-labelledby="portfolio-heading">
@@ -100,13 +97,30 @@ export const Portfolio = () => {
                   </div>
                 </div>
 
-                {/* Website Preview - Gradient placeholder */}
-                <div className={`relative h-36 bg-gradient-to-br ${getGradient(index)} overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Globe className="w-12 h-12 text-white/30" aria-hidden="true" />
-                  </div>
+                {/* Website Preview - iframe thumbnail */}
+                <div className="relative h-40 bg-gray-900 overflow-hidden">
+                  {loadedIframes[site.id] ? (
+                    <iframe
+                      src={site.url}
+                      title={`${site.name} website preview`}
+                      className="w-full h-full border-0 pointer-events-none"
+                      style={{
+                        transform: 'scale(0.35)',
+                        transformOrigin: 'top left',
+                        width: '286%',
+                        height: '286%'
+                      }}
+                      loading="lazy"
+                      sandbox="allow-scripts allow-same-origin"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-pink-600/50 flex items-center justify-center">
+                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    </div>
+                  )}
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
                       Visit Site <ExternalLink className="w-4 h-4" aria-hidden="true" />
                     </span>
