@@ -122,7 +122,7 @@ export const Testimonials = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <div className="flex justify-center gap-3 mt-10" aria-label="Testimonial navigation">
             {testimonials.map((testimonial, index) => (
               <button
                 key={index}
@@ -135,8 +135,7 @@ export const Testimonials = () => {
                 style={{
                   boxShadow: index === currentIndex ? '0 4px 15px rgba(168, 85, 247, 0.4)' : 'none'
                 }}
-                role="tab"
-                aria-selected={index === currentIndex}
+                aria-current={index === currentIndex ? 'true' : undefined}
                 aria-label={`Show testimonial ${index + 1} from ${testimonial.name}`}
               />
             ))}
