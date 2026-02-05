@@ -151,5 +151,23 @@ export const websitePortfolio = [
     name: "Little House on the Table",
     url: "https://littlehouseonthetable.com/",
     description: "Charming artisan crafts and home decor website with a cozy, inviting aesthetic."
+  },
+  {
+    id: 5,
+    name: "Wild Ones LLC",
+    url: "https://wildonesllc.org/",
+    description: "Professional organization website with modern design and seamless user experience."
+  },
+  {
+    id: 6,
+    name: "Seeds of Change Therapy Center",
+    url: "https://seedsofchangetherapycenter.com/",
+    description: "Therapeutic services website with a calming, professional design aesthetic."
+  },
+  {
+    id: 7,
+    name: "Khadijah's Angels",
+    url: "https://khadijahsangels.com/",
+    description: "Non-profit organization website with a warm, welcoming design."
   }
 ];
