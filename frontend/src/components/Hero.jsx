@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { scrollToContact } from '../lib/scrollUtils';
@@ -8,6 +8,17 @@ export const Hero = () => {
   const [isVisible] = useState(true);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
+
+  // Defer video loading until after initial render
+  useEffect(() => {
+    // Load video after a short delay to prioritize LCP
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.load();
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
@@ -34,7 +45,7 @@ export const Hero = () => {
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="none"
         onLoadedData={handleVideoLoad}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
           videoLoaded ? 'opacity-100' : 'opacity-0'
