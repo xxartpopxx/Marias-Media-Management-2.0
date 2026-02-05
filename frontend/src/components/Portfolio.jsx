@@ -97,9 +97,16 @@ export const Portfolio = () => {
                   </div>
                 </div>
 
-                {/* Website Preview - iframe thumbnail */}
+                {/* Website Preview - thumbnail or iframe */}
                 <div className="relative h-40 bg-gray-900 overflow-hidden">
-                  {loadedIframes[site.id] ? (
+                  {site.thumbnail ? (
+                    <img
+                      src={site.thumbnail}
+                      alt={`${site.name} website preview`}
+                      className="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : loadedIframes[site.id] ? (
                     <iframe
                       src={site.url}
                       title={`${site.name} website preview`}
