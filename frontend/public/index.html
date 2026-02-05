@@ -39,9 +39,68 @@
     <!-- Title -->
     <title>Maria's Media Management</title>
 
-    <!-- Google tag (gtag.js) - Google Analytics - Deferred for performance -->
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
+    <link rel="preconnect" href="https://images.ctfassets.net" crossorigin />
+    <link rel="dns-prefetch" href="https://images.ctfassets.net" />
+    
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" fetchpriority="high" />
+    
+    <!-- Critical CSS - Inline for faster FCP/LCP -->
+    <style>
+      /* Critical CSS for above-fold content */
+      *,*::before,*::after{box-sizing:border-box}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:system-ui,-apple-system,sans-serif}
+      body{margin:0;background:#0f0f0f}
+      #root{min-height:100vh}
+      
+      /* Hero gradient placeholder - instant visual */
+      .hero-gradient-placeholder {
+        background: linear-gradient(135deg, 
+          rgba(88, 28, 135, 0.9) 0%, 
+          rgba(157, 23, 77, 0.8) 25%,
+          rgba(88, 28, 135, 0.85) 50%,
+          rgba(157, 23, 77, 0.75) 75%,
+          rgba(88, 28, 135, 0.9) 100%);
+        filter: brightness(0.4);
+      }
+      
+      /* Loading spinner for lazy components */
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .animate-spin{animation:spin 1s linear infinite}
+      
+      /* Prevent layout shift for header */
+      header{height:80px}
+      
+      /* Font display swap for web fonts */
+      @font-face{font-display:swap}
+    </style>
+
+    <!-- Deferred external scripts -->
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js" defer></script>
+    
+    <!-- Visual edits scripts - only in iframe -->
     <script>
-      // Defer Google Analytics until after page load
+      if (window.self !== window.top) {
+        var debugMonitorScript = document.createElement('script');
+        debugMonitorScript.src = 'https://assets.emergent.sh/scripts/debug-monitor.js';
+        debugMonitorScript.defer = true;
+        document.head.appendChild(debugMonitorScript);
+
+        window.tailwind = window.tailwind || {};
+        tailwind.config = { corePlugins: { preflight: false } };
+
+        var tailwindScript = document.createElement('script');
+        tailwindScript.src = 'https://cdn.tailwindcss.com';
+        tailwindScript.defer = true;
+        document.head.appendChild(tailwindScript);
+      }
+    </script>
+    
+    <!-- Defer Google Analytics until after page interaction -->
+    <script>
       function loadGoogleAnalytics() {
         if (window.gaLoaded) return;
         window.gaLoaded = true;
@@ -60,82 +119,18 @@
         };
       }
       
-      // Load after page is fully loaded or after 2 seconds
-      if (document.readyState === 'complete') {
-        setTimeout(loadGoogleAnalytics, 100);
-      } else {
-        window.addEventListener('load', function() {
-          setTimeout(loadGoogleAnalytics, 100);
-        });
-      }
-    </script>
-
-    <!-- Preload critical assets for LCP optimization -->
-    <link rel="preload" as="image" href="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" fetchpriority="high" />
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
-    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
-    <link rel="preconnect" href="https://images.ctfassets.net" crossorigin />
-    <link rel="dns-prefetch" href="https://images.ctfassets.net" />
-    
-    <!-- Critical CSS for above-fold content (gradient placeholder for video) -->
-    <style>
-      /* Critical CSS - Inline for faster FCP */
-      .hero-gradient-placeholder {
-        background: linear-gradient(135deg, 
-          rgba(88, 28, 135, 0.9) 0%, 
-          rgba(157, 23, 77, 0.8) 25%,
-          rgba(88, 28, 135, 0.85) 50%,
-          rgba(157, 23, 77, 0.75) 75%,
-          rgba(88, 28, 135, 0.9) 100%);
-        filter: brightness(0.4);
-      }
-      /* Prevent layout shift */
-      #root { min-height: 100vh; }
-    </style>
-
-    <script src="https://assets.emergent.sh/scripts/emergent-main.js" defer></script>
-    <!--
-        These two scripts have been added for the Visual Edits, please do not edit or remove them
-        -->
-    <script>
-      // Only load visual edit scripts when inside an iframe
-      if (window.self !== window.top) {
-        // Load debug monitor script
-        var debugMonitorScript = document.createElement('script');
-        debugMonitorScript.src =
-          'https://assets.emergent.sh/scripts/debug-monitor.js';
-        document.head.appendChild(debugMonitorScript);
-
-        // Configure Tailwind
-        window.tailwind = window.tailwind || {};
-        tailwind.config = {
-          corePlugins: { preflight: false },
-        };
-
-        // Load Tailwind CDN
-        var tailwindScript = document.createElement('script');
-        tailwindScript.src = 'https://cdn.tailwindcss.com';
-        document.head.appendChild(tailwindScript);
-      }
+      // Load after interaction or after 4 seconds (increased delay)
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach(function(event) {
+        document.addEventListener(event, loadGoogleAnalytics, { once: true, passive: true });
+      });
+      setTimeout(loadGoogleAnalytics, 4000);
     </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-
-    <!-- 🔐 Hidden Netlify form so Netlify can detect "contact" -->
+    <!-- Hidden Netlify form -->
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="firstName" />
       <input type="text" name="lastName" />
@@ -143,9 +138,8 @@
       <textarea name="message"></textarea>
     </form>
 
-    <!-- PostHog Analytics - Deferred loading for performance -->
+    <!-- PostHog Analytics - Heavily deferred -->
     <script>
-      // Defer PostHog loading until after page interaction or 3 seconds
       function loadPostHog() {
         if (window.posthogLoaded) return;
         window.posthogLoaded = true;
@@ -160,42 +154,24 @@
                 var o = e.split('.');
                 2 == o.length && ((t = t[o[0]]), (e = o[1])),
                   (t[e] = function () {
-                    t.push(
-                      [e].concat(Array.prototype.slice.call(arguments, 0))
-                    );
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
                   });
               }
               ((p = t.createElement('script')).type = 'text/javascript'),
                 (p.crossOrigin = 'anonymous'),
                 (p.async = !0),
-                (p.src =
-                  s.api_host.replace(
-                    '.i.posthog.com',
-                    '-assets.i.posthog.com'
-                  ) + '/static/array.js'),
-                (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(
-                  p,
-                  r
-                );
+                (p.src = s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js'),
+                (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r);
               var u = e;
               for (
                 void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
                   u.people = u.people || [],
                   u.toString = function (t) {
                     var e = 'posthog';
-                    return (
-                      'posthog' !== a && (e += '.' + a),
-                      t || (e += ' (stub)'),
-                      e
-                    );
+                    return ('posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e);
                   },
-                  u.people.toString = function () {
-                    return u.toString(1) + '.people (stub)';
-                  },
-                  o =
-                    'init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric'.split(
-                      ' '
-                    ),
+                  u.people.toString = function () { return u.toString(1) + '.people (stub)'; },
+                  o = 'init capture register register_once unregister identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id alias set_config startSessionRecording stopSessionRecording opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug'.split(' '),
                   n = 0;
                 n < o.length;
                 n++
@@ -208,14 +184,16 @@
         posthog.init('phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE', {
           api_host: 'https://us.i.posthog.com',
           person_profiles: 'identified_only',
+          autocapture: false, // Disable autocapture for performance
+          capture_pageview: false, // Disable automatic pageviews
         });
       }
       
-      // Load after user interaction or after 3 seconds
+      // Load after user interaction or after 5 seconds
       ['click', 'scroll', 'keydown', 'touchstart'].forEach(function(event) {
         document.addEventListener(event, loadPostHog, { once: true, passive: true });
       });
-      setTimeout(loadPostHog, 3000);
+      setTimeout(loadPostHog, 5000);
     </script>
   </body>
 </html>
