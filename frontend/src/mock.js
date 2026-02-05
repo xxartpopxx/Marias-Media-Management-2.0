@@ -162,12 +162,21 @@ export const websitePortfolio = [
     id: 6,
     name: "Seeds of Change Therapy Center",
     url: "https://seedsofchangetherapycenter.com/",
-    description: "Therapeutic services website with a calming, professional design aesthetic."
+    description: "Therapeutic services website with a calming, professional design aesthetic.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hjetn7l0_Screenshot%202026-02-05%20at%204.17.16%E2%80%AFPM.png"
   },
   {
     id: 7,
     name: "Khadijah's Angels",
     url: "https://khadijahsangels.com/",
-    description: "Non-profit organization website with a warm, welcoming design."
+    description: "Non-profit organization website with a warm, welcoming design.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hxj0m5uo_Screenshot%202026-02-05%20at%204.17.28%E2%80%AFPM.png"
+  },
+  {
+    id: 8,
+    name: "Lake & Pine Stays",
+    url: "https://lakeandpinestays.com/",
+    description: "Premium vacation rentals at Cedar Creek Lake & Broken Bow with lakefront properties and luxury mountain cabins.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/swmxmmq3_Screenshot%202026-02-05%20at%204.17.41%E2%80%AFPM.png"
   }
 ];
