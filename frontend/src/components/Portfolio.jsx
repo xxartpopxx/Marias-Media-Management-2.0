@@ -1,9 +1,74 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Globe, Monitor, DollarSign, Link2 } from 'lucide-react';
+import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench } from 'lucide-react';
 import { websitePortfolio } from '../mock';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { scrollToContact } from '../lib/scrollUtils';
+
+// Pricing tiers data
+const pricingTiers = [
+  {
+    id: 'starter',
+    icon: Leaf,
+    emoji: '🌱',
+    name: 'Landing Page / Starter Presence',
+    price: 200,
+    description: 'Perfect for businesses or personal brands needing a simple, polished online presence.',
+    features: [
+      'Single-page website',
+      'Clean modern layout',
+      'Mobile responsive',
+      'Contact / inquiry form',
+      'Social links',
+      'Basic SEO setup',
+      'Domain connection',
+      'Unlimited design refinements'
+    ],
+    popular: false,
+    color: 'green'
+  },
+  {
+    id: 'business',
+    icon: Sparkles,
+    emoji: '✨',
+    name: 'Business Website / Growth',
+    price: 400,
+    description: 'Designed for businesses ready for a more structured and complete website experience.',
+    features: [
+      '3–5 pages',
+      'Elevated visual design',
+      'Mobile responsive',
+      'SEO-friendly structure',
+      'Conversion-focused layout',
+      'Performance optimization',
+      'Custom sections',
+      'Unlimited design refinements'
+    ],
+    popular: true,
+    popularText: 'Ideal for most businesses',
+    color: 'purple'
+  },
+  {
+    id: 'premium',
+    icon: Rocket,
+    emoji: '🚀',
+    name: 'Custom / Premium Website',
+    price: 1000,
+    description: 'For brands seeking a highly refined, visually distinctive, and strategically designed website.',
+    features: [
+      'Fully custom design',
+      'Advanced layouts',
+      'Scroll effects / visual polish',
+      'Performance tuning',
+      'SEO-focused structure',
+      'UX optimization',
+      'Strategic content layout',
+      'Unlimited refinements'
+    ],
+    popular: false,
+    color: 'pink'
+  }
+];
 
 export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,7 +134,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-20">
           {websitePortfolio.map((site, index) => (
             <a
               key={site.id}
@@ -145,63 +210,208 @@ export const Portfolio = () => {
           ))}
         </div>
 
-        {/* Pricing Card */}
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-500 transform ${
+        {/* Pricing Section Header */}
+        <div className={`text-center max-w-4xl mx-auto mb-12 transition-all duration-1000 delay-300 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <Card className="relative bg-gradient-to-br from-purple-600/20 via-pink-600/20 to-purple-600/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-purple-500/30 overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full filter blur-3xl" aria-hidden="true"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full filter blur-3xl" aria-hidden="true"></div>
+          <div className="inline-flex items-center gap-2 bg-green-500/20 px-4 py-2 rounded-full mb-6 border border-green-500/30">
+            <DollarSign className="w-4 h-4 text-green-400" aria-hidden="true" />
+            <span className="text-sm text-green-300 font-medium">Pricing Plans</span>
+          </div>
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+            Choose Your <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Perfect Plan</span>
+          </h3>
+          <p className="text-lg text-gray-300">
+            Transparent pricing for every stage of your business journey.
+          </p>
+        </div>
+
+        {/* Pricing Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-16">
+          {pricingTiers.map((tier, index) => {
+            const IconComponent = tier.icon;
+            const isPopular = tier.popular;
             
-            <div className="relative z-10">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 bg-green-500/20 px-4 py-2 rounded-full mb-4 border border-green-500/30">
-                    <DollarSign className="w-4 h-4 text-green-400" aria-hidden="true" />
-                    <span className="text-sm text-green-300 font-medium">Website Design Package</span>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Get Your Own <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Custom Website</span>
-                  </h3>
-                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <Monitor className="w-5 h-5 text-pink-400" aria-hidden="true" />
-                      <span>Custom Design</span>
+            return (
+              <div
+                key={tier.id}
+                className={`transition-all duration-700 transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                } ${isPopular ? 'lg:-mt-4 lg:mb-4' : ''}`}
+                style={{ transitionDelay: `${(index + 3) * 150}ms` }}
+              >
+                <Card className={`relative h-full bg-gray-800/50 backdrop-blur-sm rounded-3xl overflow-hidden border transition-all duration-500 hover:shadow-2xl ${
+                  isPopular 
+                    ? 'border-purple-500/70 hover:border-purple-400 shadow-xl shadow-purple-500/20 ring-2 ring-purple-500/30' 
+                    : 'border-gray-700/50 hover:border-purple-500/50'
+                }`}>
+                  {/* Popular Badge */}
+                  {isPopular && (
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-2 text-sm font-semibold">
+                      ⭐ {tier.popularText}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Link2 className="w-5 h-5 text-purple-400" aria-hidden="true" />
-                      <span>Domain Connection</span>
+                  )}
+                  
+                  <div className={`p-6 lg:p-8 ${isPopular ? 'pt-14' : ''}`}>
+                    {/* Tier Header */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl" aria-hidden="true">{tier.emoji}</span>
+                      <h4 className="text-lg font-bold text-white leading-tight">{tier.name}</h4>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Globe className="w-5 h-5 text-blue-400" aria-hidden="true" />
-                      <span>Live Website</span>
+                    
+                    {/* Price */}
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-sm text-gray-400">Starting at</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className={`text-4xl lg:text-5xl font-bold ${
+                          isPopular ? 'text-purple-300' : 'text-white'
+                        }`}>
+                          ${tier.price}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="text-center flex-shrink-0">
-                  <div className="bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-2xl p-6 md:p-8 border border-purple-400/30">
-                    <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                      $200
-                    </div>
-                    <p className="text-gray-300 text-sm mb-4">per website + domain setup</p>
+                    
+                    {/* Description */}
+                    <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                      {tier.description}
+                    </p>
+                    
+                    {/* Features List */}
+                    <ul className="space-y-3 mb-8">
+                      {tier.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                            isPopular ? 'text-purple-400' : 'text-green-400'
+                          }`} aria-hidden="true" />
+                          <span className="text-gray-300 text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* CTA Button */}
                     <Button
                       onClick={scrollToContact}
-                      className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-6 px-8 font-semibold transition-all duration-500 transform hover:scale-105"
-                      style={{
-                        boxShadow: '0 8px 30px rgba(236, 72, 153, 0.4)'
-                      }}
-                      aria-label="Get started with a custom website - Contact Maria"
+                      className={`w-full py-6 font-semibold transition-all duration-500 transform hover:scale-105 ${
+                        isPopular
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white'
+                          : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
+                      }`}
+                      style={isPopular ? {
+                        boxShadow: '0 8px 30px rgba(168, 85, 247, 0.4)'
+                      } : {}}
+                      aria-label={`Get started with ${tier.name} - Contact Maria`}
                     >
                       Get Started
                       <ExternalLink className="ml-2 w-4 h-4" aria-hidden="true" />
                     </Button>
                   </div>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Additional Info Sections */}
+        <div className={`max-w-5xl mx-auto space-y-8 transition-all duration-1000 delay-700 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>
+          
+          {/* Complimentary Prototype Preview */}
+          <Card className="bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-blue-500/30">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                <Eye className="w-6 h-6 text-blue-400" aria-hidden="true" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                  <span>🧪</span> Complimentary Prototype Preview
+                </h4>
+                <p className="text-gray-300 leading-relaxed">
+                  Every website project includes a complimentary prototype preview. Before final development, you'll receive a visual preview of your website's layout and design direction.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Domains & Hosting */}
+          <Card className="bg-gradient-to-br from-green-600/20 via-teal-600/20 to-green-600/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-green-500/30">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                <Server className="w-6 h-6 text-green-400" aria-hidden="true" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span>🌐</span> Domains & Hosting
+                </h4>
+                <div className="space-y-4">
+                  <div>
+                    <h5 className="text-white font-semibold mb-1 flex items-center gap-2">
+                      <Link2 className="w-4 h-4 text-green-400" aria-hidden="true" />
+                      Domain Connection
+                    </h5>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      I handle the domain connection process to ensure everything is configured correctly.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="text-white font-semibold mb-1 flex items-center gap-2">
+                      <Globe className="w-4 h-4 text-teal-400" aria-hidden="true" />
+                      Hosting & File Management
+                    </h5>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      All websites are deployed via Netlify. Clients will need a Netlify account where website files are securely stored and managed.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </Card>
+
+          {/* Revision Policy */}
+          <Card className="bg-gradient-to-br from-amber-600/20 via-orange-600/20 to-amber-600/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-amber-500/30">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
+                <RefreshCw className="w-6 h-6 text-amber-400" aria-hidden="true" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                  <span>🧠</span> Revision Policy
+                </h4>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-amber-300">Unlimited revisions</strong> apply during the active design phase of the project. Revisions refer to refinements of the approved layout and design direction. Major structural changes or scope expansions may require a project adjustment.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Website Care Plans */}
+          <Card className="bg-gradient-to-br from-pink-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-pink-500/30">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center">
+                  <Wrench className="w-6 h-6 text-pink-400" aria-hidden="true" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <span>🛠</span> Website Care Plans
+                  </h4>
+                  <p className="text-gray-300 leading-relaxed">
+                    Maintenance needs vary by website, but plans typically start at <strong className="text-pink-300">$30 per month</strong> depending on the level of updates and support required.
+                  </p>
+                </div>
+              </div>
+              <div className="flex-shrink-0">
+                <div className="bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-xl px-6 py-4 text-center border border-pink-400/30">
+                  <div className="text-sm text-gray-400 mb-1">Starting at</div>
+                  <div className="text-3xl font-bold text-white">$30</div>
+                  <div className="text-sm text-gray-400">/ month</div>
+                </div>
+              </div>
+            </div>
+          </Card>
+
         </div>
       </div>
     </section>
