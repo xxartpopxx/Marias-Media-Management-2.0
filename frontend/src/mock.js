@@ -184,7 +184,7 @@ export const websitePortfolio = [
     name: "CSD 3D Walls",
     url: "https://csd3dwalls.com/",
     description: "Miami's premier 3D wall installation company offering stunning PVC wall cladding, artificial greenery walls, wood slat walls, and custom LED signs that transform spaces into works of art.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_gallery-showcase-31/artifacts/3ev2cig5_Screenshot%202026-02-23%20at%203.10.40%E2%80%AFPM.png"
+    thumbnail: "https://customer-assets.emergentagent.com/job_gallery-showcase-31/artifacts/ihu54spl_Screenshot%202026-02-23%20at%203.11.43%E2%80%AFPM.png"
   },
   {
     id: 10,
