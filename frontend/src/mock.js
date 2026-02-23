@@ -178,5 +178,35 @@ export const websitePortfolio = [
     url: "https://lakeandpinestays.com/",
     description: "Premium vacation rentals at Cedar Creek Lake & Broken Bow with lakefront properties and luxury mountain cabins.",
     thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/swmxmmq3_Screenshot%202026-02-05%20at%204.17.41%E2%80%AFPM.png"
+  },
+  {
+    id: 9,
+    name: "CSD 3D Walls",
+    url: "https://csd3dwalls.com/",
+    description: "Miami's premier 3D wall installation company offering stunning PVC wall cladding, artificial greenery walls, wood slat walls, and custom LED signs that transform spaces into works of art."
+  },
+  {
+    id: 10,
+    name: "Chi Fun in the City LLC",
+    url: "https://chifuninthecityllc.com/",
+    description: "Lady Renaissance's creative portfolio showcasing her work as a professional model, creative visionary, and producer of 'Corporate Chaos' - a compelling docu-style reality series."
+  },
+  {
+    id: 11,
+    name: "Rhino Seal Asphalt",
+    url: "https://rhinoseal.net/",
+    description: "Worcester's trusted sealcoating experts with 30 years of experience providing professional asphalt maintenance, crack filling, and pavement protection services across Central Massachusetts."
+  },
+  {
+    id: 12,
+    name: "Hem of Grace Events",
+    url: "https://hemofgraceevents.com/",
+    description: "Florida-based luxury wedding and event planning company creating graceful, unforgettable celebrations including quinceañeras, baby showers, and faith-based events with bilingual services."
+  },
+  {
+    id: 13,
+    name: "Divine Vitality Research",
+    url: "https://divinevitality.co/",
+    description: "Premium research peptides and wellness compounds supplier offering third-party tested, pharmaceutical-grade quality products with a philosophy of education first, trends second."
   }
 ];
