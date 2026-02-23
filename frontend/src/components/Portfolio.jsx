@@ -74,6 +74,9 @@ export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loadedIframes, setLoadedIframes] = useState({});
   const sectionRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,6 +107,38 @@ export const Portfolio = () => {
           setLoadedIframes(prev => ({ ...prev, [site.id]: true }));
         }, index * 200);
       });
+    }
+  }, [isVisible]);
+
+  // Update scroll button states
+  const updateScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  // Handle scroll
+  const handleScroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400; // Pixels to scroll
+      const newScrollLeft = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Add scroll event listener
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', updateScrollButtons);
+      // Initial check
+      updateScrollButtons();
+      return () => container.removeEventListener('scroll', updateScrollButtons);
     }
   }, [isVisible]);
 
