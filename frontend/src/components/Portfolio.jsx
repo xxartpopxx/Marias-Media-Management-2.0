@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench } from 'lucide-react';
+import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
 import { websitePortfolio } from '../mock';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
