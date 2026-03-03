@@ -177,100 +177,107 @@ export const socialLinks = {
 export const websitePortfolio = [
   {
     id: 1,
-    name: "Upstate Hot Tubs",
-    url: "https://upstatehottubs.com/",
-    description: "Premium hot tub sales and services website with a clean, modern design showcasing luxury spa products and expert installation services."
+    name: "The Pink Edit",
+    url: "https://thepinkedit.net/",
+    description: "Stylish lifestyle and fashion blog with a vibrant pink aesthetic, featuring curated content and modern design."
   },
   {
     id: 2,
+    name: "Upstate Hot Tubs",
+    url: "https://upstatehottubs.com/",
+    description: "Premium hot tub sales and services website with a clean, modern design showcasing luxury spa products and expert installation services.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/70pz2ah6_Screenshot%202026-03-03%20at%206.24.52%E2%80%AFPM.png"
+  },
+  {
+    id: 3,
     name: "Pedro DaCosta Group",
     url: "https://pedrodacostagroup.com/",
     description: "Professional real estate and business consulting group website featuring elegant design and comprehensive service offerings."
   },
   {
-    id: 3,
+    id: 4,
     name: "Serenity Wellness NE",
     url: "http://serenitywellnessne.com/",
     description: "Holistic wellness center website with a calming, peaceful aesthetic promoting health and wellbeing services."
   },
   {
-    id: 4,
+    id: 5,
     name: "Serenity Passage",
     url: "https://serenitypassage.net",
     description: "Professional services website with a calming, serene design aesthetic."
   },
   {
-    id: 5,
+    id: 6,
     name: "A2 Hospitality & Consulting Services LLC",
     url: "https://a2hospitality.org/",
     description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services."
   },
   {
-    id: 6,
+    id: 7,
     name: "Luxury Style Studio",
     url: "https://luxurystylestudio.com/",
     description: "High-end fashion and styling services with an elegant, luxurious design aesthetic."
   },
   {
-    id: 7,
+    id: 8,
     name: "Little House on the Table",
     url: "https://littlehouseonthetable.com/",
     description: "Charming artisan crafts and home decor website with a cozy, inviting aesthetic."
   },
   {
-    id: 8,
+    id: 9,
     name: "Wild Ones LLC",
     url: "https://wildonesllc.org/",
     description: "Professional organization website with modern design and seamless user experience."
   },
   {
-    id: 9,
+    id: 10,
     name: "Seeds of Change Therapy Center",
     url: "https://seedsofchangetherapycenter.com/",
     description: "Therapeutic services website with a calming, professional design aesthetic.",
     thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hjetn7l0_Screenshot%202026-02-05%20at%204.17.16%E2%80%AFPM.png"
   },
   {
-    id: 10,
+    id: 11,
     name: "Khadijah's Angels",
     url: "https://khadijahsangels.com/",
     description: "Non-profit organization website with a warm, welcoming design.",
     thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hxj0m5uo_Screenshot%202026-02-05%20at%204.17.28%E2%80%AFPM.png"
   },
   {
-    id: 11,
+    id: 12,
     name: "Lake & Pine Stays",
     url: "https://lakeandpinestays.com/",
     description: "Premium vacation rentals at Cedar Creek Lake & Broken Bow with lakefront properties and luxury mountain cabins.",
     thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/swmxmmq3_Screenshot%202026-02-05%20at%204.17.41%E2%80%AFPM.png"
   },
   {
-    id: 12,
+    id: 13,
     name: "CSD 3D Walls",
     url: "https://csd3dwalls.com/",
     description: "Miami's premier 3D wall installation company offering stunning PVC wall cladding, artificial greenery walls, wood slat walls, and custom LED signs that transform spaces into works of art.",
     thumbnail: "https://customer-assets.emergentagent.com/job_gallery-showcase-31/artifacts/ihu54spl_Screenshot%202026-02-23%20at%203.11.43%E2%80%AFPM.png"
   },
   {
-    id: 13,
+    id: 14,
     name: "Chi Fun in the City LLC",
     url: "https://chifuninthecityllc.com/",
     description: "Lady Renaissance's creative portfolio showcasing her work as a professional model, creative visionary, and producer of 'Corporate Chaos' - a compelling docu-style reality series."
   },
   {
-    id: 14,
+    id: 15,
     name: "Rhino Seal Asphalt",
     url: "https://rhinoseal.net/",
     description: "Worcester's trusted sealcoating experts with 30 years of experience providing professional asphalt maintenance, crack filling, and pavement protection services across Central Massachusetts."
   },
   {
-    id: 15,
+    id: 16,
     name: "Hem of Grace Events",
     url: "https://hemofgraceevents.com/",
     description: "Florida-based luxury wedding and event planning company creating graceful, unforgettable celebrations including quinceañeras, baby showers, and faith-based events with bilingual services."
   },
   {
-    id: 16,
+    id: 17,
     name: "Divine Vitality Research",
     url: "https://divinevitality.co/",
     description: "Premium research peptides and wellness compounds supplier offering third-party tested, pharmaceutical-grade quality products with a philosophy of education first, trends second."
