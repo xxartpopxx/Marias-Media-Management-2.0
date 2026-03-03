@@ -39,12 +39,54 @@ export const testimonials = [
   }
 ];
 
-export const pricingPlans = [
-  { accounts: 1, price: 300 },
-  { accounts: 2, price: 450 },
-  { accounts: 3, price: 500 },
-  { accounts: 4, price: 600 }
+// Facebook Reviews for Website Services
+export const facebookReviews = [
+  {
+    id: 1,
+    name: "Daniel DaCosta",
+    text: "I just wanted to take a moment to thank you for the fantastic website you created for me. It looks amazing, and I truly appreciate all the hard work and effort you put into it. Your creativity and attention to detail really shine through, and I'm so happy with the result! Thanks again for making this happen!",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 2,
+    name: "Antoine Jackson-Stackhouse",
+    text: "Very detailed, excellent.",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 3,
+    name: "Tyler Collins",
+    text: "I absolutely love my website! She was very communicative throughout the entire process and always made sure I was involved. I really appreciated that she provided drafts and examples before delivering the final product, it made everything feel collaborative and stress free. She also brought her own ideas to the table, which helped make the site even better than I imagined. You can tell she genuinely cares about her work and her clients.",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 4,
+    name: "Teaira Pannell",
+    text: "Maria did my website for me and I just love how she did it. Maria did it exactly how I wanted it and if I need anything changed she was quick to update it. Maria respond time is amazing. I recommend her to anyone I know that needs someone to build their website💯🤞🏾 Maria is amazing 🩷🩷",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 5,
+    name: "Monica Korba",
+    text: "Seamless transaction, she made my website with ease and professionalism. Maria was very easy to communicate with, I highly recommend working with Maria for your website needs!",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 6,
+    name: "Lindsey Anna Centanni",
+    text: "Maria was prompt, very informative and has a good eye for detail. She was helpful every step of the way and guided me through the process of creating my e-commerce business. Pleasure to work with will use her again in the future.",
+    source: "facebook",
+    recommends: true
+  }
 ];
+
+export const facebookReviewsLink = "https://www.facebook.com/MariasMediaManagement/reviews/?id=100080362634808&sk=reviews";
+export const googleReviewsLink = "https://share.google/m8a3N3seqsIPZKxOr";
 
 export const etsyProducts = [
   {
@@ -124,7 +166,8 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/mariamongiardo/",
   etsy: "https://www.etsy.com/shop/MariasMediaShop",
   yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
-  google: "https://www.google.com/maps/contrib//reviews/"
+  google: "https://www.google.com/maps/contrib//reviews/",
+  facebook: "https://www.facebook.com/MariasMediaManagement"
 };
 
 export const websitePortfolio = [
