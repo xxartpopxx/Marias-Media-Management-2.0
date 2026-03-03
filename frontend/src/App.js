@@ -13,7 +13,6 @@ const Services = lazy(() => import("./components/Services").then(m => ({ default
 const Portfolio = lazy(() => import("./components/Portfolio").then(m => ({ default: m.Portfolio })));
 const Shop = lazy(() => import("./components/Shop").then(m => ({ default: m.Shop })));
 const FoodReviews = lazy(() => import("./components/FoodReviews").then(m => ({ default: m.FoodReviews })));
-const FacebookReviews = lazy(() => import("./components/FacebookReviews").then(m => ({ default: m.FacebookReviews })));
 const InstagramFeeds = lazy(() => import("./components/InstagramFeeds").then(m => ({ default: m.InstagramFeeds })));
 const FindMaria = lazy(() => import("./components/FindMaria").then(m => ({ default: m.FindMaria })));
 const Testimonials = lazy(() => import("./components/Testimonials").then(m => ({ default: m.Testimonials })));
@@ -36,7 +35,6 @@ const LazySections = memo(() => (
     <About />
     <Services />
     <Portfolio />
-    <FacebookReviews />
     <Shop />
     <FoodReviews />
     <InstagramFeeds />

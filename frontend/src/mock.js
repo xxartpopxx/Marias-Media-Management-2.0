@@ -1,4 +1,5 @@
 export const testimonials = [
+  // Original Instagram/Social Media testimonials
   {
     id: 1,
     name: "Jillian Vorce",
@@ -36,49 +37,52 @@ export const testimonials = [
     image: "https://images.ctfassets.net/ef34o61n7ee2/2yrHIqXQFAWEWGp3akJQl9/34bcc7f922ba95dccbfbae87fd841752/tanyathomasskinclinic_266380408_854354381902550_6741185645457800694_n.jpg",
     instagram: "https://www.instagram.com/tanyathomasskinclinic/",
     text: "Maria, has been my lifesaver. My business has grown tremendously since I began working with her. I was clueless on how to operate my social media platforms. Maria has helped me become a successful business. She's talented at her craft."
-  }
-];
-
-// Facebook Reviews for Website Services
-export const facebookReviews = [
+  },
+  // Facebook Reviews for Website Services
   {
-    id: 1,
+    id: 6,
     name: "Daniel DaCosta",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/pqcc5z9w_Screenshot%202026-03-03%20at%206.14.11%E2%80%AFPM.png",
     text: "I just wanted to take a moment to thank you for the fantastic website you created for me. It looks amazing, and I truly appreciate all the hard work and effort you put into it. Your creativity and attention to detail really shine through, and I'm so happy with the result! Thanks again for making this happen!",
     source: "facebook",
     recommends: true
   },
   {
-    id: 2,
+    id: 7,
     name: "Antoine Jackson-Stackhouse",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/5s2tnpiq_Screenshot%202026-03-03%20at%206.14.20%E2%80%AFPM.png",
     text: "Very detailed, excellent.",
     source: "facebook",
     recommends: true
   },
   {
-    id: 3,
-    name: "Tyler Collins",
-    text: "I absolutely love my website! She was very communicative throughout the entire process and always made sure I was involved. I really appreciated that she provided drafts and examples before delivering the final product, it made everything feel collaborative and stress free. She also brought her own ideas to the table, which helped make the site even better than I imagined. You can tell she genuinely cares about her work and her clients.",
-    source: "facebook",
-    recommends: true
-  },
-  {
-    id: 4,
-    name: "Teaira Pannell",
-    text: "Maria did my website for me and I just love how she did it. Maria did it exactly how I wanted it and if I need anything changed she was quick to update it. Maria respond time is amazing. I recommend her to anyone I know that needs someone to build their website💯🤞🏾 Maria is amazing 🩷🩷",
-    source: "facebook",
-    recommends: true
-  },
-  {
-    id: 5,
+    id: 8,
     name: "Monica Korba",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/o5x9rmev_Screenshot%202026-03-03%20at%206.14.49%E2%80%AFPM.png",
     text: "Seamless transaction, she made my website with ease and professionalism. Maria was very easy to communicate with, I highly recommend working with Maria for your website needs!",
     source: "facebook",
     recommends: true
   },
   {
-    id: 6,
+    id: 9,
+    name: "Tyler Collins",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/uke8kwbk_Screenshot%202026-03-03%20at%206.14.28%E2%80%AFPM.png",
+    text: "I absolutely love my website! She was very communicative throughout the entire process and always made sure I was involved. I really appreciated that she provided drafts and examples before delivering the final product, it made everything feel collaborative and stress free. She also brought her own ideas to the table, which helped make the site even better than I imagined. You can tell she genuinely cares about her work and her clients.",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 10,
+    name: "Teaira Pannell",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/kmyd7z5f_Screenshot%202026-03-03%20at%206.14.39%E2%80%AFPM.png",
+    text: "Maria did my website for me and I just love how she did it. Maria did it exactly how I wanted it and if I need anything changed she was quick to update it. Maria respond time is amazing. I recommend her to anyone I know that needs someone to build their website💯🤞🏾 Maria is amazing 🩷🩷",
+    source: "facebook",
+    recommends: true
+  },
+  {
+    id: 11,
     name: "Lindsey Anna Centanni",
+    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/fjglcxro_Screenshot%202026-03-03%20at%206.16.09%E2%80%AFPM.png",
     text: "Maria was prompt, very informative and has a good eye for detail. She was helpful every step of the way and guided me through the process of creating my e-commerce business. Pleasure to work with will use her again in the future.",
     source: "facebook",
     recommends: true
