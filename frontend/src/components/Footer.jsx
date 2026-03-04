@@ -43,11 +43,9 @@ export const Footer = () => {
     </svg>
   );
 
-  // Etsy Icon Component
-  const EtsyIcon = ({ className }) => (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8.559 4.297c0-.405.093-.891.652-.891 1.186 0 2.678.559 3.731.559.186 0 .558-.093.558-.465V2.091c0-.279-.186-.465-.372-.558C12.197 1.16 10.453.93 9.21.93c-2.19 0-4.634.93-4.634 4.043v2.232H3.07c-.279 0-.465.186-.465.465v1.581c0 .279.186.465.465.465h1.504v8.18c0 .279.186.465.465.465h2.605c.279 0 .465-.186.465-.465v-8.18h2.978c.279 0 .465-.186.465-.465v-.279l.465-1.302c.093-.186 0-.465-.279-.465H8.559V4.297zm12.255 6.32c-1.302-.372-2.419-.559-3.35-.559-1.674 0-2.605.744-2.605 1.767 0 2.419 4.277 1.86 4.277 5.191 0 2.698-2.046 4.091-4.836 4.091-1.395 0-2.884-.279-4.184-.744-.186-.093-.372-.279-.372-.558v-1.674c0-.279.186-.465.465-.372 1.302.465 2.698.744 3.907.744 1.302 0 2.046-.465 2.046-1.395 0-2.512-4.277-1.767-4.277-5.284 0-2.605 2.046-4.091 4.836-4.091 1.302 0 2.512.186 3.721.558.186.093.372.279.372.558v1.395c0 .372-.186.465-.465.372h-.535z"/>
-    </svg>
+  // Etsy Icon Component - Text based logo
+  const EtsyIcon = () => (
+    <span className="text-xs font-serif italic font-bold">Etsy</span>
   );
 
   return (
@@ -193,7 +191,7 @@ export const Footer = () => {
                 className="bg-white/10 p-3 rounded-full hover:bg-orange-600 transition-all duration-300 hover:scale-110 flex items-center justify-center"
                 aria-label="Shop on Etsy - Opens in new tab"
               >
-                <EtsyIcon className="w-5 h-5" />
+                <EtsyIcon />
               </a>
               <a
                 href={`mailto:${socialLinks.email}`}
@@ -229,7 +227,7 @@ export const Footer = () => {
                   className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
                   aria-label="Shop on Etsy - Opens in new tab"
                 >
-                  <EtsyIcon className="w-4 h-4" />
+                  <span className="font-serif italic font-bold">Etsy</span>
                   Shop on Etsy
                 </a>
               </div>
