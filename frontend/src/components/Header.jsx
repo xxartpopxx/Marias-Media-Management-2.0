@@ -218,57 +218,59 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav id="mobile-menu" className="lg:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top" aria-label="Mobile navigation">
-            <button 
-              onClick={() => scrollToSection('home')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection('about')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Meet Maria
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Social Media Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('portfolio')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Website Portfolio
-            </button>
-            <button 
-              onClick={() => scrollToSection('shop')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Shop
-            </button>
-            <button 
-              onClick={handleMediaKitDownload} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Download Media Kit
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')} 
-              className="block w-full text-left text-white hover:text-purple-300 transition-colors duration-200 font-medium"
-            >
-              Contact
-            </button>
+          <nav id="mobile-menu" className="lg:hidden mt-4 pb-6 animate-in slide-in-from-top bg-gray-900 rounded-2xl p-6 border border-gray-700 shadow-2xl" aria-label="Mobile navigation">
+            <div className="space-y-1">
+              <button 
+                onClick={() => scrollToSection('home')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Meet Maria
+              </button>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Social Media Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Website Portfolio
+              </button>
+              <button 
+                onClick={() => scrollToSection('shop')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Shop
+              </button>
+              <button 
+                onClick={handleMediaKitDownload} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Download Media Kit
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="block w-full text-left text-white hover:bg-purple-600/30 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-xl"
+              >
+                Contact
+              </button>
+            </div>
             
             {/* Mobile Social Icons */}
-            <div className="flex items-center space-x-4 pt-2 border-t border-gray-700">
+            <div className="flex items-center justify-center flex-wrap gap-4 pt-6 mt-6 border-t border-gray-700">
               <a
                 href={socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-blue-600 transition-all duration-200"
                 aria-label="Follow on Facebook - Opens in new tab"
               >
                 <FacebookIcon className="w-6 h-6" />
@@ -277,7 +279,7 @@ export const Header = () => {
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-pink-400 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
                 aria-label="Follow on Instagram - Opens in new tab"
               >
                 <Instagram className="w-6 h-6" />
@@ -286,7 +288,7 @@ export const Header = () => {
                 href={socialLinks.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-red-500 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-red-600 transition-all duration-200"
                 aria-label="Subscribe on YouTube - Opens in new tab"
               >
                 <YouTubeIcon className="w-6 h-6" />
@@ -295,7 +297,7 @@ export const Header = () => {
                 href={socialLinks.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-pink-400 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-black transition-all duration-200"
                 aria-label="Follow on TikTok - Opens in new tab"
               >
                 <TikTokIcon className="w-6 h-6" />
@@ -304,30 +306,32 @@ export const Header = () => {
                 href={googleReviewsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-green-400 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-green-600 transition-all duration-200"
                 aria-label="View Google Reviews - Opens in new tab"
               >
                 <GoogleIcon className="w-6 h-6" />
               </a>
               <a
                 href="mailto:mariamongiardo15@gmail.com"
-                className="text-white hover:text-purple-400 transition-colors duration-200"
+                className="bg-gray-800 p-3 rounded-full text-white hover:bg-purple-600 transition-all duration-200"
                 aria-label="Send email"
               >
                 <Mail className="w-6 h-6" />
               </a>
             </div>
 
-            <Link
-              to="/shop"
-              className="block"
-              aria-label="Visit Etsy Shop"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold">
-                Shop Etsy
-              </Button>
-            </Link>
+            <div className="mt-6">
+              <Link
+                to="/shop"
+                className="block"
+                aria-label="Visit Etsy Shop"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-lg py-4">
+                  Shop Etsy
+                </Button>
+              </Link>
+            </div>
           </nav>
         )}
       </nav>
