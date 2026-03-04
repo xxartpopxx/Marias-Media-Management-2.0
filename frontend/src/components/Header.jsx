@@ -149,7 +149,7 @@ export const Header = () => {
                 <GoogleIcon className="w-5 h-5" />
               </a>
               <a
-                href="mailto:mariasmediamanagement@gmail.com"
+                href="mailto:mariamongiardo15@gmail.com"
                 className="text-white hover:text-purple-400 transition-colors duration-200"
                 aria-label="Send email"
               >
@@ -157,21 +157,19 @@ export const Header = () => {
               </a>
             </div>
 
-            <a
-              href="https://www.etsy.com/shop/MariasMediaShop"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Shop on Etsy - Opens in new tab"
+            <Link
+              to="/shop"
+              aria-label="Visit Etsy Shop"
             >
               <Button 
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold transform hover:scale-105 transition-all duration-300"
                 style={{
-                  boxShadow: '0 4px 15px rgba(168, 85, 247, 0.3)'
+                  boxShadow: '0 4px 15px rgba(249, 115, 22, 0.3)'
                 }}
               >
                 Shop Etsy
               </Button>
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -262,7 +260,7 @@ export const Header = () => {
                 <GoogleIcon className="w-6 h-6" />
               </a>
               <a
-                href="mailto:mariasmediamanagement@gmail.com"
+                href="mailto:mariamongiardo15@gmail.com"
                 className="text-white hover:text-purple-400 transition-colors duration-200"
                 aria-label="Send email"
               >
@@ -270,17 +268,16 @@ export const Header = () => {
               </a>
             </div>
 
-            <a
-              href="https://www.etsy.com/shop/MariasMediaShop"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/shop"
               className="block"
-              aria-label="Shop on Etsy - Opens in new tab"
+              aria-label="Visit Etsy Shop"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold">
+              <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold">
                 Shop Etsy
               </Button>
-            </a>
+            </Link>
           </nav>
         )}
       </nav>

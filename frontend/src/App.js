@@ -19,6 +19,7 @@ const Testimonials = lazy(() => import("./components/Testimonials").then(m => ({
 const Contact = lazy(() => import("./components/Contact").then(m => ({ default: m.Contact })));
 const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })));
 const FloatingContact = lazy(() => import("./components/FloatingContact").then(m => ({ default: m.FloatingContact })));
+const EtsyShopPage = lazy(() => import("./components/EtsyShopPage").then(m => ({ default: m.EtsyShopPage })));
 
 // Minimal loading placeholder - memoized for performance
 const SectionLoader = memo(() => (
@@ -69,6 +70,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/shop" element={
+            <Suspense fallback={<SectionLoader />}>
+              <EtsyShopPage />
+            </Suspense>
+          } />
         </Routes>
       </BrowserRouter>
     </div>
