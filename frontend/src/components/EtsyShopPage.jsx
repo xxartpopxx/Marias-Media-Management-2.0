@@ -70,10 +70,8 @@ export const EtsyShopPage = () => {
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {/* Etsy Logo */}
             <div className="flex justify-center mb-6">
-              <div className="bg-orange-500 rounded-2xl p-4">
-                <svg className="w-14 h-14 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.559 4.297c0-.405.093-.891.652-.891 1.186 0 2.678.559 3.731.559.186 0 .558-.093.558-.465V2.091c0-.279-.186-.465-.372-.558C12.197 1.16 10.453.93 9.21.93c-2.19 0-4.634.93-4.634 4.043v2.232H3.07c-.279 0-.465.186-.465.465v1.581c0 .279.186.465.465.465h1.504v8.18c0 .279.186.465.465.465h2.605c.279 0 .465-.186.465-.465v-8.18h2.978c.279 0 .465-.186.465-.465v-.279l.465-1.302c.093-.186 0-.465-.279-.465H8.559V4.297z"/>
-                </svg>
+              <div className="bg-orange-500 rounded-2xl p-4 flex items-center justify-center">
+                <span className="text-white text-4xl font-serif italic font-bold tracking-tight">Etsy</span>
               </div>
             </div>
             
