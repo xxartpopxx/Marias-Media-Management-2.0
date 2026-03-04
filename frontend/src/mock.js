@@ -171,7 +171,10 @@ export const socialLinks = {
   etsy: "https://www.etsy.com/shop/MariasMediaShop",
   yelp: "https://www.yelp.com/user_details?userid=rQTn4mB1OlTTdGcD0CR3eg",
   google: "https://www.google.com/maps/contrib//reviews/",
-  facebook: "https://www.facebook.com/MariasMediaManagement"
+  facebook: "https://www.facebook.com/MariasMediaManagement",
+  youtube: "https://www.youtube.com/@maria.mongiardo",
+  tiktok: "https://www.tiktok.com/@maria.mongiardo",
+  email: "mariamongiardo15@gmail.com"
 };
 
 export const websitePortfolio = [

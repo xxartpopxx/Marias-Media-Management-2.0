@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { etsyProducts } from '../mock';
+import { etsyProducts, socialLinks } from '../mock';
 import { ExternalLink, ShoppingBag, ArrowLeft, Star, Package, Palette, Camera, Sparkles } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
@@ -47,7 +47,7 @@ export const EtsyShopPage = () => {
               <span className="font-medium">Back to Home</span>
             </Link>
             <a
-              href="https://www.etsy.com/shop/MariasMediaShop"
+              href={socialLinks.etsy}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
@@ -56,7 +56,7 @@ export const EtsyShopPage = () => {
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold"
               >
                 <ShoppingBag className="w-4 h-4 mr-2" />
-                View Full Store on Etsy
+                Open Full Etsy Store
                 <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -65,27 +65,27 @@ export const EtsyShopPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-28 pb-12 px-6">
         <div className="container mx-auto text-center">
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {/* Etsy Logo */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-6">
               <div className="bg-orange-500 rounded-2xl p-4">
-                <svg className="w-16 h-16 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.56 3.04c.24-.16.64-.24 1.2-.24h4.08c.88 0 1.52.24 1.92.72.4.48.6 1.12.6 1.92v.72h.96c.16 0 .24.08.24.24v1.44c0 .16-.08.24-.24.24h-.96v7.68h.96c.16 0 .24.08.24.24v1.44c0 .16-.08.24-.24.24h-.96v.72c0 .8-.2 1.44-.6 1.92-.4.48-1.04.72-1.92.72H9.76c-.56 0-.96-.08-1.2-.24-.24-.16-.36-.4-.36-.72v-.96c0-.32.12-.56.36-.72.24-.16.64-.24 1.2-.24h3.36V8.08H9.76c-.56 0-.96-.08-1.2-.24-.24-.16-.36-.4-.36-.72v-.96c0-.32.12-.56.36-.72z"/>
+                <svg className="w-14 h-14 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8.559 4.297c0-.405.093-.891.652-.891 1.186 0 2.678.559 3.731.559.186 0 .558-.093.558-.465V2.091c0-.279-.186-.465-.372-.558C12.197 1.16 10.453.93 9.21.93c-2.19 0-4.634.93-4.634 4.043v2.232H3.07c-.279 0-.465.186-.465.465v1.581c0 .279.186.465.465.465h1.504v8.18c0 .279.186.465.465.465h2.605c.279 0 .465-.186.465-.465v-8.18h2.978c.279 0 .465-.186.465-.465v-.279l.465-1.302c.093-.186 0-.465-.279-.465H8.559V4.297z"/>
                 </svg>
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               Maria's <span className="bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">Media Shop</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
               Discover unique digital products, custom photo services, and creative party games — all designed to help you create lasting memories.
             </p>
             
             {/* Shop Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mb-12">
+            <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1 text-orange-400 mb-1">
                   <Star className="w-5 h-5 fill-current" />
@@ -105,12 +105,29 @@ export const EtsyShopPage = () => {
                 <p className="text-gray-400 text-sm">Digital Delivery</p>
               </div>
             </div>
+
+            {/* Main CTA */}
+            <a
+              href={socialLinks.etsy}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-lg px-10 py-6 transform hover:scale-105 transition-all duration-300"
+                style={{ boxShadow: '0 8px 30px rgba(249, 115, 22, 0.4)' }}
+              >
+                <ShoppingBag className="w-5 h-5 mr-2" />
+                Browse Full Shop on Etsy
+                <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="py-12 px-6">
+      <section className="py-10 px-6">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {shopCategories.map((category, index) => {
@@ -118,7 +135,7 @@ export const EtsyShopPage = () => {
               return (
                 <div 
                   key={index}
-                  className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 transition-all duration-500 transform hover:scale-105 ${
+                  className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 transition-all duration-500 transform hover:scale-105 hover:bg-white/10 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -142,7 +159,7 @@ export const EtsyShopPage = () => {
             Featured Products
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {etsyProducts.map((product, index) => (
               <a
                 key={product.id}
@@ -155,13 +172,18 @@ export const EtsyShopPage = () => {
                 style={{ transitionDelay: `${(index + 4) * 100}ms` }}
               >
                 <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-orange-500/20 h-full">
-                  <div className="aspect-square overflow-hidden">
+                  <div className="aspect-square overflow-hidden relative">
                     <img
                       src={product.image}
                       alt={product.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                      <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
+                        View on Etsy <ExternalLink className="w-3 h-3" />
+                      </span>
+                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
@@ -170,12 +192,10 @@ export const EtsyShopPage = () => {
                     <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                       {product.description}
                     </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-orange-400 font-semibold flex items-center gap-1">
-                        View on Etsy
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
-                    </div>
+                    <span className="text-orange-400 font-semibold flex items-center gap-1">
+                      Shop Now
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
                   </div>
                 </Card>
               </a>
@@ -189,13 +209,13 @@ export const EtsyShopPage = () => {
         <div className="container mx-auto">
           <Card className="bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 rounded-3xl p-12 text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Visit the Full Shop
+              Ready to Shop?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Browse all products, read reviews, and shop securely on Etsy. New items added regularly!
+              Visit the full Etsy store to browse all products, read customer reviews, and shop securely. New items added regularly!
             </p>
             <a
-              href="https://www.etsy.com/shop/MariasMediaShop"
+              href={socialLinks.etsy}
               target="_blank"
               rel="noopener noreferrer"
             >
