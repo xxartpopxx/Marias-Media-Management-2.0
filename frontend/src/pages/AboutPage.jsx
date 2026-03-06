@@ -18,7 +18,7 @@ const SectionLoader = memo(() => (
 
 export const AboutPage = () => {
   const highlights = [
-    { icon: Award, title: "MPH Graduate", description: "Boston University School of Medicine" },
+    { icon: Award, title: "MPH Graduate", description: "Boston University School of Public Health" },
     { icon: Users, title: "Global Clients", description: "Supporting brands worldwide" },
     { icon: Heart, title: "Nonprofit Focus", description: "Dedicated to meaningful causes" },
     { icon: BookOpen, title: "Research Background", description: "Data-driven strategies" }
@@ -28,8 +28,8 @@ export const AboutPage = () => {
     <>
       <SEOHead
         title="About Maria | Maria's Media Management"
-        description="Meet Maria Mongiardo - a storyteller blending science, public health, research, and digital strategy to help brands connect with real people in meaningful ways."
-        keywords="Maria Mongiardo, social media expert, digital strategist, Boston, public health, brand storytelling"
+        description="Meet Maria Mongiardo - MPH graduate from Boston University School of Public Health. Passionate about making public health research accessible through social media and digital storytelling."
+        keywords="Maria Mongiardo, public health, MPH, Boston University, social media, health communication, digital storytelling"
         canonical="https://mariasmediamanagement.com/about"
       />
 
@@ -60,10 +60,10 @@ export const AboutPage = () => {
                     Meet <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Maria</span>
                   </h1>
                   <p className="text-xl font-semibold text-purple-900 mb-6 leading-relaxed">
-                    Maria Mongiardo is a storyteller at heart — blending backgrounds in science, public health, research, and digital strategy to help brands and nonprofits connect with real people in meaningful ways.
+                    Maria Mongiardo is passionate about making public health research accessible and understandable to everyone. She believes social media is a powerful tool to bridge the gap between complex research and real people.
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    Born and raised on the North Shore of Massachusetts, Maria earned her Bachelor's degree from Clark University and her Master of Public Health from Boston University School of Medicine.
+                    Born and raised on the North Shore of Massachusetts, Maria earned her Bachelor's degree from Clark University and her Master of Public Health from Boston University School of Public Health.
                   </p>
                   <Link to="/contact">
                     <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
@@ -111,7 +111,11 @@ export const AboutPage = () => {
                   
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p>
-                      While deeply passionate about health and research, I have also been immersed in online communities since my early Tumblr days — building connections, creating content, and helping others tell their stories.
+                      My goal has always been to make public health research easily understandable and accessible to everyone. I believe that valuable health information shouldn't be locked away in academic journals — it should reach the people who need it most.
+                    </p>
+                    
+                    <p>
+                      Social media is my tool to bridge this gap. By combining my background in research with digital storytelling, I help translate complex information into engaging content that resonates with real people.
                     </p>
                     
                     <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 my-8">
@@ -127,11 +131,11 @@ export const AboutPage = () => {
                     </div>
                     
                     <p>
-                      Today, I partner with entrepreneurs, clinics, chefs, coaches, salons, trainers, and creative business owners — providing strategy, content support, and digital growth guidance.
+                      Today, I partner with entrepreneurs, clinics, health organizations, and purpose-driven brands — using social media strategy and content to help them connect with their audiences authentically.
                     </p>
                     
                     <p className="text-xl font-semibold text-purple-900 pt-4 text-center">
-                      My goal is simple: help good people and meaningful brands shine online.
+                      My mission: Make meaningful information accessible and help good people shine online.
                     </p>
                   </div>
                 </Card>

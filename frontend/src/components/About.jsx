@@ -75,12 +75,12 @@ export const About = () => {
               }}
             >
               <p className="text-xl font-semibold text-purple-900 mb-6 leading-relaxed">
-                Maria Mongiardo is a storyteller at heart — blending backgrounds in science, public health, research, and digital strategy to help brands and nonprofits connect with real people in meaningful ways.
+                Maria Mongiardo is passionate about making public health research accessible and understandable to everyone. She believes social media is a powerful tool to bridge the gap between complex research and real people.
               </p>
               
               <div className="space-y-5 text-gray-700 leading-relaxed">
                 <p>
-                  Born and raised on the North Shore of Massachusetts, Maria earned her Bachelor's degree from Clark University and her Master of Public Health from Boston University School of Medicine. While deeply passionate about health and research, she has also been immersed in online communities since her early Tumblr days — building connections, creating content, and helping others tell their stories.
+                  Born and raised on the North Shore of Massachusetts, Maria earned her Bachelor's degree from Clark University and her Master of Public Health from Boston University School of Public Health. Her goal has always been to translate valuable health information into content that resonates with everyday people.
                 </p>
                 
                 <div className="my-6">
@@ -96,11 +96,11 @@ export const About = () => {
                 </div>
                 
                 <p>
-                  Today, she partners with entrepreneurs, clinics, chefs, coaches, salons, trainers, and creative business owners — providing strategy, content support, and digital growth guidance.
+                  Today, she partners with entrepreneurs, clinics, health organizations, and purpose-driven brands — using social media strategy and content to make meaningful information accessible and help them connect with their audiences.
                 </p>
                 
                 <p className="text-xl font-semibold text-purple-900 pt-4">
-                  Maria's goal is simple: help good people and meaningful brands shine online.
+                  Maria's mission: Make public health research understandable and help good people shine online.
                 </p>
               </div>
             </div>
