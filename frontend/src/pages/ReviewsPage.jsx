@@ -68,76 +68,90 @@ export const ReviewsPage = () => {
           </div>
         </section>
 
-        {/* All Reviews Gallery */}
+        {/* All Reviews Horizontal Gallery */}
         <section className="py-20 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
-            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" staggerDelay={80}>
-              {testimonials.map((review) => (
-                <Card
-                  key={review.id}
-                  className="bg-white rounded-3xl p-8 border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 flex flex-col"
-                >
-                  {/* Source Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    {review.source === 'facebook' ? (
-                      <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                        <Facebook className="w-3 h-3" /> Facebook
-                      </span>
-                    ) : review.instagram ? (
-                      <span className="flex items-center gap-1 text-xs text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
-                        <Instagram className="w-3 h-3" /> Client
-                      </span>
-                    ) : null}
-                  </div>
+            <FadeIn>
+              <h2 className="text-3xl font-bold text-center mb-8">
+                All <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Reviews</span>
+              </h2>
+            </FadeIn>
 
-                  {review.recommends && (
-                    <div className="flex items-center gap-2 mb-3 text-green-600 text-sm">
-                      <ThumbsUp className="w-4 h-4" />
-                      <span className="font-medium">Recommends</span>
+            {/* Horizontal Scrollable Gallery */}
+            <div className="relative">
+              <div 
+                className="flex gap-6 overflow-x-auto pb-6 px-4 snap-x snap-mandatory scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {testimonials.map((review) => (
+                  <Card
+                    key={review.id}
+                    className="flex-shrink-0 w-[350px] md:w-[420px] snap-start bg-white rounded-3xl p-8 border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 flex flex-col"
+                  >
+                    {/* Source Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      {review.source === 'facebook' ? (
+                        <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                          <Facebook className="w-3 h-3" /> Facebook
+                        </span>
+                      ) : review.instagram ? (
+                        <span className="flex items-center gap-1 text-xs text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
+                          <Instagram className="w-3 h-3" /> Client
+                        </span>
+                      ) : null}
                     </div>
-                  )}
-                  
-                  <Quote className="w-8 h-8 text-purple-200 mb-3" />
-                  
-                  <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
-                    "{review.text}"
-                  </p>
-                  
-                  <div className="flex items-center gap-4 pt-4 border-t border-purple-100">
-                    {review.image && (
-                      <img
-                        src={review.image}
-                        alt={review.name}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
-                        loading="lazy"
-                      />
+
+                    {review.recommends && (
+                      <div className="flex items-center gap-2 mb-3 text-green-600 text-sm">
+                        <ThumbsUp className="w-4 h-4" />
+                        <span className="font-medium">Recommends</span>
+                      </div>
                     )}
-                    <div className="flex-grow">
-                      <p className="font-bold text-gray-800">{review.name}</p>
-                      {review.company && (
-                        <p className="text-purple-600 text-sm">{review.company}</p>
+                    
+                    <Quote className="w-8 h-8 text-purple-200 mb-3" />
+                    
+                    <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
+                      "{review.text}"
+                    </p>
+                    
+                    <div className="flex items-center gap-4 pt-4 border-t border-purple-100">
+                      {review.image && (
+                        <img
+                          src={review.image}
+                          alt={review.name}
+                          className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
+                          loading="lazy"
+                        />
+                      )}
+                      <div className="flex-grow">
+                        <p className="font-bold text-gray-800">{review.name}</p>
+                        {review.company && (
+                          <p className="text-purple-600 text-sm">{review.company}</p>
+                        )}
+                      </div>
+                      {review.instagram && (
+                        <a
+                          href={review.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-pink-500 hover:text-pink-600 transition-colors"
+                          aria-label={`Visit ${review.name}'s Instagram`}
+                        >
+                          <Instagram className="w-5 h-5" />
+                        </a>
                       )}
                     </div>
-                    {review.instagram && (
-                      <a
-                        href={review.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-pink-500 hover:text-pink-600 transition-colors"
-                        aria-label={`Visit ${review.name}'s Instagram`}
-                      >
-                        <Instagram className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-                </Card>
-              ))}
-            </StaggerChildren>
+                  </Card>
+                ))}
+              </div>
+              
+              <p className="text-center text-gray-400 mt-4">← Swipe to see more reviews →</p>
+            </div>
 
             <FadeIn delay={500}>
               <div className="text-center mt-12 flex flex-wrap justify-center gap-4">
