@@ -16,18 +16,6 @@ const SectionLoader = memo(() => (
 ));
 
 export const ReviewsPage = () => {
-  // Separate reviews by source
-  const socialMediaReviews = testimonials.filter(t => !t.source || t.source === 'instagram');
-  const facebookReviews = testimonials.filter(t => t.source === 'facebook');
-
-  const StarRating = () => (
-    <div className="flex gap-1">
-      {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-      ))}
-    </div>
-  );
-
   return (
     <>
       <SEOHead
@@ -80,28 +68,41 @@ export const ReviewsPage = () => {
           </div>
         </section>
 
-        {/* Social Media Management Reviews */}
-        <section className="py-20 bg-white">
+        {/* All Reviews Gallery */}
+        <section className="py-20 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
-            <FadeIn>
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 bg-purple-100 rounded-full px-5 py-2 mb-6">
-                  <Instagram className="w-5 h-5 text-purple-600" />
-                  <span className="text-purple-700 font-medium">Social Media Management</span>
-                </div>
-                <h2 className="text-4xl font-bold">
-                  What Clients Say About Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Social Media Services</span>
-                </h2>
-              </div>
-            </FadeIn>
-
-            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" staggerDelay={100}>
-              {socialMediaReviews.map((review) => (
+            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" staggerDelay={80}>
+              {testimonials.map((review) => (
                 <Card
                   key={review.id}
-                  className="bg-gradient-to-br from-white to-purple-50 rounded-3xl p-8 border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 flex flex-col"
+                  className="bg-white rounded-3xl p-8 border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  <Quote className="w-10 h-10 text-purple-300 mb-4" />
+                  {/* Source Badge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    {review.source === 'facebook' ? (
+                      <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                        <Facebook className="w-3 h-3" /> Facebook
+                      </span>
+                    ) : review.instagram ? (
+                      <span className="flex items-center gap-1 text-xs text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
+                        <Instagram className="w-3 h-3" /> Client
+                      </span>
+                    ) : null}
+                  </div>
+
+                  {review.recommends && (
+                    <div className="flex items-center gap-2 mb-3 text-green-600 text-sm">
+                      <ThumbsUp className="w-4 h-4" />
+                      <span className="font-medium">Recommends</span>
+                    </div>
+                  )}
+                  
+                  <Quote className="w-8 h-8 text-purple-200 mb-3" />
                   
                   <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
                     "{review.text}"
@@ -112,7 +113,7 @@ export const ReviewsPage = () => {
                       <img
                         src={review.image}
                         alt={review.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-purple-200"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
                         loading="lazy"
                       />
                     )}
@@ -134,83 +135,20 @@ export const ReviewsPage = () => {
                       </a>
                     )}
                   </div>
-                  
-                  <div className="mt-4">
-                    <StarRating />
-                  </div>
-                </Card>
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
-
-        {/* Website Design Reviews */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-          <div className="container mx-auto px-6">
-            <FadeIn>
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm rounded-full px-5 py-2 mb-6">
-                  <Facebook className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-300 font-medium">Website Design Services</span>
-                </div>
-                <h2 className="text-4xl font-bold text-white">
-                  What Clients Say About Our <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Web Design</span>
-                </h2>
-              </div>
-            </FadeIn>
-
-            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" staggerDelay={100}>
-              {facebookReviews.map((review) => (
-                <Card
-                  key={review.id}
-                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 flex flex-col"
-                >
-                  {review.recommends && (
-                    <div className="flex items-center gap-2 mb-4 text-green-400">
-                      <ThumbsUp className="w-5 h-5" />
-                      <span className="text-sm font-medium">Recommends</span>
-                    </div>
-                  )}
-                  
-                  <Quote className="w-10 h-10 text-purple-400/50 mb-4" />
-                  
-                  <p className="text-white/90 leading-relaxed mb-6 flex-grow">
-                    "{review.text}"
-                  </p>
-                  
-                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                    {review.image && (
-                      <img
-                        src={review.image}
-                        alt={review.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-purple-400/50"
-                        loading="lazy"
-                      />
-                    )}
-                    <div className="flex-grow">
-                      <p className="font-bold text-white">{review.name}</p>
-                      <p className="text-blue-400 text-sm flex items-center gap-1">
-                        <Facebook className="w-4 h-4" /> Facebook Review
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                  </div>
                 </Card>
               ))}
             </StaggerChildren>
 
             <FadeIn delay={500}>
-              <div className="text-center mt-12">
+              <div className="text-center mt-12 flex flex-wrap justify-center gap-4">
                 <a href={facebookReviewsLink} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold">
-                    View All Facebook Reviews <ExternalLink className="w-5 h-5 ml-2" />
+                  <Button variant="outline" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 px-6 py-5">
+                    More on Facebook <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
+                <a href={googleReviewsLink} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-2 border-green-500 text-green-600 hover:bg-green-50 px-6 py-5">
+                    More on Google <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
               </div>

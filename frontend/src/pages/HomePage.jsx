@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star } from 'lucide-react';
+import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
@@ -130,42 +130,88 @@ export const HomePage = () => {
           </div>
         </section>
 
-        {/* Testimonials Preview */}
-        <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+        {/* Reviews Gallery */}
+        <section className="py-24 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <FadeIn>
               <div className="text-center mb-16">
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                  Client <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Love</span>
+                <div className="flex justify-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                  Client <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Reviews</span>
                 </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  See what our clients have to say about working with us
+                </p>
               </div>
             </FadeIn>
 
-            <StaggerChildren className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" staggerDelay={150}>
-              {testimonials.slice(0, 3).map((testimonial, index) => (
+            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto" staggerDelay={80}>
+              {testimonials.map((review) => (
                 <Card
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-300"
+                  key={review.id}
+                  className="bg-white rounded-2xl p-6 border border-purple-100 hover:border-purple-300 hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+                  {/* Header with stars and source */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    {review.source === 'facebook' ? (
+                      <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                        <Facebook className="w-3 h-3" /> Facebook
+                      </span>
+                    ) : review.instagram ? (
+                      <span className="flex items-center gap-1 text-xs text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
+                        <Instagram className="w-3 h-3" /> Client
+                      </span>
+                    ) : null}
                   </div>
-                  <p className="text-white/90 mb-6 leading-relaxed line-clamp-4">"{testimonial.text}"</p>
-                  <div className="flex items-center gap-4">
-                    {testimonial.image && (
+
+                  {review.recommends && (
+                    <div className="flex items-center gap-1.5 mb-2 text-green-600 text-sm">
+                      <ThumbsUp className="w-3.5 h-3.5" />
+                      <span className="font-medium">Recommends</span>
+                    </div>
+                  )}
+                  
+                  <Quote className="w-6 h-6 text-purple-200 mb-2" />
+                  
+                  <p className="text-gray-700 leading-relaxed mb-4 flex-grow text-sm">
+                    "{review.text}"
+                  </p>
+                  
+                  <div className="flex items-center gap-3 pt-3 border-t border-purple-50">
+                    {review.image && (
                       <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover"
+                        src={review.image}
+                        alt={review.name}
+                        className="w-10 h-10 rounded-full object-cover border-2 border-purple-100"
                         loading="lazy"
                       />
                     )}
-                    <div>
-                      <p className="font-semibold text-white">{testimonial.name}</p>
-                      {testimonial.company && <p className="text-white/60 text-sm">{testimonial.company}</p>}
+                    <div className="flex-grow min-w-0">
+                      <p className="font-semibold text-gray-800 text-sm truncate">{review.name}</p>
+                      {review.company && (
+                        <p className="text-purple-600 text-xs truncate">{review.company}</p>
+                      )}
                     </div>
+                    {review.instagram && (
+                      <a
+                        href={review.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-pink-500 hover:text-pink-600 transition-colors flex-shrink-0"
+                        aria-label={`Visit ${review.name}'s Instagram`}
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </Card>
               ))}
@@ -174,7 +220,7 @@ export const HomePage = () => {
             <FadeIn delay={400}>
               <div className="text-center mt-12">
                 <Link to="/reviews">
-                  <Button className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all duration-300">
+                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     View All Reviews <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
