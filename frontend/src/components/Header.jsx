@@ -32,6 +32,7 @@ export const Header = () => {
     { to: '/services', label: 'Services' },
     { to: '/portfolio', label: 'Portfolio' },
     { to: '/shop', label: 'Shop' },
+    { to: '/reviews', label: 'Reviews' },
     { to: '/contact', label: 'Contact' },
   ];
 

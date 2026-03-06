@@ -4,3 +4,4 @@ export { ServicesPage } from './ServicesPage';
 export { PortfolioPage } from './PortfolioPage';
 export { ShopPage } from './ShopPage';
 export { ContactPage } from './ContactPage';
+export { ReviewsPage } from './ReviewsPage';

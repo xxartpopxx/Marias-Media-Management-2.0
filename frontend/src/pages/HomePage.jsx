@@ -152,7 +152,7 @@ export const HomePage = () => {
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-white/90 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                  <p className="text-white/90 mb-6 leading-relaxed line-clamp-4">"{testimonial.text}"</p>
                   <div className="flex items-center gap-4">
                     {testimonial.image && (
                       <img
@@ -164,12 +164,22 @@ export const HomePage = () => {
                     )}
                     <div>
                       <p className="font-semibold text-white">{testimonial.name}</p>
-                      {testimonial.role && <p className="text-white/60 text-sm">{testimonial.role}</p>}
+                      {testimonial.company && <p className="text-white/60 text-sm">{testimonial.company}</p>}
                     </div>
                   </div>
                 </Card>
               ))}
             </StaggerChildren>
+
+            <FadeIn delay={400}>
+              <div className="text-center mt-12">
+                <Link to="/reviews">
+                  <Button className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all duration-300">
+                    View All Reviews <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
