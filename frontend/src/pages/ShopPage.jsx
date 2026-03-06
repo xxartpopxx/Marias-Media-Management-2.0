@@ -53,7 +53,7 @@ export const ShopPage = () => {
                   Explore our collection of unique digital products, from custom photo editing to personalized coloring books and party games.
                 </p>
                 <a
-                  href="https://www.etsy.com/shop/MariaMongiardo"
+                  href="https://www.etsy.com/shop/MariasMediaShop"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -152,7 +152,7 @@ export const ShopPage = () => {
                   Check out our 5-star reviews on Etsy from happy customers around the world.
                 </p>
                 <a
-                  href="https://www.etsy.com/shop/MariaMongiardo"
+                  href="https://www.etsy.com/shop/MariasMediaShop"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

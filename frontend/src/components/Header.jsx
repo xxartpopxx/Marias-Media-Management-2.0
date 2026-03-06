@@ -31,7 +31,6 @@ export const Header = () => {
     { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
     { to: '/portfolio', label: 'Portfolio' },
-    { to: '/shop', label: 'Shop' },
     { to: '/reviews', label: 'Reviews' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -168,14 +167,18 @@ export const Header = () => {
               </a>
             </div>
 
-            <Link to="/shop">
+            <a 
+              href="https://www.etsy.com/shop/MariasMediaShop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button 
                 className="ml-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold transform hover:scale-105 transition-all duration-300"
                 style={{ boxShadow: '0 4px 15px rgba(249, 115, 22, 0.3)' }}
               >
                 Shop Etsy
               </Button>
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -277,11 +280,16 @@ export const Header = () => {
             </div>
 
             <div className="mt-6">
-              <Link to="/shop" className="block">
+              <a 
+                href="https://www.etsy.com/shop/MariasMediaShop" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
                 <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-lg py-4">
                   Shop Etsy
                 </Button>
-              </Link>
+              </a>
             </div>
           </nav>
         </div>
