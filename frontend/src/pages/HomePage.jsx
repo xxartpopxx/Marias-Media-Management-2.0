@@ -86,6 +86,45 @@ export const HomePage = () => {
           </div>
         </section>
 
+        {/* Meet Maria Section */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+              <FadeIn direction="right">
+                <div className="relative">
+                  <div className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-purple-200 to-pink-200 rounded-3xl"></div>
+                  <FloatingImage
+                    src="https://images.ctfassets.net/ef34o61n7ee2/315eYhq4Pd2VAFokRA2dlg/07587558fcb0cabec06c599e72015a65/maria.mongiardo_67077307_195168964832873_4373870044423530444_n.jpg"
+                    alt="Maria Mongiardo - Founder of Maria's Media Management"
+                    className="relative rounded-3xl shadow-2xl w-full object-cover"
+                    floatRange={10}
+                    duration={5000}
+                  />
+                </div>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={200}>
+                <div>
+                  <h2 className="text-5xl md:text-6xl font-bold mb-8">
+                    Meet <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Maria</span>
+                  </h2>
+                  <p className="text-xl font-semibold text-purple-900 mb-6 leading-relaxed">
+                    Maria Mongiardo is passionate about making public health research accessible and understandable to everyone.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    She believes social media is a powerful tool to bridge the gap between complex research and real people. With a Master of Public Health from Boston University School of Public Health, Maria combines data-driven insights with creative storytelling.
+                  </p>
+                  <Link to="/about">
+                    <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                      Learn More About Maria <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
         {/* Services Preview */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
