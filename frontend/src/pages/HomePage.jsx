@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp } from 'lucide-react';
+import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp, CheckCircle } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
@@ -11,6 +11,9 @@ import { testimonials } from '../mock';
 // Lazy load heavier components
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
 const FloatingContact = lazy(() => import('../components/FloatingContact').then(m => ({ default: m.FloatingContact })));
+const InstagramFeeds = lazy(() => import('../components/InstagramFeeds').then(m => ({ default: m.InstagramFeeds })));
+const FoodReviews = lazy(() => import('../components/FoodReviews').then(m => ({ default: m.FoodReviews })));
+const FindMaria = lazy(() => import('../components/FindMaria').then(m => ({ default: m.FindMaria })));
 
 const SectionLoader = memo(() => (
   <div className="min-h-[100px] flex items-center justify-center bg-transparent">
@@ -133,9 +136,14 @@ export const HomePage = () => {
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
                   Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Services</span>
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                   Comprehensive digital solutions to elevate your brand
                 </p>
+                {/* 100% SEO Badge */}
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                  <CheckCircle className="w-5 h-5" />
+                  <span>100% SEO Optimized</span>
+                </div>
               </div>
             </FadeIn>
 
@@ -275,6 +283,21 @@ export const HomePage = () => {
             </FadeIn>
           </div>
         </section>
+
+        {/* Instagram Feeds Section */}
+        <Suspense fallback={<SectionLoader />}>
+          <InstagramFeeds />
+        </Suspense>
+
+        {/* Food Reviews Section */}
+        <Suspense fallback={<SectionLoader />}>
+          <FoodReviews />
+        </Suspense>
+
+        {/* Find Maria Section */}
+        <Suspense fallback={<SectionLoader />}>
+          <FindMaria />
+        </Suspense>
 
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-purple-600 to-pink-600">
