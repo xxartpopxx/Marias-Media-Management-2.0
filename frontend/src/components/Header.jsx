@@ -29,8 +29,8 @@ export const Header = () => {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
-    { to: '/services', label: 'Social Media' },
-    { to: '/portfolio', label: 'Websites' },
+    { to: '/services', label: 'Social Media Services' },
+    { to: '/portfolio', label: 'Website Services' },
     { to: '/reviews', label: 'Reviews' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -87,12 +87,12 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center space-x-0" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                className={`px-3 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
                   isActive(link.to)
                     ? 'text-white bg-purple-600/30'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
