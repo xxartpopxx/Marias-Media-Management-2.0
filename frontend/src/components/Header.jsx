@@ -29,8 +29,8 @@ export const Header = () => {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
-    { to: '/services', label: 'Social Media Services' },
-    { to: '/portfolio', label: 'Website Services' },
+    { to: '/services', label: 'Social Media' },
+    { to: '/portfolio', label: 'Websites' },
     { to: '/reviews', label: 'Reviews' },
     { to: '/contact', label: 'Contact' },
   ];

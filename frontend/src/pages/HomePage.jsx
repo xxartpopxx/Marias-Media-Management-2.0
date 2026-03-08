@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp, CheckCircle } from 'lucide-react';
+import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
@@ -136,14 +136,9 @@ export const HomePage = () => {
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
                   Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Services</span>
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Comprehensive digital solutions to elevate your brand
                 </p>
-                {/* 100% SEO Badge */}
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
-                  <CheckCircle className="w-5 h-5" />
-                  <span>100% SEO Optimized</span>
-                </div>
               </div>
             </FadeIn>
 
