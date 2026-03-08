@@ -128,6 +128,110 @@ export const PortfolioPage = () => {
           </div>
         </section>
 
+        {/* Portfolio Gallery - MOVED ABOVE PRICING */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+          <div className="container mx-auto px-6">
+            <FadeIn>
+              <h2 className="text-4xl font-bold text-center mb-16 text-white">
+                Recent <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Work</span>
+              </h2>
+            </FadeIn>
+
+            {/* Scrollable Portfolio */}
+            <div className="relative">
+              {/* Scroll Buttons */}
+              <button
+                onClick={() => scroll('left')}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/90 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={!canScrollLeft}
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/90 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={!canScrollRight}
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Scrollable Container - BIGGER CARDS */}
+              <div
+                ref={scrollContainerRef}
+                className="flex gap-8 overflow-x-auto pb-6 px-12 scrollbar-hide snap-x snap-mandatory"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {websitePortfolio.map((site) => (
+                  <div
+                    key={site.id}
+                    className="flex-shrink-0 w-[420px] snap-start"
+                  >
+                    <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 group">
+                      {/* Browser Chrome */}
+                      <div className="bg-gray-900 px-4 py-3 flex items-center gap-3 border-b border-gray-700">
+                        <div className="flex gap-2">
+                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div className="flex-1 flex items-center gap-2 bg-gray-800 rounded-md px-3 py-1">
+                          <Globe className="w-3 h-3 text-gray-500" />
+                          <span className="text-xs text-gray-400 truncate">{site.url.replace('https://', '').replace('http://', '')}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Website Preview - TALLER */}
+                      <div className="relative h-64 bg-gray-900 overflow-hidden">
+                        {site.thumbnail ? (
+                          <img
+                            src={site.thumbnail}
+                            alt={`${site.name} website preview`}
+                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <>
+                            {!loadedIframes[site.id] && (
+                              <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                                <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                              </div>
+                            )}
+                            <iframe
+                              src={site.url}
+                              title={`${site.name} preview`}
+                              className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
+                              loading="lazy"
+                              onLoad={() => handleIframeLoad(site.id)}
+                            />
+                          </>
+                        )}
+                      </div>
+                      
+                      {/* Info */}
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-white mb-2">{site.name}</h3>
+                        <p className="text-gray-400 text-sm mb-4 line-clamp-2">{site.description}</p>
+                        <a
+                          href={site.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors"
+                        >
+                          Visit Site <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+              
+              <p className="text-center text-gray-500 mt-4">← Use arrows or scroll to browse →</p>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing Section */}
         <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
           <div className="container mx-auto px-6">
@@ -193,110 +297,6 @@ export const PortfolioPage = () => {
                 );
               })}
             </StaggerChildren>
-          </div>
-        </section>
-
-        {/* Portfolio Gallery */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-          <div className="container mx-auto px-6">
-            <FadeIn>
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">
-                Recent <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Work</span>
-              </h2>
-            </FadeIn>
-
-            {/* Scrollable Portfolio */}
-            <div className="relative">
-              {/* Scroll Buttons */}
-              <button
-                onClick={() => scroll('left')}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/90 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : ''}`}
-                disabled={!canScrollLeft}
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => scroll('right')}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/90 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : ''}`}
-                disabled={!canScrollRight}
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
-              {/* Scrollable Container */}
-              <div
-                ref={scrollContainerRef}
-                className="flex gap-6 overflow-x-auto pb-6 px-12 scrollbar-hide snap-x snap-mandatory"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {websitePortfolio.map((site) => (
-                  <div
-                    key={site.id}
-                    className="flex-shrink-0 w-[350px] snap-start"
-                  >
-                    <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 group">
-                      {/* Browser Chrome */}
-                      <div className="bg-gray-900 px-4 py-3 flex items-center gap-3 border-b border-gray-700">
-                        <div className="flex gap-2">
-                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <div className="flex-1 flex items-center gap-2 bg-gray-800 rounded-md px-3 py-1">
-                          <Globe className="w-3 h-3 text-gray-500" />
-                          <span className="text-xs text-gray-400 truncate">{site.url.replace('https://', '').replace('http://', '')}</span>
-                        </div>
-                      </div>
-                      
-                      {/* Website Preview */}
-                      <div className="relative h-48 bg-gray-900 overflow-hidden">
-                        {site.thumbnail ? (
-                          <img
-                            src={site.thumbnail}
-                            alt={`${site.name} website preview`}
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <>
-                            {!loadedIframes[site.id] && (
-                              <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
-                                <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
-                              </div>
-                            )}
-                            <iframe
-                              src={site.url}
-                              title={`${site.name} preview`}
-                              className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
-                              loading="lazy"
-                              onLoad={() => handleIframeLoad(site.id)}
-                            />
-                          </>
-                        )}
-                      </div>
-                      
-                      {/* Info */}
-                      <div className="p-5">
-                        <h3 className="text-lg font-bold text-white mb-2">{site.name}</h3>
-                        <p className="text-gray-400 text-sm mb-4 line-clamp-2">{site.description}</p>
-                        <a
-                          href={site.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors"
-                        >
-                          Visit Site <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-              
-              <p className="text-center text-gray-500 mt-4">← Use arrows or scroll to browse →</p>
-            </div>
           </div>
         </section>
 
