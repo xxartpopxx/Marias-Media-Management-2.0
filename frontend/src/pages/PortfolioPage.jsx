@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, memo, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Globe, Monitor, Check, Sparkles, Rocket, Leaf, ChevronLeft, ChevronRight, DollarSign, Link2, Eye, Server, RefreshCw, Wrench, Grid3X3, Briefcase, Heart } from 'lucide-react';
+import { ArrowRight, ExternalLink, Globe, Monitor, Check, Sparkles, Rocket, Leaf, ChevronLeft, ChevronRight, DollarSign, Link2, Eye, Server, RefreshCw, Wrench, Grid3X3, Briefcase, Heart, Store } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
@@ -65,7 +65,8 @@ export const PortfolioPage = () => {
     grid: Grid3X3,
     briefcase: Briefcase,
     heart: Heart,
-    rocket: Rocket
+    rocket: Rocket,
+    store: Store
   };
 
   // Get filtered portfolio based on active filter

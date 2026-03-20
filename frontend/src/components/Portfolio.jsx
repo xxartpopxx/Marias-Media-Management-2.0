@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight, Grid3X3, Briefcase, Heart } from 'lucide-react';
+import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight, Grid3X3, Briefcase, Heart, Store } from 'lucide-react';
 import { websitePortfolio, portfolioCategories } from '../mock';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
@@ -89,7 +89,8 @@ export const Portfolio = () => {
     grid: Grid3X3,
     briefcase: Briefcase,
     heart: Heart,
-    rocket: Rocket
+    rocket: Rocket,
+    store: Store
   };
 
   useEffect(() => {

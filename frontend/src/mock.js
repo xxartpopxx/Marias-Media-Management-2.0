@@ -182,7 +182,8 @@ export const portfolioCategories = [
   { id: 'all', name: 'All Projects', icon: 'grid' },
   { id: 'business', name: 'Business', icon: 'briefcase' },
   { id: 'nonprofit', name: 'Non-Profit', icon: 'heart' },
-  { id: 'entrepreneur', name: 'Entrepreneur', icon: 'rocket' }
+  { id: 'entrepreneur', name: 'Entrepreneur', icon: 'rocket' },
+  { id: 'shopify', name: 'Shopify Storefront', icon: 'store' }
 ];
 
 export const websitePortfolio = [
@@ -212,7 +213,7 @@ export const websitePortfolio = [
     name: "The Pink Edit",
     url: "https://thepinkedit.net/",
     description: "Stylish lifestyle and fashion blog with a vibrant pink aesthetic, featuring curated content and modern design.",
-    category: "entrepreneur"
+    category: "shopify"
   },
   {
     id: 5,
@@ -256,7 +257,7 @@ export const websitePortfolio = [
     name: "Luxury Style Studio",
     url: "https://luxurystylestudio.com/",
     description: "High-end fashion and styling services with an elegant, luxurious design aesthetic.",
-    category: "entrepreneur"
+    category: "shopify"
   },
   {
     id: 11,
@@ -270,7 +271,7 @@ export const websitePortfolio = [
     name: "Wild Ones LLC",
     url: "https://wildonesllc.org/",
     description: "Professional organization website with modern design and seamless user experience.",
-    category: "nonprofit"
+    category: "shopify"
   },
   {
     id: 13,
@@ -358,6 +359,7 @@ export const websitePortfolio = [
     name: "HR Nest LLC",
     url: "https://www.hrnest.net/",
     description: "Career development and life transitions support helping individuals reset, rebuild, and rise through personalized mentorship, resources, and community guidance.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_multi-site-preview/artifacts/w7sla4gb_Screenshot%202026-03-20%20at%207.45.04%E2%80%AFPM.png",
     category: "entrepreneur"
   }
 ];
