@@ -242,6 +242,18 @@ frontend:
         agent: "main"
         comment: "Added 3 new websites to portfolio: (1) The NEST Project - 501(c)(3) nonprofit serving PA & OH families, (2) Line of Luxury Credit - credit repair and financial consulting services, (3) Worthy Vets Service Group - veteran-owned service organization. Total portfolio now has 23 websites."
 
+  - task: "Portfolio: Add HR Nest LLC and Category Filters"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/PortfolioPage.jsx, /app/frontend/src/mock.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added HR Nest LLC (career development services) to portfolio. Implemented category filters: All Projects (24), Business (12), Non-Profit (4), Entrepreneur (8). Each portfolio item now has a category field. Filter buttons with icons and counts allow easy browsing by project type."
+
   - task: "Remove Emergent badge"
     implemented: true
     working: "NA"

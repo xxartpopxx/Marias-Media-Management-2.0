@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
-import { websitePortfolio } from '../mock';
+import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight, Grid3X3, Briefcase, Heart } from 'lucide-react';
+import { websitePortfolio, portfolioCategories } from '../mock';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { scrollToContact } from '../lib/scrollUtils';
@@ -77,6 +77,20 @@ export const Portfolio = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  // Get filtered portfolio based on active filter
+  const filteredPortfolio = activeFilter === 'all' 
+    ? websitePortfolio 
+    : websitePortfolio.filter(site => site.category === activeFilter);
+
+  // Icon mapping for categories
+  const categoryIcons = {
+    grid: Grid3X3,
+    briefcase: Briefcase,
+    heart: Heart,
+    rocket: Rocket
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -102,13 +116,21 @@ export const Portfolio = () => {
   // Load iframes progressively when section becomes visible
   useEffect(() => {
     if (isVisible) {
-      websitePortfolio.forEach((site, index) => {
+      filteredPortfolio.forEach((site, index) => {
         setTimeout(() => {
           setLoadedIframes(prev => ({ ...prev, [site.id]: true }));
         }, index * 200);
       });
     }
-  }, [isVisible]);
+  }, [isVisible, filteredPortfolio]);
+
+  // Reset scroll position when filter changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      setTimeout(updateScrollButtons, 300);
+    }
+  }, [activeFilter]);
 
   // Update scroll button states
   const updateScrollButtons = () => {
@@ -166,6 +188,39 @@ export const Portfolio = () => {
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
             Beautifully crafted websites that bring your vision to life. Check out some of my recent work below.
           </p>
+          
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            {portfolioCategories.map((category) => {
+              const IconComponent = categoryIcons[category.icon];
+              const isActive = activeFilter === category.id;
+              const count = category.id === 'all' 
+                ? websitePortfolio.length 
+                : websitePortfolio.filter(s => s.category === category.id).length;
+              
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveFilter(category.id)}
+                  className={`group flex items-center gap-2 px-4 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg shadow-purple-500/30' 
+                      : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border border-white/10 hover:border-white/30'
+                  }`}
+                  aria-label={`Filter by ${category.name}`}
+                  aria-pressed={isActive}
+                >
+                  <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-pink-400 group-hover:text-pink-300'}`} />
+                  <span>{category.name}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${
+                    isActive ? 'bg-white/20' : 'bg-white/10'
+                  }`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Horizontal Portfolio Gallery */}
@@ -203,7 +258,7 @@ export const Portfolio = () => {
               scrollbarWidth: 'none'
             }}
           >
-            {websitePortfolio.map((site, index) => (
+            {filteredPortfolio.map((site, index) => (
               <a
                 key={site.id}
                 href={site.url}

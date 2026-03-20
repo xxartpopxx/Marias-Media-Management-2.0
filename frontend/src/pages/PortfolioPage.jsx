@@ -1,11 +1,11 @@
 import React, { Suspense, lazy, memo, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Globe, Monitor, Check, Sparkles, Rocket, Leaf, ChevronLeft, ChevronRight, DollarSign, Link2, Eye, Server, RefreshCw, Wrench } from 'lucide-react';
+import { ArrowRight, ExternalLink, Globe, Monitor, Check, Sparkles, Rocket, Leaf, ChevronLeft, ChevronRight, DollarSign, Link2, Eye, Server, RefreshCw, Wrench, Grid3X3, Briefcase, Heart } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
-import { websitePortfolio } from '../mock';
+import { websitePortfolio, portfolioCategories } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
 const FloatingContact = lazy(() => import('../components/FloatingContact').then(m => ({ default: m.FloatingContact })));
@@ -58,6 +58,20 @@ export const PortfolioPage = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  // Category icons mapping
+  const categoryIcons = {
+    grid: Grid3X3,
+    briefcase: Briefcase,
+    heart: Heart,
+    rocket: Rocket
+  };
+
+  // Get filtered portfolio based on active filter
+  const filteredPortfolio = activeFilter === 'all' 
+    ? websitePortfolio 
+    : websitePortfolio.filter(site => site.category === activeFilter);
 
   const checkScrollButtons = () => {
     if (scrollContainerRef.current) {
@@ -79,6 +93,14 @@ export const PortfolioPage = () => {
       }
     };
   }, []);
+
+  // Reset scroll position when filter changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      setTimeout(checkScrollButtons, 300);
+    }
+  }, [activeFilter]);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -132,9 +154,42 @@ export const PortfolioPage = () => {
         <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
           <div className="container mx-auto px-6">
             <FadeIn>
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">
+              <h2 className="text-4xl font-bold text-center mb-8 text-white">
                 Recent <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Work</span>
               </h2>
+              
+              {/* Category Filter Buttons */}
+              <div className="flex flex-wrap justify-center gap-3 mb-12">
+                {portfolioCategories.map((category) => {
+                  const IconComponent = categoryIcons[category.icon];
+                  const isActive = activeFilter === category.id;
+                  const count = category.id === 'all' 
+                    ? websitePortfolio.length 
+                    : websitePortfolio.filter(s => s.category === category.id).length;
+                  
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => setActiveFilter(category.id)}
+                      className={`group flex items-center gap-2 px-4 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                        isActive 
+                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg shadow-purple-500/30' 
+                          : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border border-white/10 hover:border-white/30'
+                      }`}
+                      aria-label={`Filter by ${category.name}`}
+                      aria-pressed={isActive}
+                    >
+                      <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-pink-400 group-hover:text-pink-300'}`} />
+                      <span>{category.name}</span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${
+                        isActive ? 'bg-white/20' : 'bg-white/10'
+                      }`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </FadeIn>
 
             {/* Scrollable Portfolio */}
@@ -163,7 +218,7 @@ export const PortfolioPage = () => {
                 className="flex gap-8 overflow-x-auto pb-6 px-12 scrollbar-hide snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
-                {websitePortfolio.map((site) => (
+                {filteredPortfolio.map((site) => (
                   <div
                     key={site.id}
                     className="flex-shrink-0 w-[420px] snap-start"
