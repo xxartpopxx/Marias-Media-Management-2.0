@@ -303,5 +303,23 @@ export const websitePortfolio = [
     name: "Divine Vitality Research",
     url: "https://divinevitality.co/",
     description: "Premium research peptides and wellness compounds supplier offering third-party tested, pharmaceutical-grade quality products with a philosophy of education first, trends second."
+  },
+  {
+    id: 21,
+    name: "The NEST Project",
+    url: "https://www.nestcares.org/",
+    description: "501(c)(3) nonprofit serving PA & OH families, providing adaptive clothing, sensory tools, holiday food assistance, and crisis relief for children with disabilities."
+  },
+  {
+    id: 22,
+    name: "Line of Luxury Credit",
+    url: "https://lineofluxurycredit.com/",
+    description: "Professional credit repair and financial consulting services offering expert dispute strategies, business funding solutions, and personalized credit improvement plans."
+  },
+  {
+    id: 23,
+    name: "Worthy Vets Service Group",
+    url: "https://worthyvetsservicegroup.com/",
+    description: "Veteran-owned service organization website with professional design and community-focused mission."
   }
 ];
