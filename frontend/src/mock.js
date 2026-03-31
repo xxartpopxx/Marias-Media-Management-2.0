@@ -187,36 +187,58 @@ export const portfolioCategories = [
 ];
 
 export const websitePortfolio = [
+  // Newest websites first
   {
     id: 1,
+    name: "Line of Luxury Credit",
+    url: "https://lineofluxurycredit.com/",
+    description: "Professional credit repair and financial consulting services offering expert dispute strategies, business funding solutions, and personalized credit improvement plans.",
+    category: "business"
+  },
+  {
+    id: 2,
+    name: "Nonu Aesthetics",
+    url: "https://www.nonuaesthetics.com/",
+    description: "Premium medical aesthetics clinic offering advanced skincare treatments, injectables, and personalized beauty solutions with a focus on natural-looking results.",
+    category: "business"
+  },
+  {
+    id: 3,
+    name: "Pure Intentional MT",
+    url: "https://pureintentionalmt.com/",
+    description: "Holistic wellness Shopify storefront featuring intentional living products, natural remedies, and mindful lifestyle essentials for conscious consumers.",
+    category: "shopify"
+  },
+  {
+    id: 4,
     name: "TCT Construction",
     url: "https://tctconstruction.com/",
     description: "Professional construction company specializing in turnkey projects, new construction, interior finish outs, site improvements, remodels, and renovations since 2013.",
     category: "business"
   },
   {
-    id: 2,
+    id: 5,
     name: "J-Artistry",
     url: "https://j-artistry.com/",
     description: "Professional makeup artistry services with elegant dark aesthetic, offering personalized sessions for unforgettable moments.",
     category: "entrepreneur"
   },
   {
-    id: 3,
+    id: 6,
     name: "Trusted Hearts Home Care LLC",
     url: "https://trustedheartshomecare.co/",
     description: "Compassionate non-medical home care services helping individuals remain safe, comfortable, and independent in their own homes with trained caregivers.",
     category: "business"
   },
   {
-    id: 4,
+    id: 7,
     name: "The Pink Edit",
     url: "https://thepinkedit.net/",
     description: "Stylish lifestyle and fashion blog with a vibrant pink aesthetic, featuring curated content and modern design.",
     category: "shopify"
   },
   {
-    id: 5,
+    id: 8,
     name: "Upstate Hot Tubs",
     url: "https://upstatehottubs.com/",
     description: "Premium hot tub sales and services website with a clean, modern design showcasing luxury spa products and expert installation services.",
@@ -224,14 +246,14 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 6,
+    id: 9,
     name: "Pedro DaCosta Group",
     url: "https://pedrodacostagroup.com/",
     description: "Professional real estate and business consulting group website featuring elegant design and comprehensive service offerings.",
     category: "business"
   },
   {
-    id: 7,
+    id: 10,
     name: "Serenity Wellness NE",
     url: "http://serenitywellnessne.com/",
     description: "Holistic wellness center website with a calming, peaceful aesthetic promoting health and wellbeing services.",
@@ -239,42 +261,42 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 8,
+    id: 11,
     name: "Serenity Passage",
     url: "https://serenitypassage.net",
     description: "Professional services website with a calming, serene design aesthetic.",
     category: "business"
   },
   {
-    id: 9,
+    id: 12,
     name: "A2 Hospitality & Consulting Services LLC",
     url: "https://a2hospitality.org/",
     description: "Professional hospitality consulting website featuring SEO-ready build, performance optimization, and responsive design for global consulting services.",
     category: "business"
   },
   {
-    id: 10,
+    id: 13,
     name: "Luxury Style Studio",
     url: "https://luxurystylestudio.com/",
     description: "High-end fashion and styling services with an elegant, luxurious design aesthetic.",
     category: "shopify"
   },
   {
-    id: 11,
+    id: 14,
     name: "Little House on the Table",
     url: "https://littlehouseonthetable.com/",
     description: "Charming artisan crafts and home decor website with a cozy, inviting aesthetic.",
     category: "entrepreneur"
   },
   {
-    id: 12,
+    id: 15,
     name: "Wild Ones LLC",
     url: "https://wildonesllc.org/",
     description: "Professional organization website with modern design and seamless user experience.",
     category: "shopify"
   },
   {
-    id: 13,
+    id: 16,
     name: "Seeds of Change Therapy Center",
     url: "https://seedsofchangetherapycenter.com/",
     description: "Therapeutic services website with a calming, professional design aesthetic.",
@@ -282,7 +304,7 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 14,
+    id: 17,
     name: "Khadijah's Angels",
     url: "https://khadijahsangels.com/",
     description: "Non-profit organization website with a warm, welcoming design.",
@@ -290,7 +312,7 @@ export const websitePortfolio = [
     category: "nonprofit"
   },
   {
-    id: 15,
+    id: 18,
     name: "Lake & Pine Stays",
     url: "https://lakeandpinestays.com/",
     description: "Premium vacation rentals at Cedar Creek Lake & Broken Bow with lakefront properties and luxury mountain cabins.",
@@ -298,7 +320,7 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 16,
+    id: 19,
     name: "CSD 3D Walls",
     url: "https://csd3dwalls.com/",
     description: "Miami's premier 3D wall installation company offering stunning PVC wall cladding, artificial greenery walls, wood slat walls, and custom LED signs that transform spaces into works of art.",
@@ -306,56 +328,49 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 17,
+    id: 20,
     name: "Chi Fun in the City LLC",
     url: "https://chifuninthecityllc.com/",
     description: "Lady Renaissance's creative portfolio showcasing her work as a professional model, creative visionary, and producer of 'Corporate Chaos' - a compelling docu-style reality series.",
     category: "entrepreneur"
   },
   {
-    id: 18,
+    id: 21,
     name: "Rhino Seal Asphalt",
     url: "https://rhinoseal.net/",
     description: "Worcester's trusted sealcoating experts with 30 years of experience providing professional asphalt maintenance, crack filling, and pavement protection services across Central Massachusetts.",
     category: "business"
   },
   {
-    id: 19,
+    id: 22,
     name: "Hem of Grace Events",
     url: "https://hemofgraceevents.com/",
     description: "Florida-based luxury wedding and event planning company creating graceful, unforgettable celebrations including quinceañeras, baby showers, and faith-based events with bilingual services.",
     category: "entrepreneur"
   },
   {
-    id: 20,
+    id: 23,
     name: "Divine Vitality Research",
     url: "https://divinevitality.co/",
     description: "Premium research peptides and wellness compounds supplier offering third-party tested, pharmaceutical-grade quality products with a philosophy of education first, trends second.",
     category: "business"
   },
   {
-    id: 21,
+    id: 24,
     name: "The NEST Project",
     url: "https://www.nestcares.org/",
     description: "501(c)(3) nonprofit serving PA & OH families, providing adaptive clothing, sensory tools, holiday food assistance, and crisis relief for children with disabilities.",
     category: "nonprofit"
   },
   {
-    id: 22,
-    name: "Line of Luxury Credit",
-    url: "https://lineofluxurycredit.com/",
-    description: "Professional credit repair and financial consulting services offering expert dispute strategies, business funding solutions, and personalized credit improvement plans.",
-    category: "entrepreneur"
-  },
-  {
-    id: 23,
+    id: 25,
     name: "Worthy Vets Service Group",
     url: "https://worthyvetsservicegroup.com/",
     description: "Veteran-owned service organization website with professional design and community-focused mission.",
     category: "nonprofit"
   },
   {
-    id: 24,
+    id: 26,
     name: "HR Nest LLC",
     url: "https://www.hrnest.net/",
     description: "Career development and life transitions support helping individuals reset, rebuild, and rise through personalized mentorship, resources, and community guidance.",
