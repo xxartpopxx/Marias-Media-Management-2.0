@@ -189,6 +189,14 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 30,
+    name: "Trusted Hearts Home Care LLC",
+    url: "https://trustedheartshomecare.co/",
+    description: "Compassionate non-medical home care services in Dublin, Columbus and surrounding Ohio areas, offering personal care, companion care, dementia support, and more.",
+    thumbnail: "/thumbnails/trustedhearts.jpg",
+    category: "business"
+  },
+  {
     id: 26,
     name: "A Gentle Touch HomeCare LLC",
     url: "https://agentletouchhomecarellc1.com/",
@@ -207,6 +215,7 @@ export const websitePortfolio = [
     name: "KB Buildings",
     url: "https://kbbuildings.us/",
     description: "Trusted Massachusetts-based building and remodeling contractor specializing in decks, siding, finish carpentry, kitchens, bathrooms, and custom projects.",
+    thumbnail: "/thumbnails/kbbuildings.jpg",
     category: "business"
   },
   {
@@ -214,6 +223,7 @@ export const websitePortfolio = [
     name: "EpiSplain",
     url: "https://episplain.org/",
     description: "Interactive epidemiology education platform making public health data accessible through chronic disease maps, autoimmune disease data, vaccine coverage dashboards, and risk calculators.",
+    thumbnail: "/thumbnails/episplain.jpg",
     category: "nonprofit"
   },
   {
