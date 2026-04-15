@@ -189,6 +189,34 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 26,
+    name: "A Gentle Touch HomeCare LLC",
+    url: "https://agentletouchhomecarellc1.com/",
+    description: "Compassionate non-medical home care services for seniors in Columbus, Ohio, offering personal care, companion care, respite care, and Alzheimer's & dementia support.",
+    category: "business"
+  },
+  {
+    id: 27,
+    name: "Poly Clean Center Laundromat",
+    url: "https://polycleanlaundry.com/",
+    description: "Award-winning laundromat serving Mountain Home, AR since 1963 with free pickup & delivery, wash dry fold, commercial laundry, and self-service options.",
+    category: "business"
+  },
+  {
+    id: 28,
+    name: "KB Buildings",
+    url: "https://kbbuildings.us/",
+    description: "Trusted Massachusetts-based building and remodeling contractor specializing in decks, siding, finish carpentry, kitchens, bathrooms, and custom projects.",
+    category: "business"
+  },
+  {
+    id: 29,
+    name: "EpiSplain",
+    url: "https://episplain.org/",
+    description: "Interactive epidemiology education platform making public health data accessible through chronic disease maps, autoimmune disease data, vaccine coverage dashboards, and risk calculators.",
+    category: "nonprofit"
+  },
+  {
     id: 1,
     name: "Line of Luxury Credit",
     url: "https://lineofluxurycredit.com/",
@@ -288,14 +316,7 @@ export const websitePortfolio = [
     description: "Professional organization website with modern design and seamless user experience.",
     category: "shopify"
   },
-  {
-    id: 15,
-    name: "Seeds of Change Therapy Center",
-    url: "https://seedsofchangetherapycenter.com/",
-    description: "Therapeutic services website with a calming, professional design aesthetic.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hjetn7l0_Screenshot%202026-02-05%20at%204.17.16%E2%80%AFPM.png",
-    category: "business"
-  },
+  
   {
     id: 16,
     name: "Khadijah's Angels",
