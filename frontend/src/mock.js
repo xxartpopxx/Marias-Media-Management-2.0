@@ -325,14 +325,7 @@ export const websitePortfolio = [
     thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hxj0m5uo_Screenshot%202026-02-05%20at%204.17.28%E2%80%AFPM.png",
     category: "nonprofit"
   },
-  {
-    id: 17,
-    name: "Lake & Pine Stays",
-    url: "https://lakeandpinestays.com/",
-    description: "Premium vacation rentals at Cedar Creek Lake & Broken Bow with lakefront properties and luxury mountain cabins.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/swmxmmq3_Screenshot%202026-02-05%20at%204.17.41%E2%80%AFPM.png",
-    category: "business"
-  },
+  
   {
     id: 18,
     name: "CSD 3D Walls",
@@ -376,13 +369,7 @@ export const websitePortfolio = [
     description: "501(c)(3) nonprofit serving PA & OH families, providing adaptive clothing, sensory tools, holiday food assistance, and crisis relief for children with disabilities.",
     category: "nonprofit"
   },
-  {
-    id: 24,
-    name: "Worthy Vets Service Group",
-    url: "https://worthyvetsservicegroup.com/",
-    description: "Veteran-owned service organization website with professional design and community-focused mission.",
-    category: "nonprofit"
-  },
+  
   {
     id: 25,
     name: "HR Nest LLC",
