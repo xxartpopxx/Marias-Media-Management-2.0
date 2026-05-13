@@ -50,7 +50,7 @@ export const testimonials = [
   {
     id: 7,
     name: "Traci Gina Russell",
-    image: "https://customer-assets.emergentagent.com/job_69bb304b-d01c-4906-9015-fee9ce623f50/artifacts/i9ck3afi_Screenshot%202026-05-13%20at%206.37.56%E2%80%AFPM.png",
+    image: "https://customer-assets.emergentagent.com/job_web-showcase-227/artifacts/pr2bsvvc_Screenshot%202026-05-13%20at%206.38.01%E2%80%AFPM.png",
     text: "Absolutely blown away by the work Maria did on my website! From the very beginning she was responsive, creative, patient, and incredibly fast. She took all of my ideas and turned them into something even better than I envisioned. Every little detail was handled so professionally, and the final result looks polished, modern, and high-end. If you are looking for someone who truly cares about their work and delivers quickly without sacrificing quality, she is the one. Highly recommend!",
     source: "facebook",
     recommends: true
@@ -193,6 +193,7 @@ export const websitePortfolio = [
     name: "Revenue Cycle IQ",
     url: "https://therevenuecycleiq.com/",
     description: "Healthcare revenue cycle consulting firm helping organizations improve financial performance through revenue cycle optimization, analytics, workflow transformation, denial reduction strategies, and operational intelligence.",
+    thumbnail: "https://customer-assets.emergentagent.com/job_web-showcase-227/artifacts/wz0tq44h_Screenshot%202026-05-13%20at%206.43.39%E2%80%AFPM.png",
     category: "business"
   },
   {
