@@ -49,9 +49,9 @@ export const testimonials = [
   },
   {
     id: 7,
-    name: "Antoine Jackson-Stackhouse",
-    image: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/5s2tnpiq_Screenshot%202026-03-03%20at%206.14.20%E2%80%AFPM.png",
-    text: "Very detailed, excellent.",
+    name: "Traci Gina Russell",
+    image: "https://customer-assets.emergentagent.com/job_69bb304b-d01c-4906-9015-fee9ce623f50/artifacts/i9ck3afi_Screenshot%202026-05-13%20at%206.37.56%E2%80%AFPM.png",
+    text: "Absolutely blown away by the work Maria did on my website! From the very beginning she was responsive, creative, patient, and incredibly fast. She took all of my ideas and turned them into something even better than I envisioned. Every little detail was handled so professionally, and the final result looks polished, modern, and high-end. If you are looking for someone who truly cares about their work and delivers quickly without sacrificing quality, she is the one. Highly recommend!",
     source: "facebook",
     recommends: true
   },
@@ -188,6 +188,27 @@ export const portfolioCategories = [
 
 export const websitePortfolio = [
   // Newest websites first
+  {
+    id: 31,
+    name: "Revenue Cycle IQ",
+    url: "https://therevenuecycleiq.com/",
+    description: "Healthcare revenue cycle consulting firm helping organizations improve financial performance through revenue cycle optimization, analytics, workflow transformation, denial reduction strategies, and operational intelligence.",
+    category: "business"
+  },
+  {
+    id: 32,
+    name: "Trauma Youth Support Services",
+    url: "https://tysservices.org/",
+    description: "Nonprofit supporting and empowering caregivers and families navigating youth mental health crises through caregiver boxes, resources, peer stories, and community partnerships so no family stands alone.",
+    category: "nonprofit"
+  },
+  {
+    id: 33,
+    name: "East Tennessee Sacred Circle Dance",
+    url: "https://inthedance.com/",
+    description: "Knoxville, Tennessee community hosting monthly Sacred Circle Dance and LongDance gatherings since 1997 — fun, easy, joyful dances grounded in the seasons with all dances taught and no partner or experience required.",
+    category: "business"
+  },
   {
     id: 30,
     name: "Trusted Hearts Home Care LLC",

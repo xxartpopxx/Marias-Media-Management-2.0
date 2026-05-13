@@ -70,8 +70,16 @@ export const PortfolioPage = () => {
   };
 
   // Get filtered portfolio based on active filter
-  const filteredPortfolio = activeFilter === 'all' 
-    ? websitePortfolio 
+  // For 'all' filter, order is: entrepreneur first, then non-profit, then the rest
+  const filteredPortfolio = activeFilter === 'all'
+    ? (() => {
+        const order = { entrepreneur: 0, nonprofit: 1 };
+        return [...websitePortfolio].sort((a, b) => {
+          const av = order[a.category] ?? 2;
+          const bv = order[b.category] ?? 2;
+          return av - bv;
+        });
+      })()
     : websitePortfolio.filter(site => site.category === activeFilter);
 
   const checkScrollButtons = () => {
