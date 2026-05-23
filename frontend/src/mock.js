@@ -219,10 +219,24 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 26,
-    name: "A Gentle Touch HomeCare LLC",
-    url: "https://agentletouchhomecarellc1.com/",
-    description: "Compassionate non-medical home care services for seniors in Columbus, Ohio, offering personal care, companion care, respite care, and Alzheimer's & dementia support.",
+    id: 34,
+    name: "Salumi Tucson",
+    url: "https://www.salumitucson.com/",
+    description: "Hands-on culinary experiences in Tucson, Arizona — private cooking classes, fresh pasta workshops, craft cocktail ateliers, charcuterie studios, and seasonal gatherings curated around food, creativity, and community.",
+    category: "business"
+  },
+  {
+    id: 35,
+    name: "Eternal Care",
+    url: "https://eternalcareco.com/",
+    description: "Luxury pink hearse funeral transportation in Greater Houston, TX — celebrating individuality with respectful, family-focused service, personalized farewells, memorial processions, and celebration of life experiences.",
+    category: "business"
+  },
+  {
+    id: 36,
+    name: "Montville Therapy Group",
+    url: "https://montvilletherapygroup.com/",
+    description: "Compassionate mental health care in Montville & Pine Brook, NJ — licensed therapists offering individual, couples, family, teen, child, and EMDR therapy. In-network with Horizon, Aetna, Cigna, and UnitedHealthcare.",
     category: "business"
   },
   {
