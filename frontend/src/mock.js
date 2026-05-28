@@ -189,6 +189,27 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 39,
+    name: "JC Law Foundation",
+    url: "https://www.jclawsc.org/",
+    description: "Nonprofit dedicated to CPR awareness, emergency preparedness education, and advocacy — fighting to require AEDs and CPR-trained staff in hotels so every second can save a life.",
+    category: "nonprofit"
+  },
+  {
+    id: 38,
+    name: "Veterans for Indiana",
+    url: "https://www.veteransforindiana.com/",
+    description: "Veterans-led PAC recruiting, endorsing, and electing veterans and military families to public office across Indiana — from school board to statewide leadership.",
+    category: "nonprofit"
+  },
+  {
+    id: 37,
+    name: "Captured Moments",
+    url: "https://capturedmomentspb.org/",
+    description: "Southern California luxury photo booth atelier delivering premium experiences for weddings, upscale private events, corporate evenings, and celebrity-style celebrations with modern tech and editorial elegance.",
+    category: "business"
+  },
+  {
     id: 31,
     name: "Revenue Cycle IQ",
     url: "https://therevenuecycleiq.com/",
@@ -296,13 +317,6 @@ export const websitePortfolio = [
     url: "https://j-artistry.com/",
     description: "Professional makeup artistry services with elegant dark aesthetic, offering personalized sessions for unforgettable moments.",
     category: "entrepreneur"
-  },
-  {
-    id: 6,
-    name: "The Pink Edit",
-    url: "https://thepinkedit.net/",
-    description: "Stylish lifestyle and fashion blog with a vibrant pink aesthetic, featuring curated content and modern design.",
-    category: "shopify"
   },
   {
     id: 7,
