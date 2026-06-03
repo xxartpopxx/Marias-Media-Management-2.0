@@ -6,6 +6,7 @@ import { Textarea } from '../components/ui/textarea';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { contactSchema } from '../lib/seoSchemas';
 import { toast } from 'sonner';
 import { socialLinks } from '../mock';
 
@@ -85,6 +86,7 @@ export const ContactPage = () => {
         description="Ready to transform your social media presence? Contact Maria's Media Management for a free consultation. Based in Massachusetts, serving clients globally."
         keywords="contact, social media consultation, get in touch, Boston, Massachusetts, free consultation"
         canonical="https://mariasmediamanagement.com/contact"
+        schema={contactSchema()}
       />
 
       <main className="pt-24">

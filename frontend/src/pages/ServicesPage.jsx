@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { servicesSchema } from '../lib/seoSchemas';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
 const FloatingContact = lazy(() => import('../components/FloatingContact').then(m => ({ default: m.FloatingContact })));
@@ -71,6 +72,7 @@ export const ServicesPage = () => {
         description="Comprehensive social media management services including content creation, community engagement, growth strategy, and brand consistency. Elevate your online presence."
         keywords="social media management, content creation, community engagement, brand strategy, Instagram management, Facebook management, social media services"
         canonical="https://mariasmediamanagement.com/services"
+        schema={servicesSchema(mainServices)}
       />
 
       <main className="pt-24">

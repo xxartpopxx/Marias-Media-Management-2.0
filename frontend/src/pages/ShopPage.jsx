@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren, FloatingImage } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { shopSchema } from '../lib/seoSchemas';
 import { etsyProducts } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -31,6 +32,7 @@ export const ShopPage = () => {
         description="Browse our collection of digital products including custom photo editing, personalized coloring books, and unique party games. Shop now on Etsy."
         keywords="digital products, photo editing, custom coloring books, murder mystery party games, personalized gifts, Etsy shop"
         canonical="https://mariasmediamanagement.com/shop"
+        schema={shopSchema(etsyProducts)}
       />
 
       <main className="pt-24">

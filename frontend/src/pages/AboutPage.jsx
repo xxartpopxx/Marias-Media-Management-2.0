@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, FloatingImage, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { aboutSchema } from '../lib/seoSchemas';
 import { nonprofitPartners } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -31,6 +32,7 @@ export const AboutPage = () => {
         description="Meet Maria Mongiardo - MPH graduate from Boston University School of Public Health. Passionate about making public health research accessible through social media and digital storytelling."
         keywords="Maria Mongiardo, public health, MPH, Boston University, social media, health communication, digital storytelling"
         canonical="https://mariasmediamanagement.com/about"
+        schema={aboutSchema()}
       />
 
       <main className="pt-24">

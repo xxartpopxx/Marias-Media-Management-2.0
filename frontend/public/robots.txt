@@ -5,6 +5,7 @@ User-agent: *
 Allow: /
 Disallow: /static/
 Disallow: /*.json$
+Crawl-delay: 1
 
 # Major search engines - explicit allow
 User-agent: Googlebot
@@ -43,7 +44,7 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-# Block known bad bots
+# Block known aggressive scrapers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -58,9 +59,6 @@ Disallow: /
 
 User-agent: PetalBot
 Disallow: /
-
-# Crawl delay for politeness
-Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://mariasmediamanagement.com/sitemap.xml

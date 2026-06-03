@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { portfolioSchema } from '../lib/seoSchemas';
 import { websitePortfolio, portfolioCategories } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -132,6 +133,7 @@ export const PortfolioPage = () => {
         description="View our portfolio of beautifully crafted websites. Professional web design services starting at $200. Mobile responsive, SEO-friendly, and conversion-focused."
         keywords="web design portfolio, website design, landing page design, business website, custom website, Boston web designer"
         canonical="https://mariasmediamanagement.com/portfolio"
+        schema={portfolioSchema(websitePortfolio)}
       />
 
       <main className="pt-24">

@@ -6,6 +6,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren, FloatingImage } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { homeSchema } from '../lib/seoSchemas';
 import { testimonials } from '../mock';
 
 // Lazy load heavier components
@@ -41,7 +42,8 @@ export const HomePage = () => {
         title="Maria's Media Management | Social Media & Web Design Services"
         description="Boston-based social media management and web design studio. We help brands, entrepreneurs, and organizations elevate their online presence with strategy, creativity, and heart."
         keywords="social media management, web design, digital marketing, Boston, content creation, brand strategy"
-        canonical="https://mariasmediamanagement.com"
+        canonical="https://mariasmediamanagement.com/"
+        schema={homeSchema()}
       />
 
       <main>

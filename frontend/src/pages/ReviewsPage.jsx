@@ -4,6 +4,7 @@ import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
+import { reviewsSchema } from '../lib/seoSchemas';
 import { testimonials, facebookReviewsLink, googleReviewsLink } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -23,6 +24,7 @@ export const ReviewsPage = () => {
         description="Read reviews from satisfied clients. See what entrepreneurs, clinics, and brands say about working with Maria's Media Management for social media and web design services."
         keywords="reviews, testimonials, client feedback, social media management reviews, web design reviews, Maria Mongiardo"
         canonical="https://mariasmediamanagement.com/reviews"
+        schema={reviewsSchema(testimonials)}
       />
 
       <main className="pt-24">
