@@ -40,17 +40,62 @@
     <title>Maria's Media Management | Social Media & Web Design Services</title>
     
     <!-- Additional SEO meta tags -->
-    <meta name="keywords" content="social media management, web design, digital marketing, Boston, Massachusetts, content creation, brand strategy, website design" />
+    <meta name="keywords" content="social media management, web design, digital marketing, Boston, Massachusetts, North Shore, content creation, brand strategy, website design, Instagram management, content calendar, social media strategy, small business marketing, entrepreneur marketing" />
     <meta name="author" content="Maria Mongiardo" />
-    <meta name="robots" content="index, follow" />
+    <meta name="publisher" content="Maria's Media Management" />
+    <meta name="copyright" content="Maria's Media Management" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="en-US" />
+
+    <!-- Geo Location meta -->
+    <meta name="geo.region" content="US-MA" />
+    <meta name="geo.placename" content="North Shore, Massachusetts" />
+    <meta name="geo.position" content="42.3601;-71.0589" />
+    <meta name="ICBM" content="42.3601, -71.0589" />
+
+    <!-- Mobile App / PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Maria's Media Management" />
+    <meta name="application-name" content="Maria's Media Management" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Canonical and alternate language -->
     <link rel="canonical" href="https://mariasmediamanagement.com/" />
+    <link rel="alternate" href="https://mariasmediamanagement.com/" hreflang="en-us" />
+    <link rel="alternate" href="https://mariasmediamanagement.com/" hreflang="x-default" />
+
+    <!-- Sitemap reference -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Facebook specific -->
+    <meta property="og:site_name" content="Maria's Media Management" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="Maria's Media Management - Social Media & Web Design Studio" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter additional -->
+    <meta name="twitter:site" content="@maria.mongiardo" />
+    <meta name="twitter:creator" content="@maria.mongiardo" />
+    <meta name="twitter:image:alt" content="Maria's Media Management - Social Media & Web Design Studio" />
+    <meta name="twitter:domain" content="mariasmediamanagement.com" />
+    <meta name="twitter:url" content="https://mariasmediamanagement.com/" />
     
     <!-- JSON-LD Structured Data for Local Business -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://mariasmediamanagement.com/#business",
       "name": "Maria's Media Management",
+      "alternateName": "MMM",
       "description": "Boston-based social media management and web design studio helping brands, entrepreneurs, and organizations elevate their online presence.",
       "url": "https://mariasmediamanagement.com",
       "logo": "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png",
@@ -85,6 +130,68 @@
       ],
       "priceRange": "$200 - $1000",
       "serviceType": ["Social Media Management", "Web Design", "Content Creation", "Digital Marketing", "Brand Strategy"]
+    }
+    </script>
+
+    <!-- JSON-LD WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://mariasmediamanagement.com/#website",
+      "url": "https://mariasmediamanagement.com/",
+      "name": "Maria's Media Management",
+      "description": "Social media management and web design services.",
+      "publisher": { "@id": "https://mariasmediamanagement.com/#business" },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mariasmediamanagement.com/#organization",
+      "name": "Maria's Media Management",
+      "url": "https://mariasmediamanagement.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png",
+        "width": 512,
+        "height": 512
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "mariamongiardo15@gmail.com",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/maria.mongiardo/",
+        "https://www.facebook.com/mariamongiardo15",
+        "https://www.youtube.com/@maria.mongiardo",
+        "https://www.tiktok.com/@maria.mongiardo",
+        "https://www.etsy.com/shop/MariaMongiardo"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mariasmediamanagement.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://mariasmediamanagement.com/about" },
+        { "@type": "ListItem", "position": 3, "name": "Services", "item": "https://mariasmediamanagement.com/services" },
+        { "@type": "ListItem", "position": 4, "name": "Portfolio", "item": "https://mariasmediamanagement.com/portfolio" },
+        { "@type": "ListItem", "position": 5, "name": "Shop", "item": "https://mariasmediamanagement.com/shop" },
+        { "@type": "ListItem", "position": 6, "name": "Reviews", "item": "https://mariasmediamanagement.com/reviews" },
+        { "@type": "ListItem", "position": 7, "name": "Contact", "item": "https://mariasmediamanagement.com/contact" }
+      ]
     }
     </script>
 
