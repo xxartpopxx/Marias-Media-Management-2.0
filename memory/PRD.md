@@ -30,6 +30,16 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-02-20 — SEO Phase 3 (Universal thumbnails + advanced SEO)
+- New `lib/portfolioThumbnails.js` — `getPortfolioThumbnail(site)` returns custom thumbnail if present, otherwise builds a WordPress mShots URL (`https://s.wordpress.com/mshots/v1/<url>?w=...&h=...`) — free, no API key
+- `Portfolio.jsx` + `PortfolioPage.jsx` now ALWAYS render `<img>` thumbnails (iframe fallback removed); 34/34 cards display real screenshots
+- `portfolioSchema` in JSON-LD now includes `image` for every item (34/34) — boosts Google Image search visibility & enables product/list rich results
+- `index.html` global JSON-LD: LocalBusiness now has `hasOfferCatalog` with 3 web-design Offers ($200/$400/$1000) — eligible for Google Service rich results & price snippets
+- Preconnect + dns-prefetch for `s.wordpress.com` (faster thumbnail loading)
+- `dateModified: 2026-02-20` added to every per-page WebPage/AboutPage/CollectionPage/ContactPage schema
+- Removed dead `loadedIframes` state & `handleIframeLoad` (no longer needed)
+- Zero copy/content changes
+
 ### 2026-02-20 — SEO Phase 2 (Comprehensive Enhancement)
 - Enhanced `SEOHead.jsx`: now syncs og:url/twitter:url/robots/googlebot per route + injects per-page JSON-LD
 - New `lib/seoSchemas.js` with generators for: WebPage, AboutPage, Service (×N), Person, CollectionPage, ItemList, AggregateRating + Review, ContactPage, ContactPoint, BreadcrumbList (per route)

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight, Grid3X3, Briefcase, Heart, Store } from 'lucide-react';
 import { websitePortfolio, portfolioCategories } from '../mock';
+import { getPortfolioThumbnail } from '../lib/portfolioThumbnails';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { scrollToContact } from '../lib/scrollUtils';
@@ -72,7 +73,6 @@ const pricingTiers = [
 
 export const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [loadedIframes, setLoadedIframes] = useState({});
   const sectionRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -123,15 +123,7 @@ export const Portfolio = () => {
   }, []);
 
   // Load iframes progressively when section becomes visible
-  useEffect(() => {
-    if (isVisible) {
-      filteredPortfolio.forEach((site, index) => {
-        setTimeout(() => {
-          setLoadedIframes(prev => ({ ...prev, [site.id]: true }));
-        }, index * 200);
-      });
-    }
-  }, [isVisible, filteredPortfolio]);
+  // (No-op now — thumbnails load directly via <img>.)
 
   // Reset scroll position when filter changes
   useEffect(() => {
@@ -297,35 +289,19 @@ export const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Website Preview - thumbnail or iframe */}
+                  {/* Website Preview - thumbnail (mShots fallback) */}
                   <div className="relative h-48 bg-gray-900 overflow-hidden">
-                    {site.thumbnail ? (
-                      <img
-                        src={site.thumbnail}
-                        alt={`${site.name} website preview`}
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                      />
-                    ) : loadedIframes[site.id] ? (
-                      <iframe
-                        src={site.url}
-                        title={`${site.name} website preview`}
-                        className="w-full h-full border-0 pointer-events-none"
-                        style={{
-                          transform: 'scale(0.35)',
-                          transformOrigin: 'top left',
-                          width: '286%',
-                          height: '286%'
-                        }}
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-pink-600/50 flex items-center justify-center">
-                        <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      </div>
-                    )}
+                    <img
+                      src={getPortfolioThumbnail(site, { w: 760, h: 480 })}
+                      alt={`${site.name} website preview`}
+                      className="w-full h-full object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">

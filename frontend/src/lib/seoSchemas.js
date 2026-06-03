@@ -10,11 +10,14 @@
  *   - https://mariasmediamanagement.com/#website
  */
 
+import { getPortfolioThumbnail } from './portfolioThumbnails';
+
 const SITE_URL = 'https://mariasmediamanagement.com';
 const BUSINESS_ID = `${SITE_URL}/#business`;
 const ORG_ID = `${SITE_URL}/#organization`;
 const SITE_LOGO =
   'https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png';
+const DATE_MODIFIED = '2026-02-20';
 
 const breadcrumb = (trail) => ({
   '@type': 'BreadcrumbList',
@@ -38,6 +41,7 @@ export const homeSchema = () => ({
       about: { '@id': BUSINESS_ID },
       primaryImageOfPage: { '@id': `${SITE_URL}/#logo` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       description:
         "Boston-based social media management and web design studio helping brands, entrepreneurs, and organizations elevate their online presence."
     },
@@ -55,6 +59,7 @@ export const aboutSchema = () => ({
       name: "About Maria | Maria's Media Management",
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       about: { '@id': BUSINESS_ID }
     },
     {
@@ -94,6 +99,7 @@ export const servicesSchema = (services) => ({
       name: "Services | Social Media Management | Maria's Media Management",
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       about: { '@id': BUSINESS_ID }
     },
     ...services.map((s, i) => ({
@@ -122,6 +128,7 @@ export const portfolioSchema = (portfolio) => ({
       name: "Website Portfolio | Web Design Services | Maria's Media Management",
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       about: { '@id': BUSINESS_ID }
     },
     {
@@ -137,7 +144,7 @@ export const portfolioSchema = (portfolio) => ({
           name: p.name,
           url: p.url,
           description: p.description,
-          ...(p.thumbnail ? { image: p.thumbnail } : {}),
+          image: getPortfolioThumbnail(p, { w: 800, h: 600 }),
           creator: { '@id': ORG_ID }
         }
       }))
@@ -162,6 +169,7 @@ export const reviewsSchema = (testimonials) => {
         name: "Reviews & Testimonials | Maria's Media Management",
         isPartOf: { '@id': `${SITE_URL}/#website` },
         inLanguage: 'en-US',
+        dateModified: DATE_MODIFIED,
         about: { '@id': BUSINESS_ID }
       },
       {
@@ -205,6 +213,7 @@ export const contactSchema = () => ({
       name: "Contact | Get in Touch | Maria's Media Management",
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       about: { '@id': BUSINESS_ID }
     },
     {
@@ -237,6 +246,7 @@ export const shopSchema = (products) => ({
       name: "Shop Digital Products | Maria's Media Management",
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
+      dateModified: DATE_MODIFIED,
       about: { '@id': BUSINESS_ID }
     },
     {

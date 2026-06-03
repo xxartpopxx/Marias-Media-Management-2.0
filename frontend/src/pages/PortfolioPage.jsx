@@ -6,6 +6,7 @@ import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
 import { portfolioSchema } from '../lib/seoSchemas';
+import { getPortfolioThumbnail } from '../lib/portfolioThumbnails';
 import { websitePortfolio, portfolioCategories } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -55,7 +56,6 @@ const pricingTiers = [
 ];
 
 export const PortfolioPage = () => {
-  const [loadedIframes, setLoadedIframes] = useState({});
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -120,10 +120,6 @@ export const PortfolioPage = () => {
         behavior: 'smooth'
       });
     }
-  };
-
-  const handleIframeLoad = (id) => {
-    setLoadedIframes(prev => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -248,31 +244,19 @@ export const PortfolioPage = () => {
                         </div>
                       </div>
                       
-                      {/* Website Preview - TALLER */}
+                      {/* Website Preview - thumbnail (mShots fallback for sites without custom thumbnail) */}
                       <div className="relative h-64 bg-gray-900 overflow-hidden">
-                        {site.thumbnail ? (
-                          <img
-                            src={site.thumbnail}
-                            alt={`${site.name} website preview`}
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <>
-                            {!loadedIframes[site.id] && (
-                              <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
-                                <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
-                              </div>
-                            )}
-                            <iframe
-                              src={site.url}
-                              title={`${site.name} preview`}
-                              className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
-                              loading="lazy"
-                              onLoad={() => handleIframeLoad(site.id)}
-                            />
-                          </>
-                        )}
+                        <img
+                          src={getPortfolioThumbnail(site, { w: 800, h: 600 })}
+                          alt={`${site.name} website preview`}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          decoding="async"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
                       </div>
                       
                       {/* Info */}
