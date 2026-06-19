@@ -258,14 +258,6 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 32,
-    name: "Trauma Youth Support Services",
-    url: "https://tysservices.org/",
-    description: "Nonprofit supporting and empowering caregivers and families navigating youth mental health crises through caregiver boxes, resources, peer stories, and community partnerships so no family stands alone.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Ftysservices.org%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
-    category: "nonprofit"
-  },
-  {
     id: 33,
     name: "East Tennessee Sacred Circle Dance",
     url: "https://inthedance.com/",
@@ -292,13 +284,6 @@ export const websitePortfolio = [
     name: "Eternal Care",
     url: "https://eternalcareco.com/",
     description: "Luxury pink hearse funeral transportation in Greater Houston, TX — celebrating individuality with respectful, family-focused service, personalized farewells, memorial processions, and celebration of life experiences.",
-    category: "business"
-  },
-  {
-    id: 36,
-    name: "Montville Therapy Group",
-    url: "https://montvilletherapygroup.com/",
-    description: "Compassionate mental health care in Montville & Pine Brook, NJ — licensed therapists offering individual, couples, family, teen, child, and EMDR therapy. In-network with Horizon, Aetna, Cigna, and UnitedHealthcare.",
     category: "business"
   },
   {
