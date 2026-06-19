@@ -189,6 +189,46 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 44,
+    name: "Hearth & Order Co.",
+    url: "https://hearthandorder.com/",
+    description: "Professional home organizing studio serving Riverside, San Diego, and Orange County — warm, judgment-free decluttering and sustainable system design for busy families, overwhelmed homeowners, and fresh-start seekers.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fhearthandorder.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 43,
+    name: "Seeds of Change Therapy Center",
+    url: "https://www.seedsofchangetherapycenter.com/",
+    description: "Licensed therapy center in Bakersfield serving Kern County and telehealth across California — individual, couples, family, and child counseling with EMDR, CBT, and DBT specialists in a safe, nurturing space.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.seedsofchangetherapycenter.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 42,
+    name: "Word Gumbo Learning Co.",
+    url: "https://wordgumbolearningco.com/",
+    description: "Belle Chasse, Louisiana practice offering dyslexia therapy, reading tutoring, dyslexia screeners, and full core assessments — structured, multisensory, Orton-Gillingham-based instruction helping children read, learn, grow, and succeed.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwordgumbolearningco.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "nonprofit"
+  },
+  {
+    id: 41,
+    name: "Janelle Sells AZ",
+    url: "https://janellesellsaz.homes",
+    description: "Arizona-native REALTOR® with Barrett Real Estate guiding buyers, sellers, and relocation clients across Chandler, Gilbert, Phoenix, Scottsdale, and the East Valley with honest advice, local expertise, and white-glove service.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fjanellesellsaz.homes&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "entrepreneur"
+  },
+  {
+    id: 40,
+    name: "Uniquely Pink",
+    url: "https://uniquelypink.shop/",
+    description: "Andrews, Texas pink-only Shopify boutique curated with love — girly gifts, sparkly accessories, and boutique finds for everyone who believes life is better in pink, with free shipping over $75.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Funiquelypink.shop%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "shopify"
+  },
+  {
     id: 39,
     name: "JC Law Foundation",
     url: "https://www.jclawsc.org/",
@@ -222,6 +262,7 @@ export const websitePortfolio = [
     name: "Trauma Youth Support Services",
     url: "https://tysservices.org/",
     description: "Nonprofit supporting and empowering caregivers and families navigating youth mental health crises through caregiver boxes, resources, peer stories, and community partnerships so no family stands alone.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Ftysservices.org%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "nonprofit"
   },
   {

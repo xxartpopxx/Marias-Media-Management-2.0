@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Globe, Monitor, DollarSign, Link2, Check, Sparkles, Rocket, Leaf, Eye, Server, RefreshCw, Wrench, ChevronLeft, ChevronRight, Grid3X3, Briefcase, Heart, Store } from 'lucide-react';
 import { websitePortfolio, portfolioCategories } from '../mock';
-import { getPortfolioThumbnail } from '../lib/portfolioThumbnails';
+import { getPortfolioThumbnail, getFallbackThumbnail } from '../lib/portfolioThumbnails';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { scrollToContact } from '../lib/scrollUtils';
@@ -289,7 +289,7 @@ export const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Website Preview - thumbnail (mShots fallback) */}
+                  {/* Website Preview - thumbnail (mShots → Microlink fallback) */}
                   <div className="relative h-48 bg-gray-900 overflow-hidden">
                     <img
                       src={getPortfolioThumbnail(site, { w: 760, h: 480 })}
@@ -298,8 +298,19 @@ export const Portfolio = () => {
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.style.display = 'none';
+                        const img = e.currentTarget;
+                        // First-stage fallback: try Microlink screenshot if mShots fails
+                        if (!img.dataset.fallback) {
+                          const fb = getFallbackThumbnail(site);
+                          if (fb) {
+                            img.dataset.fallback = '1';
+                            img.src = fb;
+                            return;
+                          }
+                        }
+                        // Final fallback: hide the broken image
+                        img.onerror = null;
+                        img.style.display = 'none';
                       }}
                     />
                     {/* Hover overlay */}
