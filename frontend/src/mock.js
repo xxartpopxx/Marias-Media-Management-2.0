@@ -197,12 +197,28 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 43,
-    name: "Seeds of Change Therapy Center",
-    url: "https://www.seedsofchangetherapycenter.com/",
-    description: "Licensed therapy center in Bakersfield serving Kern County and telehealth across California — individual, couples, family, and child counseling with EMDR, CBT, and DBT specialists in a safe, nurturing space.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.seedsofchangetherapycenter.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    id: 47,
+    name: "A Gentle Touch Home Care LLC",
+    url: "https://www.agentletouchhomecarellc1.com/",
+    description: "Compassionate non-medical home care agency providing personal care, companion services, and dependable in-home support that helps clients live safely, comfortably, and with dignity in the place they love most.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.agentletouchhomecarellc1.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
+  },
+  {
+    id: 46,
+    name: "Beyond Blessed Gifts",
+    url: "https://beyond-blessed-gifts.com/",
+    description: "Faith-inspired Shopify gift shop curating meaningful, uplifting, and beautifully crafted keepsakes, apparel, and inspirational treasures for every celebration, milestone, and moment worth remembering.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fbeyond-blessed-gifts.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "shopify"
+  },
+  {
+    id: 45,
+    name: "TYS Services",
+    url: "https://tysservices.org/",
+    description: "Community-focused nonprofit empowering youth and families through mentorship, educational programs, life-skills training, and holistic support services designed to inspire growth, resilience, and lasting positive change.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Ftysservices.org%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "nonprofit"
   },
   {
     id: 42,
