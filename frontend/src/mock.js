@@ -189,6 +189,30 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 50,
+    name: "Texas True Roofing",
+    url: "https://www.txtrueroofing.com/",
+    description: "Central Texas roofing company serving Austin and surrounding areas — residential, commercial, and multifamily roofing built on safety, quality, and convenience with free inspections, honest recommendations, and reliable workmanship.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.txtrueroofing.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 49,
+    name: "Chelsea Ray Writing",
+    url: "https://www.chelsearaywriting.com/",
+    description: "Author website for Chelsea Ray showcasing her debut YA pirate fantasy romance Against All Waves — slow-burn romance, deadly seas, found family, and a dash of magic, plus newsletter signup and Book Two updates.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.chelsearaywriting.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "entrepreneur"
+  },
+  {
+    id: 48,
+    name: "Skin Refinery by LaCretia",
+    url: "https://skinrefinery417.com/",
+    description: "Ozark, Missouri esthetics studio offering Korean skincare, Korean lash lifts, brow lamination and tint, facials, and waxing — results-driven treatments designed to refine your natural beauty while keeping you unmistakably you.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fskinrefinery417.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
     id: 44,
     name: "Hearth & Order Co.",
     url: "https://hearthandorder.com/",
