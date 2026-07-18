@@ -189,6 +189,14 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 51,
+    name: "Chesapeake Counseling Center",
+    url: "https://chesapeakecounselingcenter.com/",
+    description: "Warm, welcoming counseling practice offering compassionate, evidence-based therapy for individuals, couples, and families — thoughtful care that helps clients navigate life transitions, anxiety, relationships, and personal growth with clarity and confidence.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fchesapeakecounselingcenter.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
     id: 50,
     name: "Texas True Roofing",
     url: "https://www.txtrueroofing.com/",
