@@ -17,7 +17,7 @@ const BUSINESS_ID = `${SITE_URL}/#business`;
 const ORG_ID = `${SITE_URL}/#organization`;
 const SITE_LOGO =
   'https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png';
-const DATE_MODIFIED = '2026-02-20';
+const DATE_MODIFIED = '2026-07-30';
 
 const breadcrumb = (trail) => ({
   '@type': 'BreadcrumbList',
@@ -43,7 +43,11 @@ export const homeSchema = () => ({
       inLanguage: 'en-US',
       dateModified: DATE_MODIFIED,
       description:
-        "Boston-based social media management and web design studio helping brands, entrepreneurs, and organizations elevate their online presence."
+        "Boston-based social media management and web design studio helping brands, entrepreneurs, and organizations elevate their online presence.",
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '.hero-headline', '.hero-tagline']
+      }
     },
     breadcrumb([{ name: 'Home', url: `${SITE_URL}/` }])
   ]
@@ -100,7 +104,11 @@ export const servicesSchema = (services) => ({
       isPartOf: { '@id': `${SITE_URL}/#website` },
       inLanguage: 'en-US',
       dateModified: DATE_MODIFIED,
-      about: { '@id': BUSINESS_ID }
+      about: { '@id': BUSINESS_ID },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '.service-title', '.service-description']
+      }
     },
     ...services.map((s, i) => ({
       '@type': 'Service',
@@ -111,6 +119,60 @@ export const servicesSchema = (services) => ({
       provider: { '@id': BUSINESS_ID },
       areaServed: { '@type': 'Country', name: 'United States' }
     })),
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/services#faq`,
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How much does a website design cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Website design packages start at $200 for a Landing Page (single-page presence), $400 for a 3–5 page Business Website, and $1,000 for a Custom Premium Website with advanced layouts, scroll effects, and full performance tuning. Every package includes unlimited design refinements and a complimentary prototype preview.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What social media management services do you offer?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Maria's Media Management offers full-service social media management including content strategy, custom graphic design, caption writing, content calendars, community management, Instagram/Facebook/TikTok posting, hashtag research, analytics reporting, and brand voice development for entrepreneurs, small businesses, and non-profits."
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer website maintenance after launch?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Website Care Plans start at $30 per month, covering updates, content refreshes, plugin maintenance, backups, and ongoing support so your site stays polished and secure after launch.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does it take to build a website?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Landing pages typically take 1–2 weeks, business websites 2–4 weeks, and custom premium sites 3–6 weeks depending on complexity, content readiness, and revision cycles. You will receive a complimentary prototype preview before final development.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Where is Maria based and who does she work with?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Maria Mongiardo is based on the North Shore of Massachusetts (Greater Boston area) and works with clients nationwide across the United States — including entrepreneurs, small businesses, medical practices, wellness studios, non-profits, and Shopify storefronts."
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you handle domain and hosting?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Maria handles the domain connection process to ensure everything is configured correctly. Websites are deployed via Netlify, and clients receive their own Netlify account where website files are securely stored and managed.'
+          }
+        }
+      ]
+    },
     breadcrumb([
       { name: 'Home', url: `${SITE_URL}/` },
       { name: 'Services', url: `${SITE_URL}/services` }

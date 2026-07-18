@@ -227,3 +227,312 @@ button {
 .animate-glow {
     animation: glow 3s ease-in-out infinite;
 }
+
+/* ============================================
+   NEW ENHANCED ANIMATIONS
+   ============================================ */
+
+/* Shimmer sweep — perfect for CTAs & badges */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+        transform: translateX(200%) skewX(-15deg);
+    }
+}
+
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+    animation: shimmer 3.5s ease-in-out infinite;
+}
+
+/* Rotating gradient border for premium cards */
+@keyframes borderSpin {
+    0% {
+        --angle: 0deg;
+        transform: rotate(0deg);
+    }
+    100% {
+        --angle: 360deg;
+        transform: rotate(360deg);
+    }
+}
+
+.gradient-border {
+    position: relative;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(20, 20, 30, 0.9));
+    z-index: 0;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from var(--angle, 0deg),
+        #ec4899,
+        #a855f7,
+        #3b82f6,
+        #ec4899
+    );
+    z-index: -1;
+    animation: borderSpin 6s linear infinite;
+    opacity: 0.6;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Magnetic hover — subtle lift with soft glow */
+.magnetic-hover {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease-out;
+    will-change: transform;
+}
+
+.magnetic-hover:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+        0 20px 40px -12px rgba(168, 85, 247, 0.5),
+        0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+/* Sparkle animation for "New" badges */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.15) rotate(180deg);
+    }
+}
+
+.animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Bounce-in for elements entering viewport */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(40px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+    }
+    70% {
+        transform: scale(0.95) translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-bounceIn {
+    animation: bounceIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Text gradient shift — for headline highlights */
+@keyframes textGradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-text-gradient {
+    background: linear-gradient(
+        90deg,
+        #ec4899 0%,
+        #a855f7 25%,
+        #3b82f6 50%,
+        #a855f7 75%,
+        #ec4899 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGradientShift 5s ease infinite;
+}
+
+/* Ken Burns slow pan/zoom — cinematic image effect */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        transform: scale(1.08) translate(-1%, -1%);
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+}
+
+.animate-ken-burns {
+    animation: kenBurns 20s ease-in-out infinite;
+}
+
+/* Ripple ring on click / focus */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.animate-ripple {
+    animation: ripple 1.2s ease-out;
+}
+
+/* Slide-in from left/right */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Wave motion for decorative dividers */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-6px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(6px) rotate(-1deg);
+    }
+}
+
+.animate-wave {
+    animation: wave 4s ease-in-out infinite;
+}
+
+/* Glowing pulse for badges */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(236, 72, 153, 0);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Marquee scroll — for continuously moving strip */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+/* Card tilt on hover — 3D pop */
+.tilt-card {
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.5s ease-out;
+    transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+    transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateZ(20px);
+    box-shadow:
+        0 25px 50px -12px rgba(168, 85, 247, 0.4),
+        0 0 40px rgba(236, 72, 153, 0.2);
+}
+
+/* Reduced motion — respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+    .shimmer-effect::before,
+    .gradient-border::before,
+    .animate-sparkle,
+    .animate-bounceIn,
+    .animate-text-gradient,
+    .animate-ken-burns,
+    .animate-ripple,
+    .animate-slideInLeft,
+    .animate-slideInRight,
+    .animate-wave,
+    .animate-pulse-glow,
+    .animate-marquee,
+    .animate-glow,
+    .animate-pulse-slow,
+    .animate-float,
+    .animate-blob {
+        animation: none !important;
+    }
+    .magnetic-hover:hover,
+    .tilt-card:hover {
+        transform: none !important;
+    }
+}

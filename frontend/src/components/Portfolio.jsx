@@ -259,7 +259,10 @@ export const Portfolio = () => {
               scrollbarWidth: 'none'
             }}
           >
-            {filteredPortfolio.map((site, index) => (
+            {filteredPortfolio.map((site, index) => {
+              // Mark the 3 newest portfolio items as "NEW" (ids 48, 49, 50)
+              const isNew = [48, 49, 50].includes(site.id);
+              return (
               <a
                 key={site.id}
                 href={site.url}
@@ -275,7 +278,14 @@ export const Portfolio = () => {
                 aria-label={`Visit ${site.name} website - Opens in new tab`}
               >
                 {/* Browser Mockup Frame */}
-                <Card className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.02] border border-gray-700/50 hover:border-purple-500/50 h-full flex flex-col">
+                <Card className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.02] border border-gray-700/50 hover:border-purple-500/50 h-full flex flex-col magnetic-hover">
+                  {/* NEW badge */}
+                  {isNew && (
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg shadow-pink-500/40 animate-pulse-glow" aria-label="New addition to portfolio">
+                      <Sparkles className="w-3 h-3 animate-sparkle" aria-hidden="true" />
+                      <span className="tracking-wider">NEW</span>
+                    </div>
+                  )}
                   {/* Browser Header */}
                   <div className="bg-gray-900/80 px-3 py-2 flex items-center gap-2 border-b border-gray-700/50">
                     <div className="flex gap-1.5" aria-hidden="true">
@@ -294,7 +304,7 @@ export const Portfolio = () => {
                     <img
                       src={getPortfolioThumbnail(site, { w: 760, h: 480 })}
                       alt={`${site.name} website preview`}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
@@ -332,7 +342,8 @@ export const Portfolio = () => {
                   </div>
                 </Card>
               </a>
-            ))}
+              );
+            })}
           </div>
 
           {/* Scroll Indicator Dots */}

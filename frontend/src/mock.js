@@ -237,14 +237,6 @@ export const websitePortfolio = [
     category: "shopify"
   },
   {
-    id: 45,
-    name: "TYS Services",
-    url: "https://tysservices.org/",
-    description: "Community-focused nonprofit empowering youth and families through mentorship, educational programs, life-skills training, and holistic support services designed to inspire growth, resilience, and lasting positive change.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Ftysservices.org%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
-    category: "nonprofit"
-  },
-  {
     id: 42,
     name: "Word Gumbo Learning Co.",
     url: "https://wordgumbolearningco.com/",

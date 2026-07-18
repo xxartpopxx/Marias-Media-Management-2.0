@@ -5,7 +5,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
   <url>
     <loc>https://mariasmediamanagement.com/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,21 +16,51 @@
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/about</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/services</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/portfolio</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fwww.txtrueroofing.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>Texas True Roofing</image:title>
+      <image:caption>Central Texas roofing company website design — Austin residential and commercial roofing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fskinrefinery417.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>Skin Refinery by LaCretia</image:title>
+      <image:caption>Ozark Missouri esthetics studio website — Korean skincare and lash lift specialist</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fwww.chelsearaywriting.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>Chelsea Ray Writing</image:title>
+      <image:caption>Author website design for YA pirate fantasy romance novelist Chelsea Ray</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fhearthandorder.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>Hearth &amp; Order Co.</image:title>
+      <image:caption>Professional home organizing studio website — Riverside, San Diego, Orange County</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fwww.agentletouchhomecarellc1.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>A Gentle Touch Home Care LLC</image:title>
+      <image:caption>Compassionate non-medical home care agency website design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://api.microlink.io/?url=https%3A%2F%2Fbeyond-blessed-gifts.com%2F&amp;screenshot=true&amp;embed=screenshot.url&amp;meta=false&amp;viewport.width=1200&amp;viewport.height=900</image:loc>
+      <image:title>Beyond Blessed Gifts</image:title>
+      <image:caption>Faith-inspired Shopify gift shop with curated keepsakes and inspirational treasures</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://customer-assets.emergentagent.com/job_web-showcase-227/artifacts/wz0tq44h_Screenshot%202026-05-13%20at%206.43.39%E2%80%AFPM.png</image:loc>
       <image:title>Revenue Cycle IQ</image:title>
@@ -64,25 +94,25 @@
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/shop</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/reviews</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/contact</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mariasmediamanagement.com/etsy</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

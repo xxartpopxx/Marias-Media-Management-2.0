@@ -225,12 +225,21 @@ export const PortfolioPage = () => {
                 className="flex gap-8 overflow-x-auto pb-6 px-12 scrollbar-hide snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
-                {filteredPortfolio.map((site) => (
+                {filteredPortfolio.map((site) => {
+                  const isNew = [48, 49, 50].includes(site.id);
+                  return (
                   <div
                     key={site.id}
                     className="flex-shrink-0 w-[420px] snap-start"
                   >
-                    <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 group">
+                    <Card className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 group magnetic-hover">
+                      {/* NEW badge */}
+                      {isNew && (
+                        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg shadow-pink-500/40 animate-pulse-glow" aria-label="New addition to portfolio">
+                          <Sparkles className="w-3 h-3 animate-sparkle" aria-hidden="true" />
+                          <span className="tracking-wider">NEW</span>
+                        </div>
+                      )}
                       {/* Browser Chrome */}
                       <div className="bg-gray-900 px-4 py-3 flex items-center gap-3 border-b border-gray-700">
                         <div className="flex gap-2">
@@ -249,7 +258,7 @@ export const PortfolioPage = () => {
                         <img
                           src={getPortfolioThumbnail(site, { w: 800, h: 600 })}
                           alt={`${site.name} website preview`}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
                           decoding="async"
                           onError={(e) => {
@@ -261,7 +270,7 @@ export const PortfolioPage = () => {
                       
                       {/* Info */}
                       <div className="p-6">
-                        <h3 className="text-xl font-bold text-white mb-2">{site.name}</h3>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors duration-300">{site.name}</h3>
                         <p className="text-gray-400 text-sm mb-4 line-clamp-2">{site.description}</p>
                         <a
                           href={site.url}
@@ -274,7 +283,8 @@ export const PortfolioPage = () => {
                       </div>
                     </Card>
                   </div>
-                ))}
+                  );
+                })}
               </div>
               
               <p className="text-center text-gray-500 mt-4">← Use arrows or scroll to browse →</p>

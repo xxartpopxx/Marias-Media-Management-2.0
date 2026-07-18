@@ -30,6 +30,30 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-07-30 — Portfolio refresh + SEO Phase 4 + Animation Layer 2
+- **Portfolio changes**: Removed `TYS Services` (https://tysservices.org/). Kept Texas True Roofing (https://www.txtrueroofing.com/) and Skin Refinery by LaCretia (https://skinrefinery417.com/) under `business` category.
+- **SEO Phase 4**:
+  - Expanded `<meta name="keywords">` in `index.html` from 14 to 30+ targeted long-tail terms (Shopify, roofing, esthetician, real estate, medical spa, home care, luxury photo booth, etc.)
+  - Added **FAQPage JSON-LD** globally in `index.html` (5 Q&As) and per-page on Services (6 Q&As) — eligible for Google FAQ rich results
+  - Added **SpeakableSpecification** on Home + Services pages — voice search / assistant compatibility
+  - Added **ImageObject JSON-LD** for logo (helps knowledge panel)
+  - Updated `DATE_MODIFIED` to 2026-07-30 across per-page schemas
+  - Refreshed sitemap `lastmod=2026-07-30`, added 6 new portfolio image entries (Texas True Roofing, Skin Refinery, Chelsea Ray Writing, Hearth & Order, A Gentle Touch Home Care, Beyond Blessed Gifts)
+- **Animation Layer 2** — new `/app/frontend/src/App.css` utilities:
+  - `.shimmer-effect` — continuous light sweep
+  - `.gradient-border` — rotating conic-gradient border (uses CSS `@property --angle`)
+  - `.magnetic-hover` — soft lift + purple/pink glow on hover
+  - `.animate-sparkle`, `.animate-pulse-glow`, `.animate-bounceIn`, `.animate-text-gradient`
+  - `.animate-ken-burns` — cinematic slow zoom for hero images
+  - `.animate-ripple`, `.animate-slideInLeft/Right`, `.animate-wave`, `.animate-marquee`
+  - `.tilt-card` — 3D perspective tilt on hover
+  - Full `prefers-reduced-motion` guard — respects accessibility preferences
+- **Portfolio card upgrade** (Portfolio.jsx + PortfolioPage.jsx):
+  - NEW badge (sparkle + pulse-glow) on the 3 newest builds (ids 48, 49, 50)
+  - Magnetic hover class
+  - Thumbnail zoom on hover (`group-hover:scale-110`) with longer 700ms transition
+  - Hover: name color shifts to pink-300
+
 ### 2026-02-20 — SEO Phase 3 (Universal thumbnails + advanced SEO)
 - New `lib/portfolioThumbnails.js` — `getPortfolioThumbnail(site)` returns custom thumbnail if present, otherwise builds a WordPress mShots URL (`https://s.wordpress.com/mshots/v1/<url>?w=...&h=...`) — free, no API key
 - `Portfolio.jsx` + `PortfolioPage.jsx` now ALWAYS render `<img>` thumbnails (iframe fallback removed); 34/34 cards display real screenshots
