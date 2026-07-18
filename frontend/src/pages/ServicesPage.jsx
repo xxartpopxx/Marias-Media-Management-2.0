@@ -1,11 +1,43 @@
 import React, { Suspense, lazy, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Camera, Sparkles, Users, TrendingUp, MessageSquare, BarChart3, Palette, Megaphone, Calendar } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
 import { servicesSchema } from '../lib/seoSchemas';
+import {
+  SparkMark,
+  CommunityMark,
+  GrowthMark,
+  ChatMark,
+  CameraMark,
+  CheckMark
+} from '../components/HandcraftedIcons';
+
+// Extra handcrafted marks specific to this page — inline for brevity
+const ChartMark = ({ className = 'w-9 h-9', accent = 'currentColor' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" className={className} aria-hidden="true">
+    <path d="M8 40h32" stroke="currentColor" />
+    <path d="M14 34v-8M22 34v-16M30 34v-12M38 34v-20" stroke="currentColor" />
+    <circle cx="14" cy="24" r="2" fill={accent} opacity="0.7" stroke="none" />
+    <circle cx="22" cy="16" r="2" fill={accent} opacity="0.7" stroke="none" />
+    <circle cx="30" cy="20" r="2" fill={accent} opacity="0.7" stroke="none" />
+    <circle cx="38" cy="12" r="2" fill={accent} opacity="0.9" stroke="none" />
+  </svg>
+);
+
+const CalendarMark = ({ className = 'w-9 h-9', accent = 'currentColor' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" className={className} aria-hidden="true">
+    <rect x="8" y="12" width="32" height="28" rx="4" stroke="currentColor" />
+    <path d="M8 20h32M16 8v8M32 8v8" stroke="currentColor" />
+    <circle cx="16" cy="28" r="1.5" fill={accent} opacity="0.75" stroke="none" />
+    <circle cx="24" cy="28" r="1.5" fill={accent} opacity="0.75" stroke="none" />
+    <circle cx="32" cy="28" r="1.5" fill={accent} opacity="0.75" stroke="none" />
+    <circle cx="16" cy="34" r="1.5" fill={accent} opacity="0.5" stroke="none" />
+    <circle cx="24" cy="34" r="1.5" fill={accent} opacity="0.9" stroke="none" />
+  </svg>
+);
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
 const FloatingContact = lazy(() => import('../components/FloatingContact').then(m => ({ default: m.FloatingContact })));
@@ -19,37 +51,37 @@ const SectionLoader = memo(() => (
 export const ServicesPage = () => {
   const mainServices = [
     {
-      icon: Sparkles,
+      icon: SparkMark,
       title: "Content Creation",
       description: "Engaging posts, stories, and reels tailored to your brand voice and audience. We craft content that resonates and drives engagement.",
       features: ["Custom graphics & visuals", "Engaging captions", "Story & reel creation", "Brand-aligned content"]
     },
     {
-      icon: Users,
+      icon: CommunityMark,
       title: "Community Engagement",
       description: "Building authentic connections with your followers through meaningful interactions that foster loyalty and growth.",
       features: ["Comment management", "DM responses", "Audience interaction", "Community building"]
     },
     {
-      icon: TrendingUp,
+      icon: GrowthMark,
       title: "Growth Strategy",
       description: "Data-driven approaches to expand your reach, increase brand awareness, and convert followers into customers.",
       features: ["Competitor analysis", "Trend research", "Algorithm optimization", "Growth roadmaps"]
     },
     {
-      icon: MessageSquare,
+      icon: ChatMark,
       title: "Brand Consistency",
       description: "Maintaining a cohesive visual identity and messaging across all platforms to strengthen brand recognition.",
       features: ["Voice guidelines", "Visual standards", "Cross-platform consistency", "Brand storytelling"]
     },
     {
-      icon: BarChart3,
+      icon: ChartMark,
       title: "Analytics & Reporting",
       description: "Monthly performance insights with actionable recommendations to continuously improve your social presence.",
       features: ["Monthly reports", "KPI tracking", "Insights & trends", "Strategy adjustments"]
     },
     {
-      icon: Calendar,
+      icon: CalendarMark,
       title: "Content Calendar",
       description: "Strategic planning and scheduling to maintain consistent posting and maximize engagement across platforms.",
       features: ["Monthly planning", "Optimal timing", "Content themes", "Campaign coordination"]
@@ -117,15 +149,21 @@ export const ServicesPage = () => {
                     key={index}
                     className="p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-purple-100 hover:border-purple-300 rounded-3xl"
                   >
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-white" />
+                    <div
+                      className="relative w-14 h-14 rounded-[18px] flex items-center justify-center mb-6"
+                      style={{
+                        background: 'linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 14px rgba(168, 85, 247, 0.14), 0 0 0 1px rgba(168, 85, 247, 0.1)'
+                      }}
+                    >
+                      <Icon className="w-8 h-8 text-purple-700" accent="#db2777" />
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800 font-serif" style={{ letterSpacing: '-0.02em' }}>{service.title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-center text-sm text-gray-600">
-                          <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          <CheckMark className="w-4 h-4 mr-2 flex-shrink-0" accent="#059669" />
                           {feature}
                         </li>
                       ))}
@@ -148,7 +186,7 @@ export const ServicesPage = () => {
                     {includedFeatures.map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="bg-green-100 rounded-full p-1 mt-0.5 flex-shrink-0">
-                          <Check className="w-4 h-4 text-green-600" />
+                          <CheckMark className="w-4 h-4" accent="#059669" />
                         </div>
                         <span className="text-gray-700">{item}</span>
                       </div>
@@ -174,11 +212,17 @@ export const ServicesPage = () => {
               <div className="max-w-4xl mx-auto">
                 <Card className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-10 border-2 border-purple-200 shadow-lg">
                   <div className="flex items-start gap-6">
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Camera className="w-7 h-7 text-white" />
+                    <div
+                      className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 14px rgba(168, 85, 247, 0.14), 0 0 0 1px rgba(168, 85, 247, 0.1)'
+                      }}
+                    >
+                      <CameraMark className="w-8 h-8 text-purple-700" accent="#db2777" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 text-gray-800">Additional Services</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-800 font-serif" style={{ letterSpacing: '-0.02em' }}>Additional Services</h3>
                       <p className="text-xl text-gray-700 leading-relaxed">
                         In addition to social media management, Maria also offers <span className="font-semibold text-purple-700">photo editing and brand photography for restaurants and businesses</span>. Please inquire directly to discuss these services.
                       </p>

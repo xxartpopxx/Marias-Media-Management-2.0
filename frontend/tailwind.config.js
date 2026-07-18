@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['Manrope', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+  			serif: ['Fraunces', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+  			display: ['Fraunces', 'Georgia', 'serif'],
+  			body: ['Manrope', 'system-ui', 'sans-serif']
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

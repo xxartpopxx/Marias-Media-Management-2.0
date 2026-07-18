@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Target, Heart, Zap } from 'lucide-react';
+import { HeartMark, BoltMark, TargetMark } from './HandcraftedIcons';
 
 export const Mission = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +28,17 @@ export const Mission = () => {
 
   const features = [
     {
-      icon: Heart,
+      icon: HeartMark,
       title: "Passion",
       description: "We bring heart to every project, campaign, and conversation."
     },
     {
-      icon: Zap,
+      icon: BoltMark,
       title: "Strategy",
       description: "Data-driven insights meet creative storytelling for real growth."
     },
     {
-      icon: Target,
+      icon: TargetMark,
       title: "Attention to Detail",
       description: "Every post, caption, and visual is crafted with intention."
     }
@@ -83,13 +83,19 @@ export const Mission = () => {
                 }}
               >
                 <div 
-                  className="bg-gradient-to-br from-purple-100 to-pink-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transform hover:rotate-6 transition-transform duration-300"
+                  className="relative w-20 h-20 rounded-[26px] flex items-center justify-center mb-6 transform hover:rotate-3 transition-transform duration-500"
                   style={{
-                    boxShadow: '0 8px 20px rgba(168, 85, 247, 0.2)'
+                    background: 'linear-gradient(135deg, #fdf4ff 0%, #fce7f3 100%)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 6px 20px rgba(168, 85, 247, 0.12), 0 0 0 1px rgba(168, 85, 247, 0.08)'
                   }}
                   aria-hidden="true"
                 >
-                  <Icon className="w-10 h-10 text-purple-600" />
+                  <Icon className="w-10 h-10 text-purple-700" accent="#db2777" />
+                  {/* Tiny corner dot — organic accent */}
+                  <span
+                    className="absolute -top-1 -right-1 w-2 h-2 rounded-full"
+                    style={{ background: '#ec4899', opacity: 0.75 }}
+                  />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>

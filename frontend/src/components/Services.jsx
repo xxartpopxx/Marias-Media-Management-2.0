@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Check, Camera, Sparkles, Users, TrendingUp, MessageSquare } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { scrollToContact } from '../lib/scrollUtils';
+import { SparkMark, CommunityMark, GrowthMark, ChatMark, CameraMark, CheckMark } from './HandcraftedIcons';
 
 export const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,22 +31,22 @@ export const Services = () => {
 
   const serviceFeatures = [
     {
-      icon: Sparkles,
+      icon: SparkMark,
       title: "Content Creation",
       description: "Engaging posts, stories, and reels tailored to your brand voice and audience."
     },
     {
-      icon: Users,
+      icon: CommunityMark,
       title: "Community Engagement",
       description: "Building authentic connections with your followers through meaningful interactions."
     },
     {
-      icon: TrendingUp,
+      icon: GrowthMark,
       title: "Growth Strategy",
       description: "Data-driven approaches to expand your reach and increase brand awareness."
     },
     {
-      icon: MessageSquare,
+      icon: ChatMark,
       title: "Brand Consistency",
       description: "Maintaining a cohesive visual identity and messaging across all platforms."
     }
@@ -84,10 +84,21 @@ export const Services = () => {
                   role="listitem"
                 >
                   <div className="text-center">
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" aria-hidden="true">
-                      <IconComponent className="w-8 h-8 text-white" />
+                    <div
+                      className="relative w-16 h-16 rounded-[20px] flex items-center justify-center mx-auto mb-6 transform hover:-rotate-3 transition-transform duration-500"
+                      style={{
+                        background: 'linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 14px rgba(168, 85, 247, 0.14), 0 0 0 1px rgba(168, 85, 247, 0.1)'
+                      }}
+                      aria-hidden="true"
+                    >
+                      <IconComponent className="w-9 h-9 text-purple-700" accent="#db2777" />
+                      <span
+                        className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full"
+                        style={{ background: '#ec4899', opacity: 0.8 }}
+                      />
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-gray-800">
+                    <h3 className="text-xl font-bold mb-3 text-gray-800 font-serif" style={{ letterSpacing: '-0.02em' }}>
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -121,7 +132,7 @@ export const Services = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="bg-green-100 rounded-full p-1 mt-0.5 flex-shrink-0" aria-hidden="true">
-                      <Check className="w-4 h-4 text-green-600" />
+                      <CheckMark className="w-4 h-4" accent="#059669" />
                     </div>
                     <span className="text-gray-700">{item}</span>
                   </div>
@@ -153,8 +164,15 @@ export const Services = () => {
               }}
             >
               <div className="flex items-start gap-6">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                  <Camera className="w-7 h-7 text-white" />
+                <div
+                  className="relative w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: 'linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 14px rgba(168, 85, 247, 0.14), 0 0 0 1px rgba(168, 85, 247, 0.1)'
+                  }}
+                  aria-hidden="true"
+                >
+                  <CameraMark className="w-8 h-8 text-purple-700" accent="#db2777" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xl text-gray-700 leading-relaxed">

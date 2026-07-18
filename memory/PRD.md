@@ -30,6 +30,20 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-07-30 (later) — Portfolio removal + Editorial typography + Handcrafted icons
+- **Portfolio**: Removed `Hearth & Order Co.` (https://hearthandorder.com/) from `mock.js` and its sitemap image entry
+- **Typography overhaul** — moves away from the AI-generic system-ui look:
+  - Added Google Fonts: **Fraunces** (variable serif, opsz 9..144) for headings + **Manrope** (humanist sans) for body
+  - `tailwind.config.js`: extended `fontFamily.sans` (Manrope), `fontFamily.serif` + `.display` (Fraunces)
+  - `index.css`: body uses Manrope; all `h1–h4`, `.font-serif`, `.font-display` use Fraunces with `font-variation-settings: "opsz" 144, "SOFT" 30`
+  - Added `<link rel="preload as=style">` + stylesheet in `index.html` for fast font load
+- **Handcrafted icon set** — replaces the generic lucide icons that felt AI-generated:
+  - New `/app/frontend/src/components/HandcraftedIcons.jsx` — custom duotone SVGs with organic, sketched strokes and an accent color parameter
+  - `HeartMark`, `BoltMark`, `TargetMark`, `SparkMark`, `CommunityMark`, `GrowthMark`, `GlobeMark`, `ChatMark`, `CameraMark`, `CheckMark`
+  - `ServicesPage.jsx` adds inline `ChartMark` and `CalendarMark` for Analytics + Content Calendar
+  - Each icon container replaced from `bg-gradient-to-br from-purple-500 to-pink-500` (AI-flat-purple) → soft pill with warm gradient (`#fdf4ff → #fce7f3`), inset white highlight, subtle purple ring, and a small pink accent dot in top-right corner
+- **Affected files**: `HomePage.jsx`, `Mission.jsx`, `Services.jsx`, `ServicesPage.jsx`, `HandcraftedIcons.jsx` (new), `tailwind.config.js`, `index.css`, `index.html`, `mock.js`, `sitemap.xml`
+
 ### 2026-07-30 — Portfolio refresh + SEO Phase 4 + Animation Layer 2
 - **Portfolio changes**: Removed `TYS Services` (https://tysservices.org/). Kept Texas True Roofing (https://www.txtrueroofing.com/) and Skin Refinery by LaCretia (https://skinrefinery417.com/) under `business` category.
 - **SEO Phase 4**:

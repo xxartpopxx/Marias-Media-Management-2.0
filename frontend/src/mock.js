@@ -213,14 +213,6 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 44,
-    name: "Hearth & Order Co.",
-    url: "https://hearthandorder.com/",
-    description: "Professional home organizing studio serving Riverside, San Diego, and Orange County — warm, judgment-free decluttering and sustainable system design for busy families, overwhelmed homeowners, and fresh-start seekers.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fhearthandorder.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
-    category: "business"
-  },
-  {
     id: 47,
     name: "A Gentle Touch Home Care LLC",
     url: "https://www.agentletouchhomecarellc1.com/",

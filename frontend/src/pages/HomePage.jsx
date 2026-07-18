@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Zap, Target, Sparkles, Users, TrendingUp, Globe, Star, Quote, Facebook, Instagram, ThumbsUp } from 'lucide-react';
+import { ArrowRight, Star, Quote, Facebook, Instagram, ThumbsUp } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
@@ -8,6 +8,15 @@ import { FadeIn, StaggerChildren, FloatingImage } from '../components/animations
 import SEOHead from '../components/SEOHead';
 import { homeSchema } from '../lib/seoSchemas';
 import { testimonials } from '../mock';
+import {
+  HeartMark,
+  BoltMark,
+  TargetMark,
+  SparkMark,
+  CommunityMark,
+  GrowthMark,
+  GlobeMark
+} from '../components/HandcraftedIcons';
 
 // Lazy load heavier components
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -24,16 +33,16 @@ const SectionLoader = memo(() => (
 
 export const HomePage = () => {
   const features = [
-    { icon: Heart, title: "Passion", description: "We bring heart to every project, campaign, and conversation." },
-    { icon: Zap, title: "Strategy", description: "Data-driven insights meet creative storytelling for real growth." },
-    { icon: Target, title: "Attention to Detail", description: "Every post, caption, and visual is crafted with intention." }
+    { icon: HeartMark, title: "Passion", description: "We bring heart to every project, campaign, and conversation." },
+    { icon: BoltMark, title: "Strategy", description: "Data-driven insights meet creative storytelling for real growth." },
+    { icon: TargetMark, title: "Attention to Detail", description: "Every post, caption, and visual is crafted with intention." }
   ];
 
   const services = [
-    { icon: Sparkles, title: "Content Creation", description: "Engaging posts, stories, and reels tailored to your brand." },
-    { icon: Users, title: "Community Building", description: "Authentic connections with your audience." },
-    { icon: TrendingUp, title: "Growth Strategy", description: "Data-driven approaches to expand your reach." },
-    { icon: Globe, title: "Website Design", description: "Beautiful, conversion-focused websites." }
+    { icon: SparkMark, title: "Content Creation", description: "Engaging posts, stories, and reels tailored to your brand." },
+    { icon: CommunityMark, title: "Community Building", description: "Authentic connections with your audience." },
+    { icon: GrowthMark, title: "Growth Strategy", description: "Data-driven approaches to expand your reach." },
+    { icon: GlobeMark, title: "Website Design", description: "Beautiful, conversion-focused websites." }
   ];
 
   return (
@@ -79,10 +88,21 @@ export const HomePage = () => {
                     className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-purple-100"
                     style={{ boxShadow: '0 10px 40px rgba(168, 85, 247, 0.1)' }}
                   >
-                    <div className="bg-gradient-to-br from-purple-100 to-pink-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transform hover:rotate-6 transition-transform duration-300">
-                      <Icon className="w-10 h-10 text-purple-600" />
+                    <div
+                      className="relative w-20 h-20 rounded-[26px] flex items-center justify-center mb-6 transform hover:rotate-3 transition-transform duration-500"
+                      style={{
+                        background: 'linear-gradient(135deg, #fdf4ff 0%, #fce7f3 100%)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 6px 20px rgba(168, 85, 247, 0.12), 0 0 0 1px rgba(168, 85, 247, 0.08)'
+                      }}
+                      aria-hidden="true"
+                    >
+                      <Icon className="w-10 h-10 text-purple-700" accent="#db2777" />
+                      <span
+                        className="absolute -top-1 -right-1 w-2 h-2 rounded-full"
+                        style={{ background: '#ec4899', opacity: 0.75 }}
+                      />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{feature.title}</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-800 font-serif" style={{ letterSpacing: '-0.02em' }}>{feature.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                   </article>
                 );
@@ -152,10 +172,21 @@ export const HomePage = () => {
                     key={index}
                     className="p-8 bg-gradient-to-br from-white to-purple-50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-purple-100 hover:border-purple-300 rounded-3xl text-center"
                   >
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                      <Icon className="w-7 h-7 text-white" />
+                    <div
+                      className="relative w-16 h-16 rounded-[20px] flex items-center justify-center mx-auto mb-5 transform hover:-rotate-3 transition-transform duration-500"
+                      style={{
+                        background: 'linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 14px rgba(168, 85, 247, 0.14), 0 0 0 1px rgba(168, 85, 247, 0.1)'
+                      }}
+                      aria-hidden="true"
+                    >
+                      <Icon className="w-9 h-9 text-purple-700" accent="#db2777" />
+                      <span
+                        className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full"
+                        style={{ background: '#ec4899', opacity: 0.8 }}
+                      />
                     </div>
-                    <h3 className="text-lg font-bold mb-2 text-gray-800">{service.title}</h3>
+                    <h3 className="text-lg font-bold mb-2 text-gray-800 font-serif" style={{ letterSpacing: '-0.02em' }}>{service.title}</h3>
                     <p className="text-gray-600 text-sm">{service.description}</p>
                   </Card>
                 );
