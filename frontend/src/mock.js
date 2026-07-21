@@ -189,6 +189,29 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 54,
+    name: "Soft Petal Electrolysis",
+    url: "https://softpetalelectrolysis.com/",
+    description: "Boutique electrolysis studio delivering safe, permanent hair removal in a serene, spa-inspired setting — one gentle treatment at a time for skin that feels as smooth and cared for as it looks.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fsoftpetalelectrolysis.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 53,
+    name: "Ignite Consult LLC",
+    url: "https://igniteconsultllc.com/",
+    description: "Strategic consulting firm sparking meaningful transformation for organizations and leaders — customized advisory, planning, and operational guidance that helps teams grow with clarity, momentum, and measurable results.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Figniteconsultllc.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 52,
+    name: "Emma Aguirre",
+    url: "http://emmaaguirre.com/",
+    description: "Personal brand and creative portfolio for Emma Aguirre — a polished digital home showcasing her work, story, and services with warmth, elegance, and a clear invitation to connect.",
+    category: "entrepreneur"
+  },
+  {
     id: 51,
     name: "Chesapeake Counseling Center",
     url: "https://chesapeakecounselingcenter.com/",

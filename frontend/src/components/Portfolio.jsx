@@ -261,7 +261,7 @@ export const Portfolio = () => {
           >
             {filteredPortfolio.map((site, index) => {
               // Mark the 3 newest portfolio items as "NEW" (ids 48, 49, 50)
-              const isNew = [49, 50, 51].includes(site.id);
+              const isNew = [52, 53, 54].includes(site.id);
               return (
               <a
                 key={site.id}
