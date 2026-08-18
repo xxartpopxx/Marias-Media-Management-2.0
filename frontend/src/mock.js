@@ -189,6 +189,30 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 57,
+    name: "Cranio Cove",
+    url: "https://craniocove.com/",
+    description: "Private craniosacral therapy practice in Tarrytown, NY with Laura McLelland — gentle, trauma-informed, one-to-one bodywork that soothes the nervous system, releases fascial tension, and restores calm in a peaceful, supportive setting.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fcraniocove.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 56,
+    name: "Authentically Yours Property Services",
+    url: "https://authenticallyyourspropertyservices.com/",
+    description: "Locally owned Greensboro, NC property services company offering residential and commercial cleaning, move-in/move-out cleaning, and junk removal — dependable, insured, detail-focused service with free estimates.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fauthenticallyyourspropertyservices.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 55,
+    name: "Nightline Express Inc",
+    url: "https://nightlinetruck.com/",
+    description: "Family-owned trucking company in Rochester, NY with nearly 15 years of experience and a fleet of around 20 trucks — dependable freight transportation built on respect, honest communication, and lasting relationships with drivers and customers alike.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fnightlinetruck.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
     id: 54,
     name: "Soft Petal Electrolysis",
     url: "https://softpetalelectrolysis.com/",
@@ -203,13 +227,6 @@ export const websitePortfolio = [
     description: "Strategic consulting firm sparking meaningful transformation for organizations and leaders — customized advisory, planning, and operational guidance that helps teams grow with clarity, momentum, and measurable results.",
     thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Figniteconsultllc.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
-  },
-  {
-    id: 52,
-    name: "Emma Aguirre",
-    url: "http://emmaaguirre.com/",
-    description: "Personal brand and creative portfolio for Emma Aguirre — a polished digital home showcasing her work, story, and services with warmth, elegance, and a clear invitation to connect.",
-    category: "entrepreneur"
   },
   {
     id: 51,
@@ -250,14 +267,6 @@ export const websitePortfolio = [
     description: "Compassionate non-medical home care agency providing personal care, companion services, and dependable in-home support that helps clients live safely, comfortably, and with dignity in the place they love most.",
     thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fwww.agentletouchhomecarellc1.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
-  },
-  {
-    id: 46,
-    name: "Beyond Blessed Gifts",
-    url: "https://beyond-blessed-gifts.com/",
-    description: "Faith-inspired Shopify gift shop curating meaningful, uplifting, and beautifully crafted keepsakes, apparel, and inspirational treasures for every celebration, milestone, and moment worth remembering.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fbeyond-blessed-gifts.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
-    category: "shopify"
   },
   {
     id: 42,
