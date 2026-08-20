@@ -5,13 +5,6 @@ import { socialLinks, facebookReviewsLink, googleReviewsLink } from '../mock';
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   // Facebook Icon Component
   const FacebookIcon = ({ className }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -52,16 +45,16 @@ export const Footer = () => {
     <footer className="bg-gradient-to-br from-gray-900 to-purple-900 text-white py-12" role="contentinfo">
       <div className="container mx-auto px-6">
         {/* Big brand logo */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-4">
           <Link to="/" aria-label="Maria's Media Management - Home" className="inline-block">
             <img
               src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png"
               alt="Maria's Media Management Logo"
-              width="360"
-              height="360"
+              width="320"
+              height="320"
               loading="lazy"
               decoding="async"
-              className="h-40 sm:h-52 md:h-64 lg:h-72 w-auto animate-float drop-shadow-2xl"
+              className="h-32 sm:h-40 md:h-52 w-auto drop-shadow-2xl"
             />
           </Link>
         </div>
@@ -85,58 +78,28 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm" role="list">
               <li>
-                <button
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Go to Home section"
-                >
-                  Home
-                </button>
+                <Link to="/" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Home</Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Go to Meet Maria section"
-                >
-                  Meet Maria
-                </button>
+                <Link to="/about" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Meet Maria</Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Go to Services section"
-                >
-                  Social Media Services
-                </button>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Social Media Services</Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('portfolio')}
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Go to Portfolio section"
-                >
-                  Website Portfolio
-                </button>
+                <Link to="/portfolio" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Website Portfolio</Link>
               </li>
               <li>
-                <Link
-                  to="/shop"
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Visit Shop"
-                >
-                  Shop
-                </Link>
+                <Link to="/reviews" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Reviews</Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-300 hover:text-purple-300 transition-colors duration-200"
-                  aria-label="Go to Contact section"
-                >
-                  Contact
-                </button>
+                <Link to="/episplain" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">EpiSplain</Link>
+              </li>
+              <li>
+                <Link to="/shop" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Shop</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-purple-300 transition-colors duration-200">Contact</Link>
               </li>
             </ul>
           </nav>
