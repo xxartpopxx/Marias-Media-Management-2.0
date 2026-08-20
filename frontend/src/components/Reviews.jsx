@@ -36,11 +36,11 @@ export const Reviews = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-14 bg-white relative overflow-hidden">
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-20 animate-float"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-3xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, memo } from 'react';
-import { Star, Quote, Facebook, Instagram, ExternalLink, ThumbsUp } from 'lucide-react';
+import { Star, Quote, Facebook, Instagram, ExternalLink, ThumbsUp, Globe } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { FadeIn, StaggerChildren } from '../components/animations';
@@ -29,7 +29,7 @@ export const ReviewsPage = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-100 rounded-full filter blur-3xl opacity-30"></div>
           
@@ -71,7 +71,7 @@ export const ReviewsPage = () => {
         </section>
 
         {/* All Reviews Horizontal Gallery */}
-        <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+        <section className="py-12 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <FadeIn>
               <h2 className="text-3xl font-bold text-center mb-8">
@@ -100,6 +100,10 @@ export const ReviewsPage = () => {
                       {review.source === 'facebook' ? (
                         <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
                           <Facebook className="w-3 h-3" /> Facebook
+                        </span>
+                      ) : review.source === 'website' ? (
+                        <span className="flex items-center gap-1 text-xs text-purple-600 bg-purple-50 px-2 py-1 rounded-full">
+                          <Globe className="w-3 h-3" /> Website Client
                         </span>
                       ) : review.instagram ? (
                         <span className="flex items-center gap-1 text-xs text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
@@ -173,7 +177,7 @@ export const ReviewsPage = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+        <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600">
           <div className="container mx-auto px-6">
             <FadeIn>
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
@@ -195,7 +199,7 @@ export const ReviewsPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">

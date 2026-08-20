@@ -59,13 +59,13 @@ export const HomePage = () => {
         <Hero />
 
         {/* Mission Section */}
-        <section className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
+        <section className="py-14 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-30"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <FadeIn>
-              <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="text-center max-w-4xl mx-auto mb-10">
                 <h2 className="text-5xl md:text-6xl font-bold mb-8">
                   Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Mission</span>
                 </h2>
@@ -112,7 +112,7 @@ export const HomePage = () => {
         </section>
 
         {/* Meet Maria Section */}
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-14 bg-white relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               <FadeIn direction="right">
@@ -151,10 +151,10 @@ export const HomePage = () => {
         </section>
 
         {/* Services Preview */}
-        <section className="py-24 bg-white">
+        <section className="py-14 bg-white">
           <div className="container mx-auto px-6">
             <FadeIn>
-              <div className="text-center mb-16">
+              <div className="text-center mb-10">
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
                   Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Services</span>
                 </h2>
@@ -206,7 +206,7 @@ export const HomePage = () => {
         </section>
 
         {/* Reviews Horizontal Gallery */}
-        <section className="py-24 bg-gradient-to-b from-white to-purple-50">
+        <section className="py-14 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <FadeIn>
               <div className="text-center mb-12">
@@ -328,7 +328,7 @@ export const HomePage = () => {
         </Suspense>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-purple-600 to-pink-600">
+        <section className="py-14 bg-gradient-to-r from-purple-600 to-pink-600">
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

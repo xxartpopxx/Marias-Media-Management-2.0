@@ -51,6 +51,21 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-purple-900 text-white py-12" role="contentinfo">
       <div className="container mx-auto px-6">
+        {/* Big brand logo */}
+        <div className="flex justify-center mb-10">
+          <Link to="/" aria-label="Maria's Media Management - Home" className="inline-block">
+            <img
+              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png"
+              alt="Maria's Media Management Logo"
+              width="360"
+              height="360"
+              loading="lazy"
+              decoding="async"
+              className="h-40 sm:h-52 md:h-64 lg:h-72 w-auto animate-float drop-shadow-2xl"
+            />
+          </Link>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>

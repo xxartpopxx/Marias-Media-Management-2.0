@@ -30,12 +30,12 @@ export const Shop = () => {
   }, []);
 
   return (
-    <section id="shop" ref={sectionRef} className="py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 relative overflow-hidden" aria-labelledby="shop-heading">
+    <section id="shop" ref={sectionRef} className="py-14 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 relative overflow-hidden" aria-labelledby="shop-heading">
       <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-purple-200 rounded-full filter blur-3xl opacity-20 animate-pulse-slow" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-pink-200 rounded-full filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} aria-hidden="true"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-4xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-4xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 id="shop-heading" className="text-5xl md:text-6xl font-bold mb-8">

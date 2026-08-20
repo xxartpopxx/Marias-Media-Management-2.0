@@ -37,7 +37,7 @@ export const ShopPage = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full filter blur-3xl opacity-40"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-pink-100 rounded-full filter blur-3xl opacity-30"></div>
           
@@ -92,10 +92,10 @@ export const ShopPage = () => {
         </section>
 
         {/* Products Grid */}
-        <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+        <section className="py-12 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <FadeIn>
-              <h2 className="text-4xl font-bold text-center mb-16">
+              <h2 className="text-4xl font-bold text-center mb-10">
                 Featured <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Products</span>
               </h2>
             </FadeIn>
@@ -138,7 +138,7 @@ export const ShopPage = () => {
         </section>
 
         {/* Etsy Reviews */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-6">
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center">
@@ -171,7 +171,7 @@ export const ShopPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-orange-500 to-pink-500">
+        <section className="py-12 bg-gradient-to-r from-orange-500 to-pink-500">
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

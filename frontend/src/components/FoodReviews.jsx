@@ -53,9 +53,9 @@ export const FoodReviews = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden" aria-labelledby="food-reviews-heading">
+    <section ref={sectionRef} className="py-16 bg-white relative overflow-hidden" aria-labelledby="food-reviews-heading">
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-3xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 id="food-reviews-heading" className="text-5xl md:text-6xl font-bold mb-10" style={{ letterSpacing: '-0.02em' }}>

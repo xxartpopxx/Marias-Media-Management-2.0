@@ -46,13 +46,13 @@ export const InstagramFeeds = () => {
   }, [scriptLoaded]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden" aria-labelledby="instagram-heading">
+    <section ref={sectionRef} className="py-16 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden" aria-labelledby="instagram-heading">
       <div className="container mx-auto px-6 relative z-10">
         {/* Food & Brand Reels - SociableKIT Feed */}
         <div className={`mb-32 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <div className="inline-flex items-center gap-4 mb-8">
               <Instagram className="w-12 h-12 text-purple-600" aria-hidden="true" />
               <h2 id="instagram-heading" className="text-5xl md:text-6xl font-bold" style={{ letterSpacing: '-0.02em' }}>

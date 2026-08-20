@@ -15,8 +15,7 @@ export const PageTransition = ({ children }) => {
     <div
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 400ms ease-out, transform 400ms ease-out'
+        transition: 'opacity 400ms ease-out'
       }}
     >
       {children}

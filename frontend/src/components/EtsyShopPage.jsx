@@ -203,7 +203,7 @@ export const EtsyShopPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-6">
         <div className="container mx-auto">
           <Card className="bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 rounded-3xl p-12 text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

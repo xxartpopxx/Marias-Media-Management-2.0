@@ -1,4 +1,53 @@
 export const testimonials = [
+  // Website client reviews (with photos)
+  {
+    id: 12,
+    name: "Daria Bondarenko",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/62ctfbsz_unnamed.png",
+    text: "I'm so happy with how my website turned out! Everything came out exactly how I wanted, and the whole process was super easy. She was very helpful, responsive, and really listened to all my ideas and requests. I absolutely love the final result and would definitely recommend her! 🤍",
+    source: "website",
+    recommends: true
+  },
+  {
+    id: 13,
+    name: "Emma Aguirre",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/79vzpaof_unnamed.png",
+    text: "I was done trying to figure out my website and all the things that I needed it to do. Maria came in and saved the day and I am SO proud to show off my website. It's exactly the vibe I needed. She was patient with me and my limited knowledge of the inter webs and was very responsive to every question. I love it, Maria! Thank you!",
+    source: "website",
+    recommends: true
+  },
+  {
+    id: 14,
+    name: "Ciera Gingery",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/d25ecywt_unnamed.png",
+    text: "I am beyond grateful and thankful to have Maria to help me bring my vision board to reality for my website! I highly recommend and will continue to use her!",
+    source: "website",
+    recommends: true
+  },
+  {
+    id: 15,
+    name: "Josehan Avila",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/vsgvhomb_unnamed.png",
+    text: "Absolutely amazing! Did my website so beautifully and professionally!",
+    source: "website",
+    recommends: true
+  },
+  {
+    id: 16,
+    name: "Kiarah Ayers",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/zvz1sv80_690627783_2068436887385989_5545797391465357843_n.jpg",
+    text: "Maria is extremely talented, patient, incredibly understanding, and knowledgeable. I told her exactly what I wanted and she took the time to implement everything. It took time, but she was beyond willing to help me. I'm forever grateful.",
+    source: "website",
+    recommends: true
+  },
+  {
+    id: 17,
+    name: "Jodi Baker",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/2k9dr2x4_643892124_10162250199301027_1984690830953675167_n.webp",
+    text: "Maria has been fantastic to work with. She is talented, fair and gets things done in a timely fashion. Love her attention to detail as well. So grateful I found her.",
+    source: "website",
+    recommends: true
+  },
   // Original Instagram/Social Media testimonials
   {
     id: 1,
@@ -50,8 +99,8 @@ export const testimonials = [
   {
     id: 7,
     name: "Traci Gina Russell",
-    image: "https://customer-assets.emergentagent.com/job_web-showcase-227/artifacts/pr2bsvvc_Screenshot%202026-05-13%20at%206.38.01%E2%80%AFPM.png",
-    text: "Absolutely blown away by the work Maria did on my website! From the very beginning she was responsive, creative, patient, and incredibly fast. She took all of my ideas and turned them into something even better than I envisioned. Every little detail was handled so professionally, and the final result looks polished, modern, and high-end. If you are looking for someone who truly cares about their work and delivers quickly without sacrificing quality, she is the one. Highly recommend!",
+    image: "https://customer-assets-wrfwihn1.emergentagent.net/job_website-refresh-82/artifacts/rbzy1sxk_unnamed-1.png",
+    text: "I cannot recommend Maria enough! She was incredibly responsive, professional, and brought my vision to life faster than I ever expected. The entire process was seamless, and she paid attention to every detail while making the website look polished, modern, and beautiful. I am beyond happy with how my website turned out and would absolutely work with her again!",
     source: "facebook",
     recommends: true
   },
@@ -188,6 +237,30 @@ export const portfolioCategories = [
 
 export const websitePortfolio = [
   // Newest websites first
+  {
+    id: 60,
+    name: "Golden Touch Lash & Brow",
+    url: "https://goldentouchlash.com/",
+    description: "Vero Beach, Florida lash and brow studio offering luxury lash extensions, brow microshading and lamination, facials, waxing, and professional lash training — effortless, elevated beauty designed to enhance your natural glow.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fgoldentouchlash.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 59,
+    name: "Zello Labs",
+    url: "https://zellolabs.us/",
+    description: "Shopify storefront supplying high-quality, research-use-only laboratory materials with a focus on purity, consistency, and transparency — clear product information, COA-backed quality, secure checkout, and fast U.S. shipping.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fzellolabs.us%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "shopify"
+  },
+  {
+    id: 58,
+    name: "Global Industry Group",
+    url: "https://globalindg.com/",
+    description: "Texas multi-discipline industrial contractor delivering integrated construction, maintenance, and specialty services — mechanical, structural steel, civil, coatings, fireproofing and more — for refineries, energy, manufacturing, and mission-critical data center facilities.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fglobalindg.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
   {
     id: 57,
     name: "Cranio Cove",

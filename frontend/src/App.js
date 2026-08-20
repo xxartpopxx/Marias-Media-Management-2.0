@@ -13,6 +13,7 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage").then(m => ({ de
 const ShopPage = lazy(() => import("./pages/ShopPage").then(m => ({ default: m.ShopPage })));
 const ContactPage = lazy(() => import("./pages/ContactPage").then(m => ({ default: m.ContactPage })));
 const ReviewsPage = lazy(() => import("./pages/ReviewsPage").then(m => ({ default: m.ReviewsPage })));
+const EpiSplainPage = lazy(() => import("./pages/EpiSplainPage").then(m => ({ default: m.EpiSplainPage })));
 const EtsyShopPage = lazy(() => import("./components/EtsyShopPage").then(m => ({ default: m.EtsyShopPage })));
 
 // Page loader component
@@ -64,6 +65,7 @@ function App() {
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/shop" element={<ShopPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/episplain" element={<EpiSplainPage />} />
               <Route path="/contact" element={<ContactPage />} />
               {/* Legacy route for Etsy shop */}
               <Route path="/etsy" element={<EtsyShopPage />} />

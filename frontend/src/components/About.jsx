@@ -27,9 +27,9 @@ export const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 bg-white" aria-labelledby="about-heading">
+    <section id="about" ref={sectionRef} className="py-14 bg-white" aria-labelledby="about-heading">
       <div className="container mx-auto px-6">
-        <div className={`text-center mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 id="about-heading" className="text-5xl md:text-6xl font-bold mb-4">

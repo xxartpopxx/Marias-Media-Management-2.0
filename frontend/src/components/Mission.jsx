@@ -45,12 +45,12 @@ export const Mission = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden" aria-labelledby="mission-heading">
+    <section ref={sectionRef} className="py-14 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden" aria-labelledby="mission-heading">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-30" aria-hidden="true"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-30" aria-hidden="true"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-4xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-4xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 id="mission-heading" className="text-5xl md:text-6xl font-bold mb-8">

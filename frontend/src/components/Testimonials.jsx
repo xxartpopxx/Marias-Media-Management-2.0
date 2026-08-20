@@ -38,12 +38,12 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden" aria-labelledby="testimonials-heading">
+    <section id="testimonials" ref={sectionRef} className="py-14 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden" aria-labelledby="testimonials-heading">
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full filter blur-3xl opacity-20" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-20" aria-hidden="true"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center mb-20 transition-all duration-1000 transform ${
+        <div className={`text-center mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h2 id="testimonials-heading" className="text-5xl md:text-6xl font-bold mb-6">
@@ -55,7 +55,7 @@ export const Testimonials = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="relative min-h-[400px]" role="region" aria-live="polite" aria-atomic="true">
+          <div className="relative min-h-[340px]" role="region" aria-live="polite" aria-atomic="true">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}

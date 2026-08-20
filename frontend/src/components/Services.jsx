@@ -53,7 +53,7 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" ref={sectionRef} className="py-32 bg-white relative overflow-hidden" aria-labelledby="services-heading">
+    <section id="services" ref={sectionRef} className="py-16 bg-white relative overflow-hidden" aria-labelledby="services-heading">
       <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-24 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -68,7 +68,7 @@ export const Services = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Service Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" role="list">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10" role="list">
             {serviceFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
@@ -111,7 +111,7 @@ export const Services = () => {
           </div>
 
           {/* What's Included Section */}
-          <div className={`max-w-4xl mx-auto mb-16 transition-all duration-1000 delay-500 transform ${
+          <div className={`max-w-4xl mx-auto mb-10 transition-all duration-1000 delay-500 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <Card 

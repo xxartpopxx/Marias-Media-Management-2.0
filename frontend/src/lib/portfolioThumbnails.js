@@ -17,9 +17,19 @@
 const MSHOTS_BASE = 'https://s.wordpress.com/mshots/v1/';
 const MICROLINK_BASE = 'https://api.microlink.io/';
 
+/**
+ * Returns the best CURRENT thumbnail for a site.
+ *  - Live on-demand screenshots (Microlink) are always current → keep as-is.
+ *  - Any other stored thumbnail (old static PNG uploads, local /thumbnails/*.jpg)
+ *    is treated as potentially stale and is replaced with a freshly generated
+ *    live mShots screenshot so every portfolio thumbnail reflects the live site.
+ */
 export const getPortfolioThumbnail = (site, { w = 800, h = 600 } = {}) => {
-  if (site?.thumbnail) return site.thumbnail;
   if (!site?.url) return null;
+  const t = site?.thumbnail;
+  // Keep live, on-demand screenshot services (always up to date)
+  if (t && t.includes('api.microlink.io')) return t;
+  // Otherwise always generate a fresh live screenshot of the current site
   return `${MSHOTS_BASE}${encodeURIComponent(site.url)}?w=${w}&h=${h}`;
 };
 

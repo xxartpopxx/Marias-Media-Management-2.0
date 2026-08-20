@@ -91,7 +91,7 @@ export const ContactPage = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100 rounded-full filter blur-3xl opacity-30"></div>
           
@@ -143,7 +143,7 @@ export const ContactPage = () => {
         </section>
 
         {/* Contact Form */}
-        <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+        <section className="py-12 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto">
               <FadeIn>

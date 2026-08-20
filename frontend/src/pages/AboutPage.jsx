@@ -37,7 +37,7 @@ export const AboutPage = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-pink-100 rounded-full filter blur-3xl opacity-30"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-100 rounded-full filter blur-3xl opacity-30"></div>
           
@@ -79,7 +79,7 @@ export const AboutPage = () => {
         </section>
 
         {/* Highlights */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-6">
             <StaggerChildren className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto" staggerDelay={100}>
               {highlights.map((item, index) => {
@@ -102,7 +102,7 @@ export const AboutPage = () => {
         </section>
 
         {/* Story Section */}
-        <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+        <section className="py-12 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <FadeIn>
@@ -147,7 +147,7 @@ export const AboutPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+        <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600">
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

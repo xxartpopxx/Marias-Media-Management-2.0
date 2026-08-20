@@ -6,7 +6,7 @@ import { Card } from '../components/ui/card';
 import { FadeIn, StaggerChildren } from '../components/animations';
 import SEOHead from '../components/SEOHead';
 import { portfolioSchema } from '../lib/seoSchemas';
-import { getPortfolioThumbnail } from '../lib/portfolioThumbnails';
+import { getPortfolioThumbnail, getFallbackThumbnail } from '../lib/portfolioThumbnails';
 import { websitePortfolio, portfolioCategories } from '../mock';
 
 const Footer = lazy(() => import('../components/Footer').then(m => ({ default: m.Footer })));
@@ -134,7 +134,7 @@ export const PortfolioPage = () => {
 
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-[150px] opacity-20"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full filter blur-[150px] opacity-20"></div>
           
@@ -147,7 +147,7 @@ export const PortfolioPage = () => {
                   </span>
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-                  Website <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
+                  Website <span className="animate-text-gradient">Portfolio</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-10">
                   Beautifully crafted websites that bring your vision to life. Check out some of my recent work below.
@@ -158,11 +158,11 @@ export const PortfolioPage = () => {
         </section>
 
         {/* Portfolio Gallery - MOVED ABOVE PRICING */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
           <div className="container mx-auto px-6">
             <FadeIn>
               <h2 className="text-4xl font-bold text-center mb-8 text-white">
-                Recent <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Work</span>
+                Recent <span className="animate-text-gradient">Work</span>
               </h2>
               
               {/* Category Filter Buttons */}
@@ -226,11 +226,11 @@ export const PortfolioPage = () => {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {filteredPortfolio.map((site) => {
-                  const isNew = [52, 53, 54].includes(site.id);
+                  const isNew = [58, 59, 60].includes(site.id);
                   return (
                   <div
                     key={site.id}
-                    className="flex-shrink-0 w-[420px] snap-start"
+                    className="flex-shrink-0 w-[88vw] max-w-[440px] sm:w-[420px] snap-start"
                   >
                     <Card className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 group magnetic-hover">
                       {/* NEW badge */}
@@ -253,17 +253,26 @@ export const PortfolioPage = () => {
                         </div>
                       </div>
                       
-                      {/* Website Preview - thumbnail (mShots fallback for sites without custom thumbnail) */}
-                      <div className="relative h-64 bg-gray-900 overflow-hidden">
+                      {/* Website Preview - thumbnail (mShots → Microlink fallback) */}
+                      <div className="relative h-72 sm:h-64 bg-gray-900 overflow-hidden">
                         <img
                           src={getPortfolioThumbnail(site, { w: 800, h: 600 })}
                           alt={`${site.name} website preview`}
-                          className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover object-top transition-transform [transition-duration:6000ms] ease-linear group-hover:object-bottom group-hover:scale-105"
                           loading="lazy"
                           decoding="async"
                           onError={(e) => {
-                            e.currentTarget.onerror = null;
-                            e.currentTarget.style.display = 'none';
+                            const img = e.currentTarget;
+                            if (!img.dataset.fallback) {
+                              const fb = getFallbackThumbnail(site);
+                              if (fb) {
+                                img.dataset.fallback = '1';
+                                img.src = fb;
+                                return;
+                              }
+                            }
+                            img.onerror = null;
+                            img.style.display = 'none';
                           }}
                         />
                       </div>
@@ -293,10 +302,10 @@ export const PortfolioPage = () => {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
           <div className="container mx-auto px-6">
             <FadeIn>
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">
+              <h2 className="text-4xl font-bold text-center mb-10 text-white">
                 Pricing <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Packages</span>
               </h2>
             </FadeIn>
@@ -361,7 +370,7 @@ export const PortfolioPage = () => {
         </section>
 
         {/* Additional Info */}
-        <section className="py-20 bg-gray-900">
+        <section className="py-12 bg-gray-900">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <FadeIn direction="right">
@@ -416,7 +425,7 @@ export const PortfolioPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+        <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600">
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

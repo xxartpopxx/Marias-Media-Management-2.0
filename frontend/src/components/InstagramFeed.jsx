@@ -64,11 +64,11 @@ export const InstagramFeed = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-14 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-pink-100 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-3xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="inline-flex items-center gap-3 mb-6">

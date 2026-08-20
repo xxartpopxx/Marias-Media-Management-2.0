@@ -99,7 +99,7 @@ export const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-12 bg-white relative overflow-hidden"
       aria-labelledby="contact-heading"
     >
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20" aria-hidden="true"></div>
@@ -107,7 +107,7 @@ export const Contact = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div
-          className={`text-center mb-16 transition-all duration-1000 transform ${
+          className={`text-center mb-10 transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >

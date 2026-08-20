@@ -166,7 +166,7 @@ export const Portfolio = () => {
   }, [isVisible]);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden" aria-labelledby="portfolio-heading">
+    <section id="portfolio" ref={sectionRef} className="py-14 md:py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden" aria-labelledby="portfolio-heading">
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
@@ -176,7 +176,7 @@ export const Portfolio = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-4xl mx-auto mb-16 transition-all duration-1000 transform ${
+        <div className={`text-center max-w-4xl mx-auto mb-10 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20">
@@ -184,7 +184,7 @@ export const Portfolio = () => {
             <span className="text-sm text-pink-200 font-medium">Web Design Services</span>
           </div>
           <h2 id="portfolio-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
-            Website <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
+            Website <span className="animate-text-gradient">Portfolio</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
             Beautifully crafted websites that bring your vision to life. Check out some of my recent work below.
@@ -225,7 +225,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Horizontal Portfolio Gallery */}
-        <div className="relative mb-20">
+        <div className="relative mb-10">
           {/* Navigation Arrows */}
           <button
             onClick={() => handleScroll('left')}
@@ -260,15 +260,15 @@ export const Portfolio = () => {
             }}
           >
             {filteredPortfolio.map((site, index) => {
-              // Mark the 3 newest portfolio items as "NEW" (ids 48, 49, 50)
-              const isNew = [52, 53, 54].includes(site.id);
+              // Mark the 3 newest portfolio items as "NEW"
+              const isNew = [58, 59, 60].includes(site.id);
               return (
               <a
                 key={site.id}
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex-shrink-0 w-[320px] md:w-[380px] transition-all duration-700 transform ${
+                className={`group flex-shrink-0 w-[88vw] max-w-[420px] sm:w-[360px] md:w-[380px] transition-all duration-700 transform ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
                 style={{ 
@@ -300,11 +300,11 @@ export const Portfolio = () => {
                   </div>
 
                   {/* Website Preview - thumbnail (mShots → Microlink fallback) */}
-                  <div className="relative h-48 bg-gray-900 overflow-hidden">
+                  <div className="relative h-60 sm:h-52 md:h-48 bg-gray-900 overflow-hidden">
                     <img
                       src={getPortfolioThumbnail(site, { w: 760, h: 480 })}
                       alt={`${site.name} website preview`}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-top transition-transform [transition-duration:6000ms] ease-linear group-hover:object-bottom group-hover:scale-105"
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
@@ -364,7 +364,7 @@ export const Portfolio = () => {
             <span className="text-sm text-green-300 font-medium">Pricing Plans</span>
           </div>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
-            Choose Your <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Perfect Plan</span>
+            Choose Your <span className="animate-text-gradient">Perfect Plan</span>
           </h3>
           <p className="text-lg text-gray-300">
             Transparent pricing for every stage of your business journey.
@@ -372,7 +372,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-10">
           {pricingTiers.map((tier, index) => {
             const IconComponent = tier.icon;
             const isPopular = tier.popular;

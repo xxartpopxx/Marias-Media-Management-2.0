@@ -32,6 +32,7 @@ export const Header = () => {
     { to: '/services', label: 'Social Media Services' },
     { to: '/portfolio', label: 'Website Services' },
     { to: '/reviews', label: 'Reviews' },
+    { to: '/episplain', label: 'EpiSplain' },
     { to: '/contact', label: 'Contact' },
   ];
 
@@ -74,17 +75,8 @@ export const Header = () => {
     >
       <nav className="container mx-auto px-6 py-3" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center group" aria-label="Maria's Media Management - Home">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_a9efaa07-0c20-4f2e-84b4-40005799affc/artifacts/ml1q1ugm_Maria%27s%20Media%20Kit.png" 
-              alt="Maria's Media Management Logo"
-              width="80"
-              height="80"
-              className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
-              loading="eager"
-              decoding="async"
-            />
-          </Link>
+          {/* Logo removed per request — empty spacer keeps nav aligned right */}
+          <div aria-hidden="true"></div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-0" aria-label="Main navigation">
