@@ -226,7 +226,7 @@ export const PortfolioPage = () => {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {filteredPortfolio.map((site) => {
-                  const isNew = [58, 59, 60].includes(site.id);
+                  const isNew = [60, 61, 62].includes(site.id);
                   return (
                   <div
                     key={site.id}

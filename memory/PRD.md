@@ -30,6 +30,11 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-09-05 — Portfolio update
+- Removed `Khadijah's Angels` (https://khadijahsangels.com/) from `mock.js` + sitemap image entry
+- Added `Savannah's House` (https://savannahshouse.org/, id 62, business) and `Craft Addiction LLC` (https://craftaddiction25.com/, id 61, shopify) with live Microlink thumbnails; NEW badges now on ids 60/61/62
+- Serenity Wellness NE: URL → https, thumbnail switched from stale 3.6MB static PNG (which `getPortfolioThumbnail` ignored, leaving mShots 403 → blank) to a live Microlink screenshot; sitemap updated
+
 ### 2026-07-30 (later) — Portfolio removal + Editorial typography + Handcrafted icons
 - **Portfolio**: Removed `Hearth & Order Co.` (https://hearthandorder.com/) from `mock.js` and its sitemap image entry
 - **Typography overhaul** — moves away from the AI-generic system-ui look:

@@ -238,6 +238,22 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 62,
+    name: "Savannah's House",
+    url: "https://savannahshouse.org/",
+    description: "Tyler, Texas residential home serving seniors, veterans, and adults with disabilities across East Texas — founded by a 20-year CNA caregiver, offering a small, personal, home-like environment with meals, transportation assistance, tour scheduling, waiting list, and resident inquiry forms.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fsavannahshouse.org%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
+    id: 61,
+    name: "Craft Addiction LLC",
+    url: "https://craftaddiction25.com/",
+    description: "Bold Shopify storefront from Raceland, Louisiana offering custom-made graphic tees, bling tumblers and drinkware, Louisiana favorites, seasonal drops, home goods, and personalized gifts — with custom order requests, local pickup, and nationwide shipping.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fcraftaddiction25.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "shopify"
+  },
+  {
     id: 60,
     name: "Golden Touch Lash & Brow",
     url: "https://goldentouchlash.com/",
@@ -499,9 +515,9 @@ export const websitePortfolio = [
   {
     id: 9,
     name: "Serenity Wellness NE",
-    url: "http://serenitywellnessne.com/",
+    url: "https://serenitywellnessne.com/",
     description: "Holistic wellness center website with a calming, peaceful aesthetic promoting health and wellbeing services.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_front-showcase-1/artifacts/yhz4f0bk_Screenshot%202026-03-06%20at%2011.34.26%E2%80%AFAM.png",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fserenitywellnessne.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
   },
   {
@@ -538,15 +554,6 @@ export const websitePortfolio = [
     url: "https://wildonesllc.org/",
     description: "Professional organization website with modern design and seamless user experience.",
     category: "shopify"
-  },
-  
-  {
-    id: 16,
-    name: "Khadijah's Angels",
-    url: "https://khadijahsangels.com/",
-    description: "Non-profit organization website with a warm, welcoming design.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_c25134e9-1d2f-4283-ac46-fee40d54ca87/artifacts/hxj0m5uo_Screenshot%202026-02-05%20at%204.17.28%E2%80%AFPM.png",
-    category: "nonprofit"
   },
   
   {
