@@ -238,6 +238,14 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 63,
+    name: "Heritage Cuisine",
+    url: "https://theheritagecuisine.com/",
+    description: "Lexington, Kentucky catering and private dining by Chef Steve Atkins — custom menus for weddings, rehearsal dinners, private dinners, and evening celebrations across Central Kentucky, crafted with Southern heritage and refined hospitality.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Ftheheritagecuisine.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    category: "business"
+  },
+  {
     id: 62,
     name: "Savannah's House",
     url: "https://savannahshouse.org/",
@@ -307,14 +315,6 @@ export const websitePortfolio = [
     url: "https://softpetalelectrolysis.com/",
     description: "Boutique electrolysis studio delivering safe, permanent hair removal in a serene, spa-inspired setting — one gentle treatment at a time for skin that feels as smooth and cared for as it looks.",
     thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fsoftpetalelectrolysis.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
-    category: "business"
-  },
-  {
-    id: 53,
-    name: "Ignite Consult LLC",
-    url: "https://igniteconsultllc.com/",
-    description: "Strategic consulting firm sparking meaningful transformation for organizations and leaders — customized advisory, planning, and operational guidance that helps teams grow with clarity, momentum, and measurable results.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Figniteconsultllc.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
   },
   {
@@ -418,14 +418,6 @@ export const websitePortfolio = [
     category: "business"
   },
   {
-    id: 30,
-    name: "Trusted Hearts Home Care LLC",
-    url: "https://trustedheartshomecare.co/",
-    description: "Compassionate non-medical home care services in Dublin, Columbus and surrounding Ohio areas, offering personal care, companion care, dementia support, and more.",
-    thumbnail: "/thumbnails/trustedhearts.jpg",
-    category: "business"
-  },
-  {
     id: 34,
     name: "Salumi Tucson",
     url: "https://www.salumitucson.com/",
@@ -498,26 +490,10 @@ export const websitePortfolio = [
     category: "entrepreneur"
   },
   {
-    id: 7,
-    name: "Upstate Hot Tubs",
-    url: "https://upstatehottubs.com/",
-    description: "Premium hot tub sales and services website with a clean, modern design showcasing luxury spa products and expert installation services.",
-    thumbnail: "https://customer-assets.emergentagent.com/job_social-proof-pull/artifacts/70pz2ah6_Screenshot%202026-03-03%20at%206.24.52%E2%80%AFPM.png",
-    category: "business"
-  },
-  {
     id: 8,
     name: "Pedro DaCosta Group",
     url: "https://pedrodacostagroup.com/",
     description: "Professional real estate and business consulting group website featuring elegant design and comprehensive service offerings.",
-    category: "business"
-  },
-  {
-    id: 9,
-    name: "Serenity Wellness NE",
-    url: "https://serenitywellnessne.com/",
-    description: "Holistic wellness center website with a calming, peaceful aesthetic promoting health and wellbeing services.",
-    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fserenitywellnessne.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
     category: "business"
   },
   {

@@ -30,6 +30,10 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-10-14 — Portfolio update
+- Removed Ignite Consult LLC, Trusted Hearts Home Care, Upstate Hot Tubs, Serenity Wellness NE from `mock.js` + sitemap (deleted `/thumbnails/trustedhearts.jpg`)
+- Added `Heritage Cuisine` (https://theheritagecuisine.com/, id 63, business) with Microlink thumbnail; NEW badges now on ids 61/62/63
+
 ### 2026-09-05 — Portfolio update
 - Removed `Khadijah's Angels` (https://khadijahsangels.com/) from `mock.js` + sitemap image entry
 - Added `Savannah's House` (https://savannahshouse.org/, id 62, business) and `Craft Addiction LLC` (https://craftaddiction25.com/, id 61, shopify) with live Microlink thumbnails; NEW badges now on ids 60/61/62
