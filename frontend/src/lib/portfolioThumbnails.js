@@ -39,6 +39,8 @@ export const getPortfolioThumbnail = (site, { w = 800, h = 600 } = {}) => {
  */
 export const getFallbackThumbnail = (site) => {
   if (!site?.url) return null;
+  // Self-hosted backup screenshot (used if live screenshot services are rate-limited)
+  if (site?.fallbackThumbnail) return site.fallbackThumbnail;
   const params = new URLSearchParams({
     url: site.url,
     screenshot: 'true',

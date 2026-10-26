@@ -30,6 +30,11 @@ React SPA (Maria's Media Management) marketing site hosted on Netlify. User has 
 - `/app/netlify.toml` — caching, security headers, MIME types, SPA fallback with robots/sitemap bypass
 
 ## What's Been Implemented
+### 2026-10-26 — Portfolio update
+- Added `Dr. Maggie Cadet, MD` (https://maggiecadetmd.com/, id 64, entrepreneur), Microlink thumbnail + self-hosted `fallbackThumbnail` (`/thumbnails/maggiecadet.jpg`, from thum.io) — `getFallbackThumbnail` now honors `site.fallbackThumbnail`
+- Removed all NEW badges (Portfolio.jsx + PortfolioPage.jsx); CTA "Ready for Your New Website?" → "Ready to Build Your Website?"
+- Note: Microlink free tier is rate-limited (daily); sandbox IP hit the limit
+
 ### 2026-10-14 — Portfolio update
 - Removed Ignite Consult LLC, Trusted Hearts Home Care, Upstate Hot Tubs, Serenity Wellness NE from `mock.js` + sitemap (deleted `/thumbnails/trustedhearts.jpg`)
 - Added `Heritage Cuisine` (https://theheritagecuisine.com/, id 63, business) with Microlink thumbnail; NEW badges now on ids 61/62/63

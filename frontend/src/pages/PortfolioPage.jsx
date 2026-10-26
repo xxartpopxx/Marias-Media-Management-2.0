@@ -226,20 +226,12 @@ export const PortfolioPage = () => {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {filteredPortfolio.map((site) => {
-                  const isNew = [61, 62, 63].includes(site.id);
                   return (
                   <div
                     key={site.id}
                     className="flex-shrink-0 w-[88vw] max-w-[440px] sm:w-[420px] snap-start"
                   >
                     <Card className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 group magnetic-hover">
-                      {/* NEW badge */}
-                      {isNew && (
-                        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg shadow-pink-500/40 animate-pulse-glow" aria-label="New addition to portfolio">
-                          <Sparkles className="w-3 h-3 animate-sparkle" aria-hidden="true" />
-                          <span className="tracking-wider">NEW</span>
-                        </div>
-                      )}
                       {/* Browser Chrome */}
                       <div className="bg-gray-900 px-4 py-3 flex items-center gap-3 border-b border-gray-700">
                         <div className="flex gap-2">
@@ -429,7 +421,7 @@ export const PortfolioPage = () => {
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready for Your New Website?
+                Ready to Build Your Website?
               </h2>
               <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
                 Let's create something beautiful together. Get your free consultation today.

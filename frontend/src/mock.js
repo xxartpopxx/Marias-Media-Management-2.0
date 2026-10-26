@@ -238,6 +238,15 @@ export const portfolioCategories = [
 export const websitePortfolio = [
   // Newest websites first
   {
+    id: 64,
+    name: "Dr. Maggie Cadet, MD",
+    url: "https://maggiecadetmd.com/",
+    description: "Personal brand site for Dr. Maggie Cadet, a board-certified NYC rheumatologist — patient-friendly education on arthritis, joint pain, lupus, and autoimmune disease, plus women's and minority health, nutrition, fitness, and healthy living.",
+    thumbnail: "https://api.microlink.io/?url=https%3A%2F%2Fmaggiecadetmd.com%2F&screenshot=true&embed=screenshot.url&meta=false&viewport.width=1200&viewport.height=900",
+    fallbackThumbnail: "/thumbnails/maggiecadet.jpg",
+    category: "entrepreneur"
+  },
+  {
     id: 63,
     name: "Heritage Cuisine",
     url: "https://theheritagecuisine.com/",
